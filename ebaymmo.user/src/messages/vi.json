@@ -1,0 +1,1514 @@
+{
+    "english": "English",
+    "vietnamese": "Tiếng Việt",
+    "russian": "Русский",
+    "chinese": "中文",
+
+    "Products": "Sản phẩm",
+    "Services": "Dịch vụ",
+    "What are you looking for?": "Bạn đang tìm kiếm gì?",
+    "Search History": "Lịch sử tìm kiếm",
+    "No search history found": "Không có lịch sử tìm kiếm",
+    "Header": {
+        "hello": "Xin chào",
+        "deposit": "Nạp tiền",
+        "withdraw": "Rút tiền",
+        "storeManagement": "Quản lý cửa hàng",
+        "logout": "Đăng xuất",
+        "vietnamese": "Tiếng Việt",
+        "russian": "Русский",
+        "chinese": "中文",
+        "english": "English",
+        "depositModalTitle": "Nạp USDT",
+        "walletAddress": "Địa chỉ ví",
+        "balance": "Số dư",
+        "networkCode": "Mã mạng",
+        "selectNetwork": "Chọn mạng",
+        "amount": "Số tiền",
+        "enterDepositAmount": "Nhập số tiền nạp",
+        "continue": "Tiếp tục",
+        "success": "Thành công",
+        "error": "Lỗi",
+        "close": "Đóng",
+        "addressBalance": "Số dư địa chỉ",
+        "accountManagement": "Quản lý tài khoản",
+        "orderManagement": "Quản lý đơn hàng",
+        "transactionHistory": "Lịch sử giao dịch",
+        "withdrawalHistory": "Lịch sử rút tiền",
+        "depositHistory": "Lịch sử nạp tiền",
+        "resellerHistory": "Lịch sử bán lại",
+        "favoriteStore": "Cửa hàng yêu thích",
+        "contentManagement": "Quản lý nội dung",
+        "dashboard": "Bảng điều khiển",
+        "withdrawTitle": "Yêu cầu rút tiền",
+        "minWithdrawal": "Số tiền rút tối thiểu là 50 USDT",
+        "enterWithdrawAmount": "Nhập số tiền bạn muốn rút (tối thiểu 50)",
+        "2faVerificationCode": "Mã xác thực 2FA",
+        "enter2faCode": "Nhập mã xác thực từ Google Authenticator",
+        "submitWithdrawal": "Rút tiền",
+        "2faRequired": "Kích hoạt 2FA",
+        "2faRequiredMessage": "Bạn cần kích hoạt 2FA để rút tiền. Kích hoạt 2FA giúp bảo vệ tài khoản và giao dịch của bạn.",
+        "setup2fa": "Kích hoạt ngay",
+        "pleaseSelectWallet": "Vui lòng chọn ví",
+        "selectWalletAddress": "Chọn địa chỉ ví",
+        "walletRequired": "Vui lòng thêm ví trước khi rút tiền",
+        "twoFactorRequired": "Vui lòng bật xác thực hai yếu tố trước khi rút tiền",
+        "pendingLimit": "Bạn có 3 giao dịch đang chờ xử lý",
+        "fillAllFields": "Vui lòng điền đầy đủ thông tin",
+        "insufficientBalance": "Số dư không đủ cho giao dịch",
+        "incorrectCode": "Mã xác thực không chính xác",
+        "withdrawalSuccess": "Đã gửi yêu cầu rút tiền",
+        "cancel": "Hủy"
+    },
+    "HeaderMenuDropdown": {
+        "products": "Sản phẩm",
+        "services": "Dịch vụ",
+        "support": "Hỗ trợ",
+        "share": "Chia sẻ",
+        "favoriteStore": "Cửa hàng yêu thích",
+        "Contact": "Liên hệ",
+        "2Fa": "2FA",
+        "FAQs": "FAQs",
+        "Email": "Email",
+        "Software": "Phần mềm",
+        "Account": "Tài khoản",
+        "Other": "Khác",
+        "Increase Interaction": "Tăng cường tương tác",
+        "Software Service": "Dịch vụ phần mềm",
+        "Blockchain": "Blockchain",
+        "Other Services": "Dịch vụ khác",
+        "seller": "NGƯỜI BÁN",
+        "register seller": "Đăng ký bán hàng"
+    },
+    "BecomeSeller": {
+        "title": "Trở thành người bán",
+        "description": "Tham gia nền tảng của chúng tôi và bắt đầu bán sản phẩm hoặc dịch vụ của bạn.",
+        "registerButton": "Đăng ký ngay"
+    },
+    "common": {
+        "buttons": {
+            "submit": "Gửi",
+            "cancel": "Hủy",
+            "save": "Lưu",
+            "close": "Đóng",
+            "continue": "Tiếp tục",
+            "back": "Quay lại",
+            "edit": "Chỉnh sửa"
+        },
+        "statuses": {
+            "loading": "Đang tải...",
+            "success": "Thành công",
+            "error": "Lỗi",
+            "warning": "Cảnh báo"
+        }
+    },
+    "auction": {
+        "startauction": "Bắt đầu trong:",
+        "endauction": "Kết thúc trong:",
+        "prepareauction": "Chuẩn bị đấu giá:",
+        "roonwaiting": "Phong chờ đấu giá:",
+        "currentWaiting": "Hiện đang chờ vị trí đấu giá:",
+        "waitingTime": "Cuộc đấu giá sẽ bắt đầu vào:"
+    },
+    "auth": {
+        "login": "Đăng nhập",
+        "register": "Đăng ký",
+        "forgotPassword": "Quên mật khẩu",
+        "resetPassword": "Đặt lại mật khẩu",
+        "logout": "Đăng xuất"
+    },
+    "navigation": {
+        "home": "Trang chủ",
+        "profile": "Hồ sơ",
+        "settings": "Cài đặt",
+        "chat": "Trò chuyện"
+    },
+    "errors": {
+        "required": "Trường này là bắt buộc",
+        "invalidEmail": "Địa chỉ email không hợp lệ",
+        "passwordMismatch": "Mật khẩu không khớp",
+        "serverError": "Đã xảy ra lỗi máy chủ",
+        "orderFailed": "Tạo đơn hàng thất bại. Vui lòng thử lại.",
+        "serviceFailed": "Tạo đơn hàng dịch vụ thất bại. Vui lòng thử lại.",
+        "submitFailed": "Gửi đơn hàng thất bại. Vui lòng thử lại.",
+        "ownProduct": "Bạn không thể mua sản phẩm của chính mình",
+        "noProduct": "Chưa chọn sản phẩm!",
+        "resellerDuplicate": "Bạn chỉ có thể đăng ký làm người bán lại một lần cho mỗi cửa hàng",
+        "resellerFailed": "Gửi yêu cầu thất bại. Vui lòng thử lại.",
+        "noPreOrder": "Cửa hàng này không chấp nhận đặt hàng trước",
+        "futureDate": "Vui lòng chọn ngày trong tương lai",
+        "notEnoughBalance": "Số dư không đủ để thanh toán"
+    },
+    "FeatureSection": {
+        "title": "TÍNH NĂNG CÓ SẴN TẠI EBAYMMO",
+        "feature1": {
+            "title": "Kiểm tra sản phẩm trùng lặp",
+            "description": "Toàn bộ cửa hàng cam kết không bán hàng trùng lặp. Hệ thống của chúng tôi sẽ kiểm tra từng sản phẩm một để đảm bảo rằng sản phẩm được giao cho người dùng chưa từng được bán cho bất kỳ ai khác trên trang web, và sản phẩm bạn đã mua không thể được bán cho bất kỳ ai khác."
+        },
+        "feature2": {
+            "title": "Nạp tiền & Thanh toán tự động",
+            "description": "Bạn chỉ cần nạp tiền với cú pháp chính xác, số dư của bạn sẽ được cập nhật sau 1-5 phút. Tất cả các bước thanh toán và giao hàng được thực hiện ngay lập tức."
+        },
+        "feature3": {
+            "title": "Giữ đơn hàng trong 3 ngày",
+            "description": "Sau khi bạn mua hàng, đơn hàng sẽ ở trạng thái Giữ trong 3 ngày, đủ thời gian để bạn kiểm tra và thay đổi mật khẩu sản phẩm. Nếu có bất kỳ vấn đề gì, vui lòng nhanh chóng sử dụng tính năng \"Khiếu nại\"."
+        },
+        "feature4": {
+            "title": "Tính năng cho cộng tác viên",
+            "description": "Vui lòng đọc thêm trong phần \"Câu hỏi thường gặp - FAQs\"."
+        },
+        "slogan": {
+            "title": "Một sản phẩm ra đời với mục đích làm cho giao dịch sản phẩm số trở nên thuận tiện và an toàn hơn.",
+            "description": "Tại Taphoammo, bạn sẽ có trải nghiệm mua sắm an toàn hơn nhiều, chúng tôi sẽ giữ tiền của người bán trong 3 ngày, kiểm tra tất cả sản phẩm được bán để xem có giống với sản phẩm khác không, hướng đến tạo ra một nơi giao dịch mà người dùng có thể tin tưởng, một trang web mà người bán có thể yên tâm đặt hàng tồn kho và cạnh tranh công bằng."
+        }
+    },
+    "product": {
+        "details": {
+            "stock": "Kho hàng",
+            "sold": "Đã bán",
+            "product": "Sản phẩm",
+            "warehouse": "Kho hàng",
+            "quantity": "Số lượng",
+            "price": "Giá sản phẩm",
+            "totalPayment": "Tổng thanh toán",
+            "discount": "Giảm giá",
+            "productDescription": "Mô tả sản phẩm",
+            "noDescription": "Không có mô tả",
+            "seeMore": "Xem thêm",
+            "hide": "Ẩn bớt",
+            "reviews": "Đánh giá",
+            "noReviews": "Chưa có đánh giá",
+            "preOrder": "Đặt trước",
+            "buyNow": "Mua ngay",
+            "selectDate": "Vui lòng chọn ngày hoàn thành dự kiến",
+            "placeOrder": "Đặt hàng",
+            "quantityExceedsStock": "Số lượng vượt quá hàng trong kho!",
+            "notDuplicate": "Không trùng lặp",
+            "stockCount": "{count} sản phẩm",
+            "orderConfirmation": "Xác nhận đơn hàng",
+            "preOrderConfirmation": "Xác nhận đặt trước",
+            "completionDate": "Ngày hoàn thành",
+            "selectCompletionDate": "Vui lòng chọn ngày hoàn thành dự kiến",
+            "productList": "Danh sách sản phẩm",
+            "classify": "Phân loại"
+        }
+    },
+    "store": {
+        "details": {
+            "favoriteStores": "Cửa hàng yêu thích",
+            "noFavoriteStores": "Không có cửa hàng yêu thích nào",
+            "storeInformation": "Thông tin cửa hàng",
+            "online": "Đang trực tuyến",
+            "lastSeen": "Trực tuyến {time}",
+            "level": "Cấp {level}",
+            "registrationDate": "Ngày đăng ký",
+            "purchased": "{count} sản phẩm",
+            "stores": "Cửa hàng",
+            "sold": "{count} sản phẩm",
+            "posts": "{count} bài viết",
+            "contact": "Liên hệ",
+            "connectWith": "Kết nối với {username}"
+        },
+        "status": {
+            "active": "Hoạt động",
+            "inactive": "Không hoạt động"
+        },
+        "sponsor": "Tài trợ"
+    },
+    "success": {
+        "resellerRegistered": "Đăng ký người bán lại thành công"
+    },
+    "warehouse": {
+        "title": "Quản lý kho hàng",
+        "listProduct": "Danh sách sản phẩm",
+        "productName": "Tên sản phẩm",
+        "serviceName": "Tên dịch vụ",
+        "status": "Trạng thái",
+        "action": "Hành động",
+        "addItem": "Thêm mục",
+        "deleteProduct": "Xóa sản phẩm",
+        "deleteService": "Xóa dịch vụ",
+        "confirmDelete": "Xác nhận xóa",
+        "deleteConfirmation": "Bạn có chắc chắn muốn xóa \"{name}\"?",
+        "delete": "Xóa",
+        "editProduct": "Chỉnh sửa sản phẩm",
+        "editService": "Chỉnh sửa dịch vụ",
+        "priceUsdt": "Giá (USDT)",
+        "priceRange": "Giá phải nằm trong khoảng từ 0 đến 1.000.000 USDT",
+        "priceNegativeError": "Giá không thể là số âm",
+        "priceExceedsLimitError": "Giá không thể vượt quá 1.000.000 USDT",
+        "statusUpdateSuccess": "Cập nhật trạng thái sản phẩm thành công",
+        "statusUpdateError": "Cập nhật trạng thái sản phẩm thất bại",
+        "productUpdateSuccess": "Cập nhật sản phẩm thành công",
+        "serviceUpdateSuccess": "Cập nhật dịch vụ thành công",
+        "productUpdateError": "Cập nhật sản phẩm thất bại",
+        "serviceUpdateError": "Cập nhật dịch vụ thất bại"
+    },
+    "popupAddProduct": {
+        "title": "Thêm sản phẩm",
+        "upload": {
+            "uploadFile": "Tải lên tệp",
+            "apiServer": "Máy chủ API",
+            "dragDrop": "Nhấp để chọn tệp, hoặc kéo và thả tệp vào đây",
+            "uploadFileTxt": "Tải lên tệp (txt)",
+            "note": "Lưu ý: Mỗi dòng tải lên sẽ là một sản phẩm. Cấu trúc của mỗi dòng:",
+            "email": "Email: username@gmail.com|password|.....",
+            "software": "Phần mềm: xxx....",
+            "account": "Tài khoản: username|password và(hoặc) bất cứ thứ gì khác",
+            "other": "Khác: xxx...."
+        },
+        "table": {
+            "latestUploaded": "Tệp tải lên mới nhất",
+            "productName": "Tên sản phẩm",
+            "fileName": "Tên tệp",
+            "uploadDate": "Ngày tải lên",
+            "result": "Kết quả",
+            "status": "Trạng thái",
+            "loading": "Đang tải...",
+            "errorLoadingData": "Lỗi khi tải dữ liệu",
+            "noUploadsFound": "Không tìm thấy tệp tải lên nào",
+            "serialNumber": "Số thứ tự",
+            "product": "Sản phẩm",
+            "createDate": "Ngày tạo",
+            "saleDate": "Ngày bán"
+        },
+        "pagination": {
+            "previous": "Trước",
+            "next": "Tiếp theo"
+        },
+        "buttons": {
+            "deleteAll": "Xóa tất cả",
+            "deleting": "Đang xóa...",
+            "downloadUnsold": "Tải xuống sản phẩm chưa bán",
+            "downloading": "Đang tải xuống...",
+            "save": "Lưu"
+        },
+        "uploading": "Đang tải lên... {progress}%"
+    },
+    "popupAddWarehouse": {
+        "addProduct": "Thêm sản phẩm",
+        "addService": "Thêm dịch vụ",
+        "addNew": "Thêm mới",
+        "store": "Cửa hàng: ",
+        "priceInvalid": "Giá không hợp lệ",
+        "priceGreaterThanZero": "Giá phải lớn hơn 0",
+        "priceTooHigh": "Giá không được vượt quá 100,000",
+        "usePrivateWarehouse": "Sử dụng kho hàng riêng",
+        "privateWarehouseNote": "(Cài đặt này yêu cầu bạn phải có máy chủ kho hàng riêng và API để cung cấp sản phẩm cho nền tảng)",
+        "productName": "Tên sản phẩm",
+        "serviceName": "Tên dịch vụ",
+        "enterProductName": "Nhập tên sản phẩm",
+        "enterServiceName": "Nhập tên dịch vụ",
+        "price": "Giá",
+        "enterPrice": "Nhập giá",
+        "productStatus": "Trạng thái sản phẩm",
+        "success": "Thêm sản phẩm thành công",
+        "error": "Thêm sản phẩm thất bại: "
+    },
+    "popupReseller": {
+        "title": "Chương trình đại lý",
+        "becomeReseller": "Trở thành đại lý",
+        "description": "Tham gia chương trình đại lý cho cửa hàng này và kiếm được phần trăm doanh thu từ số tiền chiết khấu trên mỗi đơn hàng bạn bán. Lưu ý: Khi khách hàng truy cập thông qua liên kết giới thiệu của bạn, tất cả các đơn hàng tiếp theo của họ sẽ tự động được liên kết với tài khoản của bạn.",
+        "discountTitle": "Đặt phần trăm chiết khấu mong muốn của bạn",
+        "discountPlaceholder": "Chỉ định phần trăm chiết khấu (tối đa 35%)",
+        "detailsTitle": "Chi tiết bổ sung",
+        "detailsPlaceholder": "Cung cấp bất kỳ yêu cầu cụ thể hoặc làm rõ về tùy chọn chiết khấu của bạn.",
+        "submitButton": "Gửi yêu cầu"
+    },
+    "complainOrder": {
+        "title": "Khiếu nại đơn hàng",
+        "addImages": "Thêm hình ảnh khiếu nại",
+        "optional": "(không bắt buộc)",
+        "imageDescription": "Thêm hình ảnh để hỗ trợ khiếu nại của bạn. Bạn có thể thêm tối đa 7 hình ảnh",
+        "complainImage": "Hình ảnh khiếu nại",
+        "imageUpload": "Tải lên hình ảnh",
+        "describeComplaint": "Mô tả khiếu nại của bạn cho Đơn hàng",
+        "textareaPlaceholder": "Viết chi tiết khiếu nại của bạn",
+        "sendButton": "Gửi",
+        "submitting": "Đang gửi khiếu nại của bạn...",
+        "submitSuccess": "Khiếu nại của bạn đã được gửi thành công",
+        "submitError": "Không thể gửi khiếu nại. Vui lòng thử lại.",
+        "fileTypeError": "Chỉ cho phép các tệp JPEG, PNG, GIF, MP4, MOV hoặc AVI"
+    },
+    "viewComplainModal": {
+        "title": "Chi tiết khiếu nại cho đơn hàng",
+        "loadError": "Không thể tải chi tiết khiếu nại. Vui lòng thử lại.",
+        "cancellingComplaint": "Đang hủy khiếu nại...",
+        "cancelSuccess": "Hủy khiếu nại thành công",
+        "cancelError": "Không thể hủy khiếu nại. Vui lòng thử lại.",
+        "updatingStatus": "Đang cập nhật trạng thái khiếu nại...",
+        "disputeSuccess": "Trạng thái khiếu nại đã được cập nhật thành tranh chấp",
+        "updateError": "Không thể cập nhật trạng thái khiếu nại. Vui lòng thử lại.",
+        "complaintInformation": "Thông tin khiếu nại",
+        "complaintDate": "Ngày khiếu nại",
+        "complaintStatus": "Trạng thái khiếu nại",
+        "complaintDetails": "Chi tiết khiếu nại",
+        "noContent": "Không có nội dung",
+        "attachedImage": "Hình ảnh đính kèm",
+        "complainImage": "Hình ảnh khiếu nại",
+        "cancelButton": "Hủy khiếu nại",
+        "disputeButton": "Tranh chấp",
+        "noComplaintFound": "Không tìm thấy thông tin khiếu nại cho đơn hàng này.",
+        "statusCancelled": "Đã hủy",
+        "statusResolved": "Đã giải quyết",
+        "statusDispute": "Đang tranh chấp",
+        "statusPending": "Đang chờ xử lý"
+    },
+    "donateModal": {
+        "title": "Hỗ trợ tác giả",
+        "amount": "Số tiền",
+        "amountPlaceholder": "Tối thiểu 5,000 USDT",
+        "comment": "Bình luận",
+        "commentPlaceholder": "Nhập yêu cầu nội dung cụ thể",
+        "donateButton": "Quyên góp"
+    },
+    "depositModal": {
+        "title": "Quét mã QR để nạp tiền",
+        "walletAddress": "Địa chỉ ví USDT của bạn",
+        "balance": "Số dư",
+        "networks": {
+            "bsc": "Binance Smart Chain",
+            "ethereum": "Ethereum",
+            "arbitrum": "Arbitrum"
+        }
+    },
+    "addModalShop": {
+        "shopName": "Tên cửa hàng *",
+        "enterShopName": "Nhập tên cửa hàng của bạn",
+        "businessType": "Loại hình kinh doanh *",
+        "selectBusinessType": "Chọn loại hình kinh doanh",
+        "shopType": "Loại cửa hàng *",
+        "selectShopType": "Chọn loại cửa hàng",
+        "discountedProductType": "Loại sản phẩm giảm giá",
+        "selectDiscountedProductType": "Chọn loại sản phẩm giảm giá",
+        "refundRating": "Tỷ lệ hoàn tiền (%) *",
+        "addRefundRating": "Thêm tỷ lệ hoàn tiền",
+        "tag": "Thẻ",
+        "selectTag": "Chọn thẻ",
+        "duplicateProduct": "Sản phẩm trùng lặp",
+        "usePrivateStock": "Sử dụng kho riêng",
+        "allowResellers": "Cho phép người bán lại bán hàng",
+        "allowPreOrder": "Cho phép đặt hàng trước",
+        "shortDescription": "Mô tả ngắn *",
+        "enterShortDescription": "Nhập mô tả của bạn",
+        "detailedDescription": "Mô tả chi tiết *",
+        "clickToUploadAvatar": "Nhấp để tải lên ảnh đại diện, hoặc kéo và thả",
+        "addNew": "Thêm mới",
+        "pleaseUploadImageFile": "Vui lòng tải lên một tệp hình ảnh",
+        "fileSizeLessThan5MB": "Kích thước tệp phải nhỏ hơn 5MB",
+        "imageDimensionsRequirement": "Kích thước hình ảnh phải nằm trong khoảng từ {minWidth}x{minHeight} đến {maxWidth}x{maxHeight} pixel",
+        "shopNameRequired": "Tên cửa hàng là bắt buộc",
+        "shopNameLengthError": "Tên cửa hàng phải ít hơn {maxLength} ký tự",
+        "businessTypeRequired": "Loại hình kinh doanh là bắt buộc",
+        "shopTypeRequired": "Loại cửa hàng là bắt buộc",
+        "detailedDescriptionRequired": "Mô tả chi tiết là bắt buộc",
+        "detailedDescriptionMinLength": "Mô tả chi tiết phải có ít nhất {minLength} ký tự",
+        "refundRatingRequired": "Tỷ lệ hoàn tiền là bắt buộc",
+        "refundRatingRange": "Tỷ lệ hoàn tiền phải nằm trong khoảng từ {min} đến {max}",
+        "shortDescriptionRequired": "Mô tả ngắn là bắt buộc",
+        "shortDescriptionMinLength": "Mô tả ngắn phải có ít nhất {minLength} ký tự",
+        "shortDescriptionMaxLength": "Mô tả ngắn phải ít hơn {maxLength} ký tự",
+        "shopAvatarRequired": "Ảnh đại diện cửa hàng là bắt buộc",
+        "fillAllRequiredFields": "Vui lòng điền đầy đủ tất cả các trường bắt buộc một cách chính xác",
+        "addStoreSuccess": "Thêm cửa hàng thành công",
+        "maxStore": "Bạn chỉ có thể tạo tối đa 5 cửa hàng",
+        "addShop": "Thêm cửa hàng"
+    },
+    "seller": {
+        "title": "Bảng điều khiển người bán",
+        "nav": {
+            "title": "Tài khoản người bán",
+            "dashboard": "Bảng điều khiển",
+            "productOrders": "Đơn hàng sản phẩm",
+            "serviceOrders": "Đơn hàng dịch vụ",
+            "pre-orders": "Đơn đặt trước",
+            "store-management": "Quản lý cửa hàng",
+            "reseller-list": "Danh sách đại lý",
+            "top-stores": "Cửa hàng hàng đầu",
+            "reviews": "Đánh giá",
+            "complaint": "Khiếu nại",
+            "discount-codes": "Mã giảm giá",
+            "logout": "Đăng xuất"
+        },
+        "dashboard": {
+            "title": "Bảng điều khiển",
+            "order-number": "Số đơn hàng",
+            "sales": "Doanh số",
+            "30-day-near": "30 ngày gần đây",
+            "download": "Tải xuống",
+            "business-month": "Tháng kinh doanh",
+            "increate": "Tăng",
+            "decreate": "Giảm",
+            "so-with-the-previous-month": "so với tháng trước",
+            "temborary-hold": "Tạm giữ"
+        },
+        "store-management": {
+            "shop": "Cửa hàng",
+            "add-new": "Thêm mới",
+            "note": "Ghi chú",
+            "require": "Bạn chỉ có thể tạo tối đa 5 cửa hàng",
+            "actions": "Thao tác",
+            "type": "Loại",
+            "duplicate": "Trùng lặp",
+            "reseller": "Đại lý",
+            "pre-order": "Đặt trước",
+            "stock": "Kho hàng",
+            "status": "Trạng thái",
+            "editShop": "Sửa cửa hàng",
+            "addService": "Thêm dịch vụ",
+            "addProduct": "Thêm sản phẩm",
+            "warehouseManagement": "Quản lý kho",
+            "noTransactions": "Không tìm thấy giao dịch nào."
+        },
+        "product-order": {
+            "product-order": "Đơn hàng sản phẩm",
+            "enter-order-code": "Nhập mã đơn hàng",
+            "enter-buyer-name": "Nhập tên người mua",
+            "all": "Tất cả",
+            "search-order": "Tìm kiếm đơn hàng",
+            "order-code": "Mã đơn hàng",
+            "Sale Date": "Ngày bán",
+            "buyer": "Người mua",
+            "store": "Cửa hàng",
+            "item": "Sản phẩm",
+            "Quantity": "Số lượng",
+            "price": "Giá",
+            "discount": "Giảm giá",
+            "total": "Tổng cộng",
+            "refund": "Hoàn tiền",
+            "reseller": "Đại lý",
+            "platform": "Nền tảng",
+            "status": "Trạng thái",
+            "no-orders": "Không có đơn hàng nào"
+        },
+        "service-orders": {
+            "all": "Tất cả",
+            "title": "Đơn hàng dịch vụ",
+            "enter-order-code": "Nhập mã đơn hàng",
+            "search-orders": "Tìm kiếm đơn hàng",
+            "no-orders": "Không tìm thấy đơn hàng dịch vụ nào. Đơn hàng dịch vụ sẽ xuất hiện ở đây khi khách hàng đặt hàng.",
+            "table": {
+                "action": "Thao tác",
+                "orderCode": "Mã đơn hàng",
+                "saleDate": "Ngày bán",
+                "buyer": "Người mua",
+                "store": "Cửa hàng",
+                "item": "Sản phẩm",
+                "quantity": "Số lượng",
+                "price": "Giá",
+                "discounted": "Đã giảm giá",
+                "total": "Tổng cộng",
+                "refund": "Hoàn tiền",
+                "reseller": "Đại lý",
+                "platform": "Nền tảng",
+                "status": "Trạng thái"
+            },
+            "actions": {
+                "acceptOrder": "Xem",
+                "cancelOrder": "Hủy đơn"
+            }
+        },
+        "pre-orders": {
+            "title": "Đơn đặt trước",
+            "enter-order-code": "Nhập mã đơn hàng",
+            "search-orders": "Tìm kiếm đơn hàng",
+            "no-orders": "Không tìm thấy đơn đặt trước nào. Đơn đặt trước sẽ xuất hiện ở đây khi khách hàng đặt hàng."
+        },
+        "complaints": {
+            "all": "Tất cả",
+            "title": "Đơn khiếu nại",
+            "enter-order-code": "Nhập mã đơn hàng",
+            "enter-buyer-name": "Nhập tên người mua",
+            "search-complaints": "Tìm kiếm khiếu nại",
+            "chat-with": "Trò chuyện với {username}",
+            "date-complaint": "Ngày khiếu nại",
+            "content": "Nội dung",
+            "image": "Hình ảnh",
+            "table": {
+                "chat": "Trò chuyện",
+                "dateComplaint": "Ngày khiếu nại",
+                "image": "Hình ảnh",
+                "content": "Nội dung",
+                "code": "Mã",
+                "store": "Cửa hàng",
+                "buyer": "Người mua",
+                "quantity": "Số lượng",
+                "total": "Tổng cộng",
+                "status": "Trạng thái"
+            }
+        },
+        "reseller-list": {
+            "title": "Quản lý đại lý",
+            "table": {
+                "action": "Thao tác",
+                "store": "Cửa hàng",
+                "resellerName": "Tên đại lý",
+                "commissionRate": "Tỷ lệ hoa hồng",
+                "requestDate": "Ngày yêu cầu",
+                "introduction": "Giới thiệu",
+                "status": "Trạng thái"
+            },
+            "actions": {
+                "accept": "Chấp nhận",
+                "cancel": "Từ chối",
+                "seeMore": "Xem thêm"
+            },
+            "modal": {
+                "introduction": "Giới thiệu",
+                "processing": "Đang xử lý...",
+                "approveSuccess": "Phê duyệt đại lý thành công!",
+                "approveError": "Không thể phê duyệt đại lý. Vui lòng thử lại.",
+                "rejectSuccess": "Từ chối đại lý thành công!",
+                "rejectError": "Không thể từ chối đại lý. Vui lòng thử lại."
+            }
+        },
+        "reviews": {
+            "title": "Phản hồi",
+            "table": {
+                "orderCode": "Mã đơn hàng",
+                "store": "Cửa hàng",
+                "creationDate": "Ngày tạo",
+                "comment": "Bình luận",
+                "reply": "Trả lời",
+                "rating": "Đánh giá",
+                "viewComment": "Xem bình luận"
+            },
+            "noReviews": "Không tìm thấy đánh giá nào.",
+            "error": "Lỗi: {message}"
+        },
+        "discount-codes": {
+            "title": "Mã giảm giá",
+            "addNew": "Thêm mới +",
+            "table": {
+                "actions": "Thao tác",
+                "no": "STT",
+                "code": "Mã giảm giá",
+                "store": "Cửa hàng",
+                "start": "Bắt đầu",
+                "end": "Kết thúc",
+                "rate": "Tỷ lệ giảm",
+                "maxDiscount": "Giảm tối đa",
+                "amount": "Số tiền giảm",
+                "usage": "Số lần sử dụng",
+                "status": "Trạng thái"
+            },
+            "noData": "Không tìm thấy mã giảm giá nào.",
+            "modal": {
+                "title": "Thêm mã giảm giá mới"
+            },
+            "status": {
+                "active": "Hoạt động",
+                "inactive": "Không hoạt động"
+            }
+        }
+    },
+    "custom-dropdown": {
+        "all": "Tất cả",
+        "pending": "Đang chờ",
+        "successed": "Thành công",
+        "refunded": "Đã hoàn tiền",
+        "cancelled": "Đã hủy",
+        "refund": "Hoàn tiền"
+    },
+    "review": {
+        "title": "Đánh giá",
+        "response": "Phản hồi",
+        "noDate": "Chưa có ngày",
+        "noReview": "Chưa có nội dung đánh giá",
+        "loading": {
+            "userInfo": "Đang tải thông tin người dùng...",
+            "review": "Đang tải đánh giá..."
+        },
+        "error": "Lỗi: {message}",
+        "notFound": "Không tìm thấy đánh giá"
+    },
+    "banner": {
+        "title": "NẠP THÊM TIỀN ĐỂ SỞ HỮU SẢN PHẨM TỐT NHẤT!",
+        "register": "Đăng ký bán"
+    },
+    "footer": {
+        "contactInformation": "Thông tin liên hệ",
+        "address": "Địa chỉ",
+        "hotline": "Hotline",
+        "taxCode": "Mã số thuế",
+        "email": "Email",
+        "support": "Hỗ trợ",
+        "policy": "Chính sách",
+        "terms of use": "Điều khoản sử dụng",
+        "FAQs": "FAQs"
+    },
+    "privacyPolicy": {
+        "title": "Chính sách bảo mật",
+        "lastUpdated": "Cập nhật lần cuối: 6 tháng 3, 2024",
+        "introduction": {
+            "title": "1. Giới thiệu",
+            "content": "Chào mừng bạn đến với EbayMMO. Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ dữ liệu cá nhân của bạn. Chính sách bảo mật này sẽ thông báo cho bạn về cách chúng tôi bảo vệ dữ liệu cá nhân của bạn khi bạn truy cập trang web của chúng tôi và cho bạn biết về quyền riêng tư của bạn và cách pháp luật bảo vệ bạn."
+        },
+        "informationCollection": {
+            "title": "2. Thông tin chúng tôi thu thập",
+            "content": "Chúng tôi có thể thu thập, sử dụng, lưu trữ và chuyển giao các loại dữ liệu cá nhân khác nhau về bạn, được nhóm lại như sau:",
+            "identityData": "Dữ liệu nhận dạng bao gồm tên, họ, tên người dùng hoặc mã định danh tương tự.",
+            "contactData": "Dữ liệu liên hệ bao gồm địa chỉ email và số điện thoại.",
+            "financialData": "Dữ liệu tài chính bao gồm thông tin thanh toán và lịch sử giao dịch.",
+            "technicalData": "Dữ liệu kỹ thuật bao gồm địa chỉ IP, loại và phiên bản trình duyệt, cài đặt múi giờ và vị trí, loại và phiên bản plugin trình duyệt, hệ điều hành và nền tảng, và các công nghệ khác trên thiết bị bạn sử dụng để truy cập trang web này.",
+            "usageData": "Dữ liệu sử dụng bao gồm thông tin về cách bạn sử dụng trang web, sản phẩm và dịch vụ của chúng tôi."
+        },
+        "informationUsage": {
+            "title": "3. Cách chúng tôi sử dụng thông tin của bạn",
+            "content": "Chúng tôi sẽ chỉ sử dụng dữ liệu cá nhân của bạn khi pháp luật cho phép. Thông thường, chúng tôi sẽ sử dụng dữ liệu cá nhân của bạn trong các trường hợp sau:",
+            "points": [
+                "Để đăng ký bạn làm khách hàng hoặc người bán mới.",
+                "Để xử lý và giao đơn hàng của bạn.",
+                "Để quản lý mối quan hệ với bạn.",
+                "Để cho phép bạn tham gia vào các tính năng của dịch vụ của chúng tôi.",
+                "Để quản trị và bảo vệ doanh nghiệp và trang web của chúng tôi.",
+                "Để cung cấp nội dung và quảng cáo phù hợp cho bạn.",
+                "Để sử dụng phân tích dữ liệu để cải thiện trang web, sản phẩm/dịch vụ, tiếp thị, mối quan hệ khách hàng và trải nghiệm của chúng tôi."
+            ]
+        },
+        "dataSecurity": {
+            "title": "4. Bảo mật dữ liệu",
+            "content": "Chúng tôi đã áp dụng các biện pháp bảo mật phù hợp để ngăn chặn dữ liệu cá nhân của bạn bị mất, sử dụng hoặc truy cập trái phép, thay đổi hoặc tiết lộ. Ngoài ra, chúng tôi giới hạn quyền truy cập vào dữ liệu cá nhân của bạn cho những nhân viên, đại lý, nhà thầu và bên thứ ba khác có nhu cầu kinh doanh cần biết."
+        },
+        "dataRetention": {
+            "title": "5. Lưu trữ dữ liệu",
+            "content": "Chúng tôi sẽ chỉ lưu giữ dữ liệu cá nhân của bạn trong thời gian cần thiết để thực hiện các mục đích mà chúng tôi đã thu thập, bao gồm cho các mục đích đáp ứng bất kỳ yêu cầu pháp lý, kế toán hoặc báo cáo nào."
+        },
+        "legalRights": {
+            "title": "6. Quyền pháp lý của bạn",
+            "content": "Trong một số trường hợp nhất định, bạn có quyền theo luật bảo vệ dữ liệu đối với dữ liệu cá nhân của mình, bao gồm quyền:",
+            "points": [
+                "Yêu cầu truy cập dữ liệu cá nhân của bạn.",
+                "Yêu cầu sửa đổi dữ liệu cá nhân của bạn.",
+                "Yêu cầu xóa dữ liệu cá nhân của bạn.",
+                "Phản đối việc xử lý dữ liệu cá nhân của bạn.",
+                "Yêu cầu hạn chế xử lý dữ liệu cá nhân của bạn.",
+                "Yêu cầu chuyển dữ liệu cá nhân của bạn.",
+                "Quyền rút lại sự đồng ý."
+            ]
+        },
+        "cookies": {
+            "title": "7. Cookies",
+            "content": "Chúng tôi sử dụng cookies và các công nghệ theo dõi tương tự để theo dõi hoạt động trên Dịch vụ của chúng tôi và lưu giữ một số thông tin. Cookies là các tệp có chứa một lượng nhỏ dữ liệu có thể bao gồm một mã định danh duy nhất ẩn danh."
+        },
+        "changes": {
+            "title": "8. Thay đổi đối với Chính sách bảo mật này",
+            "content": "Chúng tôi có thể cập nhật Chính sách bảo mật của chúng tôi theo thời gian. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách đăng Chính sách bảo mật mới trên trang này và cập nhật ngày \"cập nhật lần cuối\" ở đầu Chính sách bảo mật này."
+        },
+        "contact": {
+            "title": "9. Liên hệ với chúng tôi",
+            "content": "Nếu bạn có bất kỳ câu hỏi nào về Chính sách bảo mật này, vui lòng liên hệ với chúng tôi:",
+            "address": "Địa chỉ: Khu công nghiệp Nham Sơn - Yên Lư, Thị trấn Nham Biền, Huyện Yên Dũng, Bắc Giang, Việt Nam",
+            "hotline": "Hotline: 0396 112 998",
+            "email": "Email: support@ebaymmo.com"
+        }
+    },
+    "terms": {
+        "title": "Điều khoản sử dụng",
+        "lastUpdated": "Cập nhật mới nhất: 28/05/2024",
+        "faqLink": "Để biết thêm câu hỏi, vui lòng truy cập",
+        "faqText": "Câu hỏi thường gặp",
+        "prohibitedItems": {
+            "title": "1. Các mặt hàng bị cấm (hạn chế) trên trang",
+            "content": "Mỗi khi bạn bán một sản phẩm, người bán có trách nhiệm đảm bảo rằng hàng hóa của họ tuân thủ luật pháp và quy định hiện hành và không vi phạm Điều khoản sử dụng và Chính sách của EbayMMO. Vui lòng đọc các hướng dẫn sau đây về danh sách các mặt hàng bị cấm/hạn chế. Danh sách có thể thay đổi dựa trên tình hình thực tế, vui lòng cập nhật thường xuyên để đảm bảo an toàn cho sản phẩm của bạn. Dưới đây là danh sách các mặt hàng bị hạn chế (cấm):",
+            "items": [
+                "Thẻ ngân hàng (Thẻ tín dụng và thẻ ghi nợ...): tất cả các loại thẻ ngân hàng trong nước và quốc tế, tài khoản ngân hàng, tài khoản để tạo thẻ ảo...",
+                "Thông tin cá nhân: thông tin cá nhân của người dùng như tên thật, giấy tờ cá nhân, tài khoản điện tử và tài khoản mạng xã hội thu được từ việc hack, lừa đảo, v.v.",
+                "Sản phẩm thu được từ việc sử dụng tài khoản của người khác: VPS, key, v.v. thu được bằng cách đánh cắp hoặc các hoạt động bất hợp pháp.",
+                "Phần mềm bẻ khóa hoặc phần mềm độc hại: Vui lòng tôn trọng công sức của các lập trình viên EbayMMO chính hãng.",
+                "Số sim (điện thoại) từ tất cả các mạng, số thật, số ảo.",
+                "Tài liệu số, sách điện tử vi phạm pháp luật."
+            ]
+        },
+        "sellingRules": {
+            "title": "2. Quy tắc bán sản phẩm - (dành cho chủ cửa hàng)",
+            "rules": [
+                "Không sử dụng ngôn ngữ thô tục, tạo sự thù địch hoặc ảnh hưởng đến các cửa hàng khác.",
+                "Không đăng thông tin cá nhân hoặc bất kỳ thông tin liên hệ nào khác ngoài ebaymmo.com.",
+                "Không sử dụng hình ảnh xúc phạm, tạo sự thù địch hoặc ảnh hưởng đến tổ chức cá nhân.",
+                "Không sử dụng hình ảnh của người nổi tiếng mà không được phép.",
+                "Nếu bạn không xử lý hoàn tiền đơn hàng trong vòng 3 ngày, chúng tôi sẽ xử lý hoàn tiền thay bạn.",
+                "Sử dụng tính năng bảo hành trực tiếp trên nền tảng, tuyệt đối không bảo hành thông qua bất kỳ kênh nào khác."
+            ]
+        },
+        "generalRules": {
+            "title": "3. Quy tắc chung cho tất cả người dùng",
+            "rules": [
+                "Không sử dụng lỗi dưới bất kỳ hình thức nào.",
+                "Không thực hiện bất kỳ hành động nào gây hại đến trang, cửa hàng hoặc người dùng khác."
+            ]
+        },
+        "violations": {
+            "title": "4. Vi phạm điều khoản",
+            "content": "Vi phạm điều khoản của Tạp Hóa MMO có thể dẫn đến ít nhất một trong các hình phạt sau:",
+            "penalties": [
+                "Xóa cửa hàng",
+                "Hạn chế tài khoản",
+                "Đình chỉ hoặc xóa tài khoản",
+                "Yêu cầu bồi thường thiệt hại"
+            ],
+            "shopOwnerPenalties": {
+                "title": "Đối với chủ cửa hàng: Mỗi vi phạm sẽ nhận một hình phạt. Hình phạt sẽ tăng dần.",
+                "penalties": [
+                    "Lần 1: Cảnh cáo.",
+                    "Lần 2: Cảnh cáo.",
+                    "Lần 3: +5% phí cho tất cả các cửa hàng.",
+                    "Lần 4: Tiếp tục +5% phí cho tất cả các cửa hàng.",
+                    "Lần 5: Đóng tất cả các cửa hàng và ngừng hợp tác."
+                ]
+            }
+        },
+        "contact": {
+            "title": "Liên hệ",
+            "content": "Nếu bạn có bất kỳ câu hỏi nào về các điều khoản sử dụng này, vui lòng liên hệ với chúng tôi:",
+            "address": "Địa chỉ: Khu công nghiệp Nham Sơn - Yên Lư, Thị trấn Nham Biền, Huyện Yên Dũng, Bắc Giang, Việt Nam",
+            "hotline": "Hotline: 0396 112 998",
+            "email": "Email: support@ebaymmo.com"
+        }
+    },
+    "2fa": {
+        "title": "Xác thực - Lấy mã từ chuỗi 2FA",
+        "publicKey": "Khóa công khai",
+        "publicKeyPlaceholder": "Nhập chuỗi 2FA của bạn",
+        "confirm": "Xác nhận",
+        "loginCode": "Mã đăng nhập của bạn:",
+        "timeRemaining": "Thời gian còn lại:",
+        "description": {
+            "line1": "• Authenticator là một ứng dụng tạo mã 2FA (6 số ngẫu nhiên thay đổi mỗi 30 giây) và được thiết kế để chỉ bạn mới có thể đăng nhập vào tài khoản của mình, ngay cả khi người khác biết mật khẩu của bạn.",
+            "line2": "• Khi đăng nhập, bạn cần xác minh 2 yếu tố bằng 2FA, bạn phải sử dụng Authenticator để lấy mã đăng nhập.",
+            "line3": "• Các gian hàng trên MMO Grocery bán các sản phẩm thường đi kèm với 2FA, hãy sử dụng ứng dụng này để lấy mã đăng nhập."
+        },
+        "saveString": {
+            "title": "Lưu chuỗi này",
+            "reminderName": "Tên gợi nhớ",
+            "reminderPlaceholder": "Nhập tên gợi nhớ của bạn",
+            "cancel": "Hủy",
+            "save": "Lưu",
+            "note": "*Lưu ý: Tính năng này sẽ được lưu trên trình duyệt của bạn, nếu bạn thay đổi trình duyệt hoặc xóa cookie, nó sẽ bị mất."
+        },
+        "savedList": {
+            "title": "Danh sách chuỗi mã đã lưu",
+            "operation": "Thao tác",
+            "reminderName": "Tên gợi nhớ",
+            "currentCode": "Mã hiện tại",
+            "delete": "Xóa",
+            "noData": "Không có dữ liệu"
+        }
+    },
+    "faqs": {
+        "title": "Câu hỏi thường gặp",
+        "subtitle": "Tìm câu trả lời cho các câu hỏi phổ biến về nền tảng của chúng tôi",
+        "categories": {
+            "buyer": "Dành cho người mua",
+            "seller": "Dành cho người bán",
+            "reseller": "Dành cho đại lý"
+        },
+        "buyer": {
+            "howToBuy": {
+                "question": "Làm thế nào để mua hàng?",
+                "answer": "Nạp tiền vào tài khoản, sau đó dùng số dư để thanh toán đơn hàng. Lưu ý quá trình nạp tiền và giao hàng hoàn toàn tự động nên bạn có thể phải đợi một lúc để hệ thống xử lý."
+            },
+            "nonDuplicateEmail": {
+                "question": "Email không trùng lặp là gì?",
+                "answer": "Việc mua bán tài khoản theo nhóm tiềm ẩn nhiều rủi ro, đặc biệt khi người bán không uy tín có thể bán lại tài khoản cho nhiều người. Trang web của chúng tôi có cơ chế kiểm tra tài khoản trùng lặp (cam kết không bán trùng), để ngăn chặn rủi ro này và đảm bảo tài khoản bạn mua chưa từng được bán cho bất kỳ ai khác trên hệ thống."
+            },
+            "howToAddMoney": {
+                "question": "Làm thế nào để nạp tiền?",
+                "answer": "Chọn mục \"Nạp tiền\" trong menu, sau đó làm theo hướng dẫn. Nếu giao dịch có thông tin chính xác, tiền sẽ được cộng tự động vào tài khoản. Bạn có thể gửi bất kỳ số tiền nào (từ 1 đơn vị trở lên)."
+            },
+            "wrongTransfer": {
+                "question": "Tôi chuyển nhầm tiền thì sao?",
+                "answer": "Chúng tôi thường xuyên gặp tình huống này nên hãy kiểm tra kỹ khi nạp tiền. Nếu chuyển nhầm số tiền, vui lòng thông báo ngay cho chúng tôi qua Facebook. Chúng tôi sẽ xác minh và hoàn tiền. Lưu ý: Tiền chỉ được hoàn lại cho đúng người gửi để tránh lừa đảo ABC."
+            },
+            "intermediary": {
+                "question": "Tôi có cần thuê trung gian không?",
+                "answer": "Chính sách giữ tiền người bán trong 3 ngày có nghĩa là taphoammo đã đóng vai trò trung gian cho giao dịch an toàn. Xin lưu ý chúng tôi chỉ hỗ trợ giao dịch thực hiện trực tiếp qua website để đảm bảo an toàn cho bạn và tránh các hình thức lừa đảo đang lan truyền trên mạng xã hội. Mong bạn cân nhắc phương án an toàn hơn này."
+            }
+        },
+        "seller": {
+            "registerToSell": {
+                "question": "Làm thế nào để đăng ký bán hàng?",
+                "answer": "Vui lòng đăng nhập trước, sau đó chọn \"Đăng ký bán hàng\" và điền đầy đủ thông tin cần thiết để xác minh. Sau khi được duyệt, bạn có thể bắt đầu bán hàng trên nền tảng."
+            },
+            "createStore": {
+                "question": "Làm thế nào để tạo cửa hàng?",
+                "answer": "Trước tiên, đăng ký bán hàng, sau đó vào mục \"Quản lý cửa hàng\" để tạo cửa hàng mới. Đảm bảo chọn đúng danh mục sản phẩm."
+            },
+            "optimizeStore": {
+                "question": "Làm thế nào để tối ưu cửa hàng?",
+                "answer": "Bắt đầu bằng việc đầu tư vào hình ảnh cửa hàng, từ khóa tìm kiếm, tiêu đề và mô tả rõ ràng. Tiếp theo, xây dựng kế hoạch dài hạn để đảm bảo chất lượng sản phẩm. Chúng tôi sẽ giúp tối ưu cửa hàng để nó hấp dẫn nhất có thể khi quảng cáo trên mạng xã hội. Ngoài ra, xếp hạng cửa hàng sẽ được cập nhật hàng tuần dựa trên hiệu suất bán hàng của bạn."
+            },
+            "topPage": {
+                "question": "Làm thế nào để cửa hàng xuất hiện đầu trang?",
+                "answer": "Tất cả phụ thuộc vào hiệu suất bán hàng và đánh giá của khách hàng. Xếp hạng được cập nhật hàng tuần."
+            },
+            "salesRevenue": {
+                "question": "Doanh thu bán hàng được xử lý thế nào?",
+                "answer": "Đối với mỗi đơn hàng thành công, số tiền sẽ ở trạng thái \"Chờ xử lý\" trong 3 ngày. Nếu không có tranh chấp từ người mua, bạn có thể rút tiền ngay sau thời gian này. Vui lòng tham khảo hạn mức rút tiền trên nền tảng."
+            },
+            "prohibitedItems": {
+                "question": "Những mặt hàng nào bị cấm?",
+                "answer": "Danh sách các mặt hàng bị cấm trên nền tảng được cập nhật liên tục. Vui lòng chú ý các cập nhật này, đặc biệt là những mặt hàng liên quan đến trộm cắp danh tính như tài khoản ngân hàng, tài khoản Facebook và tài khoản email bị hack thông qua các hoạt động bất hợp pháp và các hoạt động liên quan đến chính trị hoặc tôn giáo."
+            },
+            "discount": {
+                "question": "Chiết khấu đơn hàng được áp dụng thế nào?",
+                "answer": "Chúng tôi áp dụng chiết khấu cho mỗi đơn hàng thành công, mong bạn hiểu đây là một phần của mối quan hệ cùng phát triển. Ngoài ra, chương trình đại lý là một lựa chọn để tăng doanh số bán hàng, nhưng hãy nhớ rằng bạn phải cung cấp chiết khấu cho đại lý của mình."
+            },
+            "withdrawMoney": {
+                "question": "Làm thế nào để rút tiền?",
+                "answer": "Đối với số dư đã được duyệt, bạn có thể chọn tùy chọn rút tiền để chuyển vào tài khoản của mình."
+            },
+            "buildTrust": {
+                "question": "Làm thế nào để xây dựng niềm tin cho sản phẩm của tôi trên nền tảng của bạn?",
+                "answer": "Bạn có một lựa chọn khác là tạo máy chủ riêng cho sản phẩm của mình và cung cấp API cho nền tảng của chúng tôi. Đội ngũ kỹ thuật của chúng tôi sẽ phối hợp để tích hợp cả hai hệ thống. Tuy nhiên, để phát triển lâu dài, bạn có thể cân nhắc các tùy chọn xây dựng niềm tin."
+            },
+            "productExchange": {
+                "question": "Làm thế nào để xử lý đổi hàng cho khách?",
+                "answer": "Nếu đơn hàng của khách có sản phẩm lỗi, vào mục đơn hàng đã bán, chọn tùy chọn sửa chữa, sau đó chọn \"Hành động sửa chữa\" -> nhập số lượng sản phẩm cần sửa. Hệ thống sẽ tự động tạo mã giảm giá dựa trên số lượng sản phẩm cần thiết và gửi cho khách hàng."
+            }
+        },
+        "reseller": {
+            "becomeReseller": {
+                "question": "Làm thế nào để trở thành đại lý?",
+                "answer": "Thành viên đã đăng ký thành công và cập nhật thông tin cá nhân (tên, tài khoản mạng xã hội, tài khoản ngân hàng - dùng để rút tiền, v.v.) có thể trở thành đại lý trên nền tảng này."
+            },
+            "startSelling": {
+                "question": "Làm thế nào để bắt đầu bán hàng?",
+                "answer": "Duyệt danh sách cửa hàng. Các cửa hàng cho phép đại lý sẽ có nút dành cho đại lý. Bạn nên chủ động thương lượng tỷ lệ chiết khấu với chủ cửa hàng và nhớ sử dụng liên kết giới thiệu của mình."
+            },
+            "withdrawRevenue": {
+                "question": "Tôi có thể rút doanh thu bán hàng không?",
+                "answer": "Có. Tương tự như người bán, hoa hồng từ mỗi đơn hàng sẽ được giữ trên nền tảng trong 3 ngày. Sau thời gian này, bạn có thể yêu cầu rút tiền nếu không có tranh chấp về đơn hàng."
+            },
+            "additionalRewards": {
+                "question": "Tôi có nhận được phần thưởng bổ sung không?",
+                "answer": "Có. Hàng tháng, dựa trên doanh thu bán hàng của bạn, chúng tôi sẽ thưởng thêm một tỷ lệ phần trăm nếu doanh thu của bạn đạt đến một ngưỡng nhất định."
+            }
+        }
+    },
+    "contact": {
+        "title": "LIÊN HỆ HỖ TRỢ",
+        "faq": "Câu hỏi thường gặp",
+        "socialLinks": {
+            "facebook": "EbayMMO",
+            "telegram": "Chat với hỗ trợ",
+            "email": "support@ebaymmo.com",
+            "workingHours": "Thứ 2 - Thứ 7: 08:00 - 22:00"
+        },
+        "supportMessage": "Đội ngũ hỗ trợ của chúng tôi sẽ cố gắng giải quyết khiếu nại và câu hỏi của bạn trong thời gian sớm nhất.",
+        "form": {
+            "contactInfo": "Thông tin liên hệ",
+            "email": {
+                "label": "Email",
+                "placeholder": "Nhập email của bạn"
+            },
+            "phone": {
+                "label": "Số điện thoại",
+                "placeholder": "Nhập số điện thoại của bạn"
+            },
+            "consultationNeed": {
+                "title": "Nhu cầu tư vấn",
+                "label": "Nhu cầu tư vấn",
+                "placeholder": "Vui lòng chọn nhu cầu tư vấn",
+                "options": {
+                    "default": "Vui lòng chọn nhu cầu tư vấn",
+                    "option1": "Nhu cầu tư vấn 1",
+                    "option2": "Nhu cầu tư vấn 2",
+                    "option3": "Nhu cầu tư vấn 3"
+                }
+            },
+            "content": {
+                "label": "Nội dung",
+                "placeholder": "Nhập nhu cầu tư vấn cụ thể"
+            },
+            "submit": "Gửi câu hỏi",
+            "sending": "Đang gửi..."
+        },
+        "validation": {
+            "email": {
+                "required": "Vui lòng nhập email",
+                "invalid": "Email không hợp lệ"
+            },
+            "phone": {
+                "required": "Vui lòng nhập số điện thoại",
+                "invalid": "Số điện thoại không hợp lệ",
+                "minLength": "Số điện thoại phải có ít nhất 10 chữ số",
+                "maxLength": "Số điện thoại không được quá 15 chữ số"
+            },
+            "need": {
+                "required": "Vui lòng chọn nhu cầu tư vấn"
+            },
+            "content": {
+                "required": "Vui lòng nhập nội dung",
+                "minLength": "Nội dung phải có ít nhất 10 ký tự"
+            }
+        },
+        "messages": {
+            "success": "Gửi thông tin liên hệ thành công!",
+            "error": "Gửi thông tin liên hệ thất bại!"
+        }
+    },
+    "categorysection": {
+        "category": "DANH SÁCH DANH MỤC",
+        "store": "DANH SÁCH CỬA HÀNG",
+        "service": "DANH SÁCH DỊCH VỤ",
+        "seemore": "Xem thêm"
+    },
+    "contactSection": {
+        "title": "HỖ TRỢ LIÊN HỆ",
+        "faq": "CÂU HỎI THƯỜNG GẶP",
+        "social": {
+            "facebook": "EbayMMO",
+            "telegram": "Trò chuyện với bộ phận hỗ trợ",
+            "email": "support@ebaymmo.vn",
+            "workingHours": "Thứ 2-Thứ 7 08:00 - 22:00"
+        },
+        "supportMessage": "Đội ngũ hỗ trợ của chúng tôi sẽ cố gắng hết sức để xử lý khiếu nại và câu hỏi của bạn trong thời gian sớm nhất.",
+        "contactInfo": "Thông tin liên hệ",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Nhập email của bạn",
+        "phoneLabel": "Số điện thoại",
+        "phonePlaceholder": "Nhập số điện thoại của bạn",
+        "consultationNeed": "Nhu cầu tư vấn",
+        "selectConsultation": "Vui lòng chọn nhu cầu tư vấn",
+        "option1": "Chọn nhu cầu tư vấn 1",
+        "option2": "Chọn nhu cầu tư vấn 2",
+        "option3": "Chọn nhu cầu tư vấn 3",
+        "contentLabel": "Nội dung",
+        "contentPlaceholder": "Nhập nhu cầu tư vấn cụ thể",
+        "sendButton": "Gửi câu hỏi",
+        "sendingButton": "Đang gửi..."
+    },
+    "saleRegistration": {
+        "title": "CƠ HỘI HỢP TÁC",
+        "content": "Chúng tôi cung cấp nhiều cơ hội cho bạn để tham gia và phát triển cùng nhau. Vui lòng chọn tùy chọn phù hợp nhất với nhu cầu của bạn và gửi thông tin cho chúng tôi để chúng tôi có thể liên lạc với bạn.",
+        "storeInformation": "Thông tin cửa hàng",
+        "phoneNumber": "Số điện thoại",
+        "enterPhoneNumber": "Nhập số điện thoại của bạn",
+        "uploadIdCard": "Tải lên hình ảnh CMND/CCCD",
+        "uploadPortraitPhoto": "Tải lên ảnh chân dung",
+        "2faCode": "Mã 2FA",
+        "enter2faCode": "Nhập mã 2FA",
+        "register": "Đăng ký",
+        "enable2fa": "Bật xác thực hai yếu tố",
+        "needEnable2fa": "Bạn cần bật 2FA để đăng ký làm người bán",
+        "2faProtection": "2FA giúp bảo vệ tài khoản và giao dịch của bạn",
+        "enableNow": "Bật ngay",
+        "validation": {
+            "phoneNumberRequired": "Vui lòng nhập số điện thoại của bạn",
+            "phoneNumberDigitsOnly": "Số điện thoại chỉ được chứa số",
+            "phoneNumberMinLength": "Số điện thoại phải có ít nhất 10 chữ số",
+            "phoneNumberMaxLength": "Số điện thoại không được quá 11 chữ số"
+        },
+        "features": {
+            "secure": {
+                "title": "Hoàn toàn bảo mật",
+                "description": "Thông tin này được bảo mật hoàn toàn và sẽ được chúng tôi sử dụng để liên hệ với bạn khi cần thiết."
+            },
+            "cooperate": {
+                "title": "Hợp tác - Kết nối",
+                "description": "Hãy kết nối và hợp tác để phát triển cộng đồng kiếm tiền trực tuyến."
+            },
+            "support": {
+                "title": "Đội ngũ hỗ trợ",
+                "description": "Đội ngũ hỗ trợ của chúng tôi sẽ liên hệ với bạn để giúp tối ưu hóa hiệu suất bán hàng của bạn."
+            },
+            "notifications": {
+                "title": "Thông báo đẩy",
+                "description": "Vui lòng vào phần thông tin tài khoản (hồ sơ), và cập nhật cài đặt thông báo đẩy sang Telegram để không bỏ lỡ khách hàng nào."
+            },
+            "twoFactor": {
+                "title": "Xác thực hai yếu tố (2FA)",
+                "description": "Đây là yêu cầu bắt buộc trước khi đăng ký làm người bán. Vui lòng cập nhật trong hồ sơ của bạn."
+            }
+        }
+    },
+    "user": {
+        "title": "Tài khoản của tôi",
+        "nav": {
+            "title": "Tài khoản người dùng",
+            "account-management": "Quản lý tài khoản",
+            "address-balance": "Số dư địa chỉ",
+            "order-management": "Quản lý đơn hàng",
+            "transaction-history": "Lịch sử giao dịch",
+            "deposit-history": "Lịch sử nạp tiền",
+            "withdrawal-history": "Lịch sử rút tiền",
+            "reseller-history": "Lịch sử đại lý",
+            "favourite-store": "Cửa hàng yêu thích",
+            "content-management": "Quản lý nội dung",
+            "favourite-post": "Bài viết yêu thích",
+            "logout": "Đăng xuất"
+        },
+        "address-balance": {
+            "title": "Quản lý số dư",
+            "currentBalance": "Số dư hiện tại: {balance} USDT",
+            "addWallet": "Thêm ví",
+            "maxWallets": "Bạn chỉ có thể tạo tối đa 3 ví",
+            "network": "Mạng",
+            "walletAddress": "Địa chỉ ví",
+            "createdAt": "Ngày tạo",
+            "updatedAt": "Ngày cập nhật",
+            "actions": "Hành động",
+            "viewMore": "Xem thêm",
+            "collapse": "Thu gọn",
+            "edit": "Chỉnh sửa",
+            "editWallet": "Chỉnh sửa địa chỉ ví",
+            "addNewWallet": "Thêm ví mới",
+            "selectNetwork": "Chọn mạng",
+            "enterWalletAddress": "Nhập địa chỉ ví",
+            "enter2FACode": "Nhập mã 2FA",
+            "saveChanges": "Lưu thay đổi",
+            "addAddress": "Thêm địa chỉ",
+            "errors": {
+                "loginRequired": "Vui lòng đăng nhập lại",
+                "fillAllFields": "Vui lòng điền đầy đủ thông tin",
+                "incorrect2FA": "Mã 2FA không chính xác",
+                "updateFailed": "Cập nhật ví thất bại",
+                "addFailed": "Thêm ví thất bại",
+                "maxWalletsReached": "Bạn chỉ có thể tạo tối đa 3 ví",
+                "emptyAddress": "Địa chỉ ví không được để trống",
+                "invalidAddressFormat": "Định dạng địa chỉ ví không hợp lệ. Vui lòng nhập địa chỉ BSC hợp lệ",
+                "duplicateAddress": "Địa chỉ ví này đã tồn tại"
+            },
+            "success": {
+                "walletUpdated": "Ví đã được cập nhật thành công",
+                "walletAdded": "Ví đã được thêm thành công"
+            },
+            "2FAWarning": {
+                "title": "Bật xác thực hai yếu tố",
+                "description": "Bạn cần bật xác thực hai yếu tố để quản lý ví của mình",
+                "enableNow": "Bật ngay"
+            }
+        },
+        "account-management": {
+            "title": "Quản lý tài khoản",
+            "api-purchase": {
+                "title": "Mua API",
+                "enabled": "Đã bật",
+                "not-enabled": "Chưa bật",
+                "hint": "(Bật mua API để sử dụng tính năng này)"
+            },
+            "login-history": {
+                "title": "Lịch sử đăng nhập",
+                "ip": "IP",
+                "device": "Thiết bị"
+            },
+            "profile": {
+                "title": "Thông tin tài khoản",
+                "avatar": "Ảnh đại diện",
+                "uploading": "Đang tải lên...",
+                "preview": "Xem trước",
+                "upload": "Tải lên",
+                "choose-picture": "Chọn ảnh đại diện",
+                "save": "Lưu",
+                "points": "điểm cấp",
+                "level": "Cấp {level}",
+                "points-to-next": "{points} điểm để lên cấp {nextLevel}",
+                "account": "Tài khoản",
+                "kyc-verified": "Đã xác minh KYC",
+                "kyc-unverified": "Chưa xác minh KYC",
+                "username": "tên người dùng",
+                "fullName": "Họ và tên",
+                "fullNamePlaceholder": "Nhập họ và tên của bạn",
+                "email": "Email",
+                "password": "Mật khẩu",
+                "passwordPlaceholder": "Nhập mật khẩu mới",
+                "registration-date": "Ngày đăng ký",
+                "editableField": {
+                    "oldPassword": "Mật khẩu cũ",
+                    "oldPasswordPlaceholder": "Nhập mật khẩu cũ",
+                    "newPassword": "Mật khẩu mới",
+                    "newPasswordPlaceholder": "Nhập mật khẩu mới",
+                    "confirmPassword": "Xác nhận mật khẩu",
+                    "confirmPasswordPlaceholder": "Nhập lại mật khẩu mới",
+                    "passwordMismatch": "Mật khẩu xác nhận không khớp",
+                    "passwordTooShort": "Mật khẩu phải có ít nhất 8 ký tự",
+                    "passwordNeedsUppercase": "Mật khẩu phải chứa ít nhất một chữ hoa",
+                    "passwordNeedsNumber": "Mật khẩu phải chứa ít nhất một chữ số",
+                    "passwordNeedsSpecial": "Mật khẩu phải chứa ít nhất một ký tự đặc biệt",
+                    "cancel": "Hủy",
+                    "confirm": "Xác nhận",
+                    "noValue": "Chưa có {field}"
+                },
+                "fileTypeError": "Chỉ cho phép các tệp JPEG, PNG, GIF, MP4, MOV hoặc AVI"
+            },
+            "telegram": {
+                "title": "Kết nối Telegram",
+                "connected": "Đã kết nối",
+                "not-connected": "Chưa kết nối",
+                "hint": "(Kết nối với Telegram ngay)",
+                "success": "Đã kết nối thành công với Telegram! {name}",
+                "success-no-name": "Đã kết nối thành công với Telegram!"
+            },
+            "2fa": {
+                "title": "Xác thực hai yếu tố",
+                "hint": "(Bảo vệ tài khoản của bạn bằng xác thực hai yếu tố)",
+                "qr-code": "Mã QR",
+                "scan-instruction": "Sử dụng ứng dụng Google Authenticator trên điện thoại và quét mã này",
+                "or": "hoặc",
+                "secret-key": "Sử dụng khóa bí mật này để cấu hình trong ứng dụng xác thực",
+                "copy": "Sao chép",
+                "note": "Lưu ý:",
+                "save-code": "Lưu mã này, bạn sẽ không thể đăng nhập nếu mất nó.",
+                "get-otp": "Lấy mã OTP đăng nhập",
+                "enter-otp": "Nhập mã OTP 6 chữ số",
+                "otp-placeholder": "Nhập mã OTP",
+                "verifying": "Đang xác minh...",
+                "confirm": "Xác nhận",
+                "save-reminder": "Vui lòng lưu mã này, bạn sẽ không thể đăng nhập nếu mất nó.",
+                "enabled": "Đã bật",
+                "not-enabled": "Chưa bật"
+            },
+            "stats": {
+                "purchased": "Đã mua",
+                "number-of-stores": "Số cửa hàng",
+                "sold": "Đã bán",
+                "number-of-posts": "Số bài viết",
+                "products": "Sản phẩm",
+                "stores": "Cửa hàng",
+                "posts": "Bài viết",
+                "orders": "Đơn hàng"
+            }
+        }
+    },
+    "order-management": {
+        "title": "Quản lý đơn hàng",
+        "header": {
+            "title": "Quản lý đơn hàng",
+            "searchPlaceholder": "Bạn muốn tìm gì?",
+            "filter": {
+                "all": "Tất cả",
+                "orderCode": "Mã đơn hàng",
+                "seller": "Người bán"
+            }
+        },
+        "table": {
+            "action": "Hành động",
+            "orderCode": "Mã đơn hàng",
+            "orderDate": "Ngày đặt hàng",
+            "seller": "Người bán",
+            "productName": "Tên sản phẩm",
+            "quantity": "Số lượng",
+            "price": "Giá",
+            "reduce": "Giảm giá",
+            "completedDate": "Ngày hoàn tất",
+            "status": "Trạng thái",
+            "orderType": "Loại đơn hàng",
+            "totalMoney": "Tổng tiền"
+        },
+        "reviewOrder": "Xem đơn hàng",
+        "complain": "Khiếu nại",
+        "viewComplain": "Xem khiếu nại",
+        "chat": "Chat",
+        "getProductData": "Lấy dữ liệu sản phẩm",
+        "modal": {
+            "product": "Sản phẩm",
+            "value": "Giá trị",
+            "postback": "Phản hồi",
+            "noData": "Không có dữ liệu cho đơn hàng này",
+            "account": "Tài khoản",
+            "password": "Mật khẩu",
+            "reportError": "Báo lỗi sản phẩm",
+            "warnings": {
+                "deleteAfter30Days": "Đơn hàng sẽ bị xóa sau 30 ngày, vui lòng lưu nó vào máy tính của bạn để tránh mất đơn hàng",
+                "randomString": "Nếu sản phẩm không phải là tài khoản đăng nhập, mà là một chuỗi ngẫu nhiên, số sê-ri hoặc bất kỳ chuỗi nào không liên quan, điều đó có nghĩa là cửa hàng có kiểm tra trang web hệ thống. Vui lòng khiếu nại đơn hàng và báo cáo cho dịch vụ hỗ trợ nền tảng để nhận lại tiền.",
+                "warranty": "Vui lòng yêu cầu cửa hàng bảo hành trực tiếp trên nền tảng, sử dụng chức năng bảo hành để đảm bảo quyền lợi của bạn và không nhận được sản phẩm đã được bán cho người khác."
+            },
+            "buttons": {
+                "downloadOrder": "Tải đơn hàng",
+                "uploadError": "Tải lỗi sản phẩm"
+            },
+            "errors": {
+                "noDataToDownload": "Không có dữ liệu để tải"
+            }
+        }
+    },
+    "transaction-history": {
+        "title": "Lịch sử giao dịch",
+        "searchPlaceholder": "Bạn muốn tìm gì?",
+        "columns": {
+            "transactionDate": "Ngày giao dịch",
+            "transactionCode": "Mã giao dịch",
+            "amount": "Số tiền",
+            "orderStatus": "Trạng thái"
+        },
+        "noTransactions": "Không có giao dịch",
+        "showingEntries": "Hiển thị từ {from} đến {to} trong {total} bản ghi"
+    },
+    "deposit-history": {
+        "title": "Lịch sử nạp tiền",
+        "errorLoading": "Lỗi tải dữ liệu nạp tiền",
+        "table": {
+            "amount": "Số tiền",
+            "description": "Mô tả",
+            "depositAt": "Ngày nạp tiền",
+            "status": "Trạng thái",
+            "actions": "Hành động",
+            "viewDetails": "Xem chi tiết"
+        },
+        "modal": {
+            "title": "Chi tiết nạp tiền",
+            "depositLogs": "Lịch sử nạp tiền",
+            "processedAt": "Thời gian xử lý",
+            "status": {
+                "completed": "Đã hoàn tất",
+                "pending": "Đang xử lý"
+            }
+        },
+        "noData": "Chưa có dữ liệu"
+    },
+    "reseller-history": {
+        "title": "Lịch sử đại lý",
+        "storeList": "Danh sách cửa hàng",
+        "history": "Lịch sử",
+        "store": "Cửa hàng",
+        "resellerLink": "Liên kết đại lý",
+        "commission": "Hoa hồng",
+        "status": "Trạng thái",
+        "orderId": "ID đơn hàng",
+        "purchaseDate": "Ngày mua",
+        "quantity": "Số lượng",
+        "unitPrice": "Giá đơn vị",
+        "totalAmount": "Tổng số tiền",
+        "commissionAccount": "Tài khoản hoa hồng",
+        "seeMore": "Xem thêm",
+        "tooltip": {
+            "note": "*Lưu ý: ",
+            "content": "Khách hàng chỉ cần truy cập trang web một lần qua liên kết đại lý của bạn, chúng tôi sẽ lưu cookie và áp dụng hoa hồng cho tất cả các đơn hàng tiếp theo (nếu liên kết đại lý của bạn vẫn được chấp thuận bởi chủ cửa hàng)"
+        },
+        "statuses": {
+            "active": "Đang hoạt động",
+            "inactive": "Không hoạt động",
+            "pending": "Đang chờ",
+            "approved": "Đã duyệt"
+        }
+    },
+    "withdrawal-history": {
+        "title": "Lịch sử rút tiền",
+        "requestDate": "Ngày yêu cầu",
+        "transactionAmount": "Số tiền giao dịch",
+        "status": "Trạng thái",
+        "description": "Mô tả",
+        "balanceAddress": "Địa chỉ số dư",
+        "withdrawalRequest": "Yêu cầu rút tiền",
+        "statuses": {
+            "pending": "Đang chờ",
+            "completed": "Đã hoàn tất",
+            "failed": "Lỗi",
+            "processing": "Đang xử lý"
+        },
+        "modal": {
+            "title": "Yêu cầu rút tiền",
+            "amount": "Số tiền",
+            "amountPlaceholder": "Nhập số tiền để rút",
+            "submit": "Gửi",
+            "cancel": "Hủy",
+            "success": "Yêu cầu rút tiền đã được gửi thành công",
+            "error": "Không thể gửi yêu cầu rút tiền",
+            "missingFields": "Vui lòng điền đầy đủ các trường bắt buộc"
+        }
+    },
+    "favourite-post": {
+        "title": "Bài viết yêu thích",
+        "noPosts": "Bạn chưa có bài viết yêu thích",
+        "error": "Lỗi tải dữ liệu bài viết yêu thích",
+        "donate": "Ủng hộ"
+    },
+    "content-management": {
+        "title": "Quản lý nội dung",
+        "publicPosts": "Bài viết công khai",
+        "post": "Bài viết",
+        "postNotFound": "Không tìm thấy bài viết",
+        "search": {
+            "placeholder": "Tìm kiếm bài viết"
+        }
+    },
+    "checkLiveFB": {
+        "title": "Kiểm tra Facebook Live",
+        "inputLabels": {
+            "uidList": "Danh sách UID (Tối đa 1000 ID)",
+            "delimiter": "Ký tự phân cách",
+            "column": "Cột",
+            "liveUids": "UID còn sống",
+            "deadUids": "UID đã chết"
+        },
+        "stats": {
+            "total": "Tổng số",
+            "success": "Thành công",
+            "failed": "Thất bại"
+        },
+        "buttons": {
+            "check": "Kiểm tra",
+            "checking": "Đang kiểm tra..."
+        },
+        "errors": {
+            "maxUidsExceeded": "Số lượng UID vượt quá giới hạn (tối đa 1000)"
+        }
+    },
+
+    "shares": {
+        "placeholder": "Tìm kiếm bài viết",
+        "searchBy": "Tìm kiếm theo",
+        "post": "Đăng bài",
+        "noPost": "Không có bài viết nào"
+    },
+
+    "post": {
+        "donate": {
+            "enjoy": "Bạn thích bài viết này?",
+            "title": "Quyên góp",
+            "description": "Nếu vậy, hãy ủng hộ tác giả bằng cách quyên góp nếu bạn thấy nội dung hữu ích.",
+            "relatedPost": "Bài viết liên quan",
+            "errorRelated": "Không tìm thấy bài viết liên quan"
+        },
+        "comment": {
+            "title": "Bình luận",
+            "placeHolder": "Vui lòng bình luận trong bài viết này...",
+            "description": "Bình luận của bạn sẽ được xem xét trước khi đăng. ",
+            "submit": "Gửi bình luận",
+            "viewReply": "Xem phản hồi",
+            "hideReply": "Ẩn phản hồi",
+            "noReply": "Chưa có phản hồi nào.",
+            "loading": "Đang tải...",
+            "noComment": "Chưa có bình luận nào."
+        }
+    },
+    "order-service": {
+        "service": "Dịch vụ",
+        "status": {
+            "cancelled": "Từ chối đơn",
+            "pending": "Chờ xác nhận",
+            "accepted": "Đang thực hiện",
+            "completed": "Đã hoàn thành",
+            "updateSuccess": "Cập nhật trạng thái đơn hàng thành công",
+            "updateFailed": "Không thể cập nhật trạng thái đơn hàng",
+            "updateError": "Lỗi khi cập nhật trạng thái đơn hàng",
+            "noOrderId": "Không tìm thấy mã đơn hàng"
+        },
+        "buttons": {
+            "accept": "Chấp nhận đơn",
+            "reject": "Từ chối đơn",
+            "confirmCompletion": "Xác nhận hoàn thành",
+            "contactBuyer": "Liên hệ người mua",
+            "viewReviews": "Xem đánh giá",
+            "processing": "Đang xử lý..."
+        },
+        "stages": {
+            "ordered": "Đã đặt",
+            "completed": "Hoàn thành",
+            "success": "Thành công"
+        },
+        "testMode": {
+            "title": "Chế độ kiểm thử",
+            "currentStatus": "Trạng thái hiện tại",
+            "stage": "Giai đoạn"
+        },
+        "default": {
+            "service": "Dịch vụ thiết kế",
+            "category": "Thiết kế",
+            "orderCode": "ORDER123"
+        },
+        "progress-bar": {
+            "processing": "Đang xử lý",
+            "confirmed": "Đã xác nhận",
+            "completed": "Đã hoàn thành",
+            "cancelled": "Đã từ chối",
+            "stage-completed": "Đã hoàn thành"
+        }
+    },
+    "order-stages": {
+        "cancelled": {
+            "title": "Đơn bị từ chối",
+            "description": "Đơn hàng này đã bị từ chối và không thể được xử lý tiếp.",
+            "actions": {
+                "viewReason": "Xem lý do từ chối",
+                "contact": "Liên hệ người mua để làm rõ",
+                "viewStats": "Xem thống kê đơn hàng"
+            }
+        },
+        "pending": {
+            "title": "Chờ xác nhận",
+            "description": "Đơn hàng đang chờ bạn xác nhận.",
+            "actions": {
+                "check": "Kiểm tra chi tiết đơn hàng",
+                "confirm": "Xác nhận khả năng thực hiện",
+                "decideAccept": "Quyết định có chấp nhận hay không"
+            }
+        },
+        "accepted": {
+            "title": "Đang thực hiện",
+            "description": "Bạn đang thực hiện dịch vụ cho đơn hàng này.",
+            "actions": {
+                "continue": "Tiếp tục thực hiện đơn hàng",
+                "quality": "Duy trì tiêu chuẩn chất lượng cao",
+                "confirm": "Xác nhận hoàn thành khi xong"
+            }
+        },
+        "completed": {
+            "title": "Đã hoàn thành",
+            "description": "Đơn hàng đã được hoàn thành.",
+            "actions": {
+                "viewReviews": "Xem đánh giá của khách hàng",
+                "contact": "Liên hệ người mua để nhận phản hồi",
+                "viewStats": "Kiểm tra phân tích đơn hàng"
+            }
+        },
+        "unknown": {
+            "title": "Trạng thái không xác định",
+            "description": "Vui lòng kiểm tra lại trạng thái đơn hàng."
+        },
+        "fields": {
+            "orderCode": "Mã đơn",
+            "orderDate": "Ngày đặt",
+            "service": "Dịch vụ",
+            "price": "Giá",
+            "startDate": "Ngày bắt đầu",
+            "description": "Mô tả",
+            "completionDate": "Ngày hoàn thành",
+            "buyer": "Người mua",
+            "quantity": "Số lượng",
+            "orderStatus": "Trạng thái đơn hàng"
+        }
+    },
+    "order-buyer": {
+        "cancelled": {
+          "title": "Thất bại",
+          "description": "Đơn hàng đã bị từ chối"
+        },
+        "pending": {
+          "title": "Đang xử lý",
+          "subtitle": "Đơn hàng đang chờ xác nhận",
+          "message": "Chúng tôi đang tiếp nhận yêu cầu và sẽ xác nhận sớm nhất có thể."
+        },
+        "accepted": {
+          "title": "Đã xác nhận",
+          "subtitle": "Đơn hàng đang được xử lý",
+          "message": "Nhân viên của chúng tôi đang tiến hành thực hiện yêu cầu của bạn. Bạn sẽ nhận được thông báo khi hoàn thành."
+        },
+        "completed": {
+          "title": "Thành công",
+          "subtitle": "Đơn hàng đã hoàn thành",
+          "message": "Chúc mừng! Đơn hàng của bạn đã được hoàn thành thành công. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!"
+        },
+        "buttons": {
+          "cancelOrder": "Hủy đơn",
+          "contactSeller": "Liên hệ người bán",
+          "complaint": "Khiếu nại",
+          "review": "Đánh giá"
+        },
+        "orderInfo": "Thông tin đơn hàng",
+        "requestDetails": "Chi tiết yêu cầu",
+        "defaultNotes": "Khách hàng yêu cầu thiết kế logo theo phong cách tối giản, sử dụng màu xanh lá và trắng làm chủ đạo.",
+        "buyerInfo": "Thông tin người mua",
+        "fromDate": "*Tính từ ngày {date}",
+        "fields": {
+          "quantity": "Số lượng",
+          "price": "Giá",
+          "orderDate": "Ngày đặt",
+          "totalPayment": "Tổng thanh toán",
+          "completionDeadline": "Thời hạn hoàn thành",
+          "buyer": "Người mua",
+          "orderCode": "Mã đơn hàng"
+        }
+      }
+}

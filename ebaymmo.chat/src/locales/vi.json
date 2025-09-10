@@ -1,0 +1,28 @@
+{
+	"paymentRequired": "Số dư tài khoản không đủ, vui lòng nạp thêm",
+	"userNotFound": "Không tìm thấy người dùng",
+	"provincesFetchError": "Không thể lấy danh sách tỉnh",
+	"keyNotFound": "Không tìm thấy khóa",
+	"keyPurchaseError": "Không thể mua khóa mới",
+	"renewKeyError": "Không thể gia hạn khóa",
+	"deleteKeyError": "Không thể xóa khóa",
+	"userInfoError": "Không thể lấy thông tin người dùng",
+	"agencyNotFound": "Không tìm thấy đại lý",
+	"keyDetailFetchError": "Không thể lấy chi tiết khóa",
+	"oldIPRemovalError": "Không thể xóa IP cũ",
+	"newIPFetchError": "Không thể lấy IP mới",
+	"currentIPFetchError": "Không thể lấy IP hiện tại",
+	"systemError": "Lỗi hệ thống",
+	"missingUserNameOrPassword": "Thiếu tên đăng nhập hoặc mật khẩu",
+	"invalidPassword": "Mật khẩu không hợp lệ",
+	"missingInfoRegister": "Thiếu thông tin đăng ký",
+	"usernameAlreadyExists": "Tên đăng nhập đã tồn tại",
+	"emailAlreadyExists": "Email đã tồn tại",
+	"missingEmail": "Thiếu email",
+	"missingPasswordOrToken": "Thiếu mật khẩu hoặc mã thông báo",
+	"invalidToken": "Mã thông báo không hợp lệ",
+	"tokenExpired": "Mã thông báo đã hết hạn",
+	"error": {
+		"unhandledRejection": "error.unhandledRejection"
+	}
+}

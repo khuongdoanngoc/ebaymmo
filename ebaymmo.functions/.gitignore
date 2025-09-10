@@ -1,0 +1,11 @@
+node_modules
+.env
+.env.*
+!.env.example
+bin
+dist
+logs
+uploads
+*/config.yaml
+*/dump.sql
+src/sdk/sdk.ts

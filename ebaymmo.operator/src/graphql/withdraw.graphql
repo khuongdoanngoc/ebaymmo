@@ -1,0 +1,69 @@
+query GetWithdrawalRequests(
+    $where: WithdrawalsBoolExp = {}
+    $limit: Int = 10
+    $offset: Int = 0
+) {
+    withdrawals(where: $where, limit: $limit, offset: $offset) {
+        withdrawalId
+        user {
+            userId
+            username
+            email
+        }
+        amount
+        withdrawalStatus
+        requestDate
+        processedDate
+        balanceAddress
+    }
+
+    withdrawalsAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+query GetPendingWithdrawalsCount {
+    pendingWithdrawals: withdrawalsAggregate(
+        where: { withdrawalStatus: { _eq: "pending" } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+}
+
+subscription PendingWithdrawalsCount {
+    withdrawalsAggregate(where: { withdrawalStatus: { _eq: "pending" } }) {
+        aggregate {
+            count
+        }
+    }
+}
+
+mutation ApproveWithdrawal($withdrawId: uuid!, $notes: String!) {
+    updateWithdrawalsByPk(
+        pkColumns: { withdrawalId: $withdrawId }
+        _set: {
+            withdrawalStatus: "completed"
+            processedDate: "now()"
+            description: $notes
+        }
+    ) {
+        withdrawalId
+    }
+}
+
+mutation RejectWithdrawal($withdrawId: uuid!, $notes: String!) {
+    updateWithdrawalsByPk(
+        pkColumns: { withdrawalId: $withdrawId }
+        _set: {
+            withdrawalStatus: "canceled"
+            processedDate: "now()"
+            description: $notes
+        }
+    ) {
+        withdrawalId
+    }
+}

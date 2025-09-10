@@ -1,0 +1,19 @@
+{
+    "errors": {
+        "missingCredentials": "Thiếu tên đăng nhập hoặc mật khẩu",
+        "emailAlreadyExists": "Email đã tồn tại",
+        "userNotFound": "Không tìm thấy người dùng",
+        "invalidPassword": "Mật khẩu không hợp lệ",
+        "failedToGenerateTokens": "Không thể tạo mã thông báo",
+        "invalidOrExpiredRefreshToken": "Mã thông báo làm mới không hợp lệ hoặc đã hết hạn",
+        "failedToCreateAccessToken": "Không thể tạo mã thông báo truy cập",
+        "failedToCreateRefreshToken": "Không thể tạo mã thông báo làm mới",
+        "resetPasswordFailed": "Không thể gửi email khôi phục mật khẩu",
+        "resetPasswordTokenFailed": "Không thể đặt lại mật khẩu!"
+    },
+    "messages": {
+        "registerSuccess": "Đăng ký thành công",
+        "resetPasswordEmailSent": "Email khôi phục mật khẩu đã được gửi",
+        "resetPasswordSuccess": "Đặt lại mật khẩu thành công!"
+    }
+}

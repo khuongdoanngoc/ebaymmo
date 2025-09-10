@@ -1,0 +1,20 @@
+fragment ProductItemFields on ProductItems {
+  productItemId
+  productId
+  dataText
+  content
+  status
+  exportedAt
+  createAt
+  updateAt
+  serialKey
+  expirationDate
+}
+
+mutation CreateProductItems($object: ProductItemsInsertInput!) {
+  insertProductItemsOne(object: $object) {
+    ...ProductItemFields
+  }
+}
+
+

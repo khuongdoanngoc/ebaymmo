@@ -1,0 +1,11 @@
+table:
+  name: orders_per_day
+  schema: public
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - total_orders
+        - order_date
+      filter: {}
+    comment: ""

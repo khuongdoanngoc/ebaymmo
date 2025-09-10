@@ -1,0 +1,6 @@
+mutation checkFB($uids: [String!]!) {
+    checkFBUids(uids: $uids) {
+        deadUids
+        liveUids
+    }
+}

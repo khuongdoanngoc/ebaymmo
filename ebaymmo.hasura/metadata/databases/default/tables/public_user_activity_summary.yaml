@@ -1,0 +1,25 @@
+table:
+  name: user_activity_summary
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - blog_comment_count
+        - blog_count
+        - donation_count
+        - order_count
+        - review_count
+        - store_count
+        - support_ticket_count
+        - wishlist_count
+        - email
+        - username
+        - registration_date
+        - last_login
+        - status
+        - user_id
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+    comment: ""

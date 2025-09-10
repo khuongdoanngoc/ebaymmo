@@ -1,0 +1,27 @@
+name: Deploy Next.js with Docker (Develop)
+
+on:
+    push:
+        branches:
+            - develop
+
+jobs:
+    deploy-fe:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Thực thi Docker Compose cho SHOP3.user
+              uses: appleboy/ssh-action@v0.1.6
+              with:
+                  host: ${{ secrets.SSH_HOST }} # Địa chỉ IP hoặc hostname của server
+                  username: ${{ secrets.SSH_USER }} # Tên user SSH
+                  key: ${{ secrets.SSH_KEY }} # Private key cho SSH
+                  port: ${{ secrets.REMOTE_PORT }}
+                  script: |
+                      cd /home/shop3/git/SHOP3.user
+                      git checkout develop   
+                      git pull --rebase origin develop
+                      git pull --rebase origin develop
+                      git pull --rebase origin develop
+                      npm install
+                      npm run generate
+                      docker-compose up --build -d

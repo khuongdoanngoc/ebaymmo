@@ -1,0 +1,27 @@
+table:
+  name: listing_bid_histories
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - action
+        - avatar
+        - email
+        - full_name
+        - images
+        - status
+        - store_name
+        - username
+        - balance
+        - bid_amount
+        - bid_date
+        - create_at
+        - update_at
+        - bid_id
+        - history_id
+        - position_id
+        - store_id
+        - user_id
+      filter: {}
+    comment: ""

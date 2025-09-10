@@ -1,0 +1,240 @@
+query getUsers(
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [UsersOrderBy!] = {}
+    $where: UsersBoolExp = {}
+) {
+    users(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        userId
+        username
+        email
+        fullName
+        googleAccountId
+        images
+        lastLogin
+        password
+        twoFactorEnabled
+        twoFactorSecret
+        role
+        referralCode
+        sellerSince
+        balance
+        createAt
+        updateAt
+    }
+}
+
+query GetUserByEmail($email: String!) {
+    users(where: { email: { _eq: $email } }, limit: 1) {
+        userId
+        email
+        username
+    }
+}
+
+query GetUserInfo($email: String!) {
+    users(where: { email: { _eq: $email } }) {
+        userId
+        email
+        username
+        images
+        role
+        sellerSince
+        twoFactorEnabled
+    }
+}
+
+query SearchUsers(
+    $where: UsersBoolExp = {}
+    $limit: Int = 10
+    $offset: Int = 0
+) {
+    users(limit: $limit, offset: $offset, where: $where) {
+        fullName
+        images
+        userId
+        username
+    }
+}
+
+query GetSellerStore($where: GetSellerStoreViewBoolExp = {}) {
+    getSellerStoreView(where: $where) {
+        categoryName
+        categorySlug
+        images
+        lastLogin
+        parentCategoryName
+        parentCategorySlug
+        totalSoldCount
+        totalStockCount
+        userId
+        username
+    }
+}
+
+query GetUserBasic($where: GetSellerStoreViewBoolExp = {}) {
+    getSellerStoreView(where: $where) {
+        images
+        lastLogin
+        userId
+        username
+        sellerSince
+        fullName
+        totalSoldCount
+        totalStockCount
+    }
+}
+
+fragment userBasic on Users {
+    username
+    fullName
+    images
+    email
+}
+
+mutation editUserProfile($userId: uuid!, $input: UsersSetInput!) {
+    updateUsers(where: { userId: { _eq: $userId } }, _set: $input) {
+        returning {
+            ...userBasic
+        }
+    }
+}
+
+query GetUserProfileWithStoresAndBlogs(
+    $userId: uuid!
+    $storesWhere: StoresBoolExp = {}
+    $storeLimit: Int
+    $storeOffset: Int
+    $storeOrderBy: [StoresOrderBy!] = [{ totalStockCount: DESC }]
+    $blogsWhere: BlogsBoolExp = {}
+    $blogLimit: Int
+    $blogOffset: Int
+    $blogOrderBy: [BlogsOrderBy!] = [{ postingDay: DESC }]
+) {
+    users(where: { userId: { _eq: $userId } }) {
+        userId
+        username
+        fullName
+        images
+        lastLogin
+        sellerSince
+        storesAggregate {
+            aggregate {
+                sum {
+                    totalSoldCount
+                    totalStockCount
+                }
+                count
+            }
+        }
+        stores(
+            where: $storesWhere
+            limit: $storeLimit
+            offset: $storeOffset
+            orderBy: $storeOrderBy
+        ) {
+            storeId
+            storeName
+            description
+            category {
+                categoryId
+                categoryName
+            }
+            storePrice
+            avatar
+            totalSoldCount
+            totalStockCount
+            storeRatings {
+                rating
+            }
+        }
+        blogs(
+            where: $blogsWhere
+            limit: $blogLimit
+            offset: $blogOffset
+            orderBy: $blogOrderBy
+        ) {
+            blogId
+            title
+            images
+            postingDay
+            description
+        }
+    }
+}
+
+mutation ChangeUserPassword(
+    $token: String!
+    $oldPassword: String!
+    $newPassword: String!
+) {
+    changePassword(
+        input: {
+            token: $token
+            oldPassword: $oldPassword
+            newPassword: $newPassword
+        }
+    ) {
+        success
+        message
+    }
+}
+
+mutation editUserLastLogin($now: timestamptz!) {
+    updateUsers(where: {}, _set: { lastLogin: $now }) {
+        returning {
+            userId
+            username
+            lastLogin
+        }
+    }
+}
+
+subscription UserInfo($userId: uuid!) {
+    usersByPk(userId: $userId) {
+        balance
+        images
+        email
+        fullName
+        username
+        createAt
+        userId
+        twoFactorEnabled
+        telegramConnectionStatus
+        telegramConnections {
+            telegramUsername
+            telegramFirstName
+            telegramLastName
+        }
+        sellerSince
+    }
+}
+
+# Query check 2FA status
+query CheckUserTwoFactorEnabled($userId: uuid!) {
+    usersByPk(userId: $userId) {
+        twoFactorEnabled
+    }
+}
+
+query UserStatistics($where: UserStatisticsBoolExp = {}) {
+    userStatistics(where: $where) {
+        sellerSince
+        totalBlogs
+        totalOrders
+        totalSold
+        totalStores
+        userId
+    }
+}
+
+subscription User2FAStatus($userId: uuid!) {
+    usersByPk(userId: $userId) {
+        userId
+        twoFactorEnabled
+        twoFactorSecret
+        email
+        username
+        fullName
+    }
+}

@@ -1,0 +1,65 @@
+query GetStoreRatingsForSeller(
+    $storeIds: [uuid!]!
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [StoreRatingsOrderBy!]
+) {
+    storeRatings(
+        where: { storeId: { _in: $storeIds } }
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+    ) {
+        ratingId
+        storeId
+        review
+        rating
+        ratingDate
+        store {
+            storeName
+        }
+        user {
+            fullName
+            username
+        }
+    }
+    storeRatingsAggregate(where: { storeId: { _in: $storeIds } }) {
+        aggregate {
+            count
+        }
+    }
+}
+
+query GetRatingById($ratingId: uuid!) {
+    storeRatingsByPk(ratingId: $ratingId) {
+        ratingId
+        storeId
+        review
+        rating
+        ratingDate
+        response
+        responseDate
+        store {
+            storeName
+        }
+        user {
+            fullName
+            username
+            images
+        }
+    }
+}
+
+mutation UpdateReviewResponse($ratingId: uuid!, $response: String!) {
+    updateStoreRatings(
+        where: { ratingId: { _eq: $ratingId } }
+        _set: { response: $response }
+    ) {
+        affectedRows
+        returning {
+            ratingId
+            response
+            responseDate
+        }
+    }
+}

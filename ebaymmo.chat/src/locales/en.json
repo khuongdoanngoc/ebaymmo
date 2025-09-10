@@ -1,0 +1,28 @@
+{
+	"paymentRequired": "Insufficient account balance, please top up",
+	"userNotFound": "User not found",
+	"provincesFetchError": "Failed to fetch provinces list",
+	"keyNotFound": "Key not found",
+	"keyPurchaseError": "Failed to purchase new key",
+	"renewKeyError": "Failed to renew key",
+	"deleteKeyError": "Failed to delete key",
+	"userInfoError": "Failed to fetch user information",
+	"agencyNotFound": "Agency not found",
+	"keyDetailFetchError": "Failed to fetch key details",
+	"oldIPRemovalError": "Failed to remove old IP",
+	"newIPFetchError": "Failed to fetch new IP",
+	"currentIPFetchError": "Failed to fetch current IP",
+	"systemError": "System error",
+	"missingUserNameOrPassword": "Missing username or password",
+	"invalidPassword": "Invalid password",
+	"missingInfoRegister": "Missing information register",
+	"usernameAlreadyExists": "Username already exists",
+	"emailAlreadyExists": "Email already exists",
+	"missingEmail": "Missing email",
+	"missingPasswordOrToken": "Missing password or token",
+	"invalidToken": "Invalid token",
+	"tokenExpired": "Token expired",
+	"error": {
+		"unhandledRejection": "error.unhandledRejection"
+	}
+}

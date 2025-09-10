@@ -1,0 +1,73 @@
+mutation addDiscounted($objects: [CouponsInsertInput!] = {}) {
+    insertCoupons(objects: $objects) {
+        affectedRows
+        returning {
+            description
+            couponCode
+            couponId
+            createAt
+            discountType
+            discountValue
+            endDate
+            startDate
+            storeId
+            updateAt
+            discountRate
+            usageLimit
+            maximumAmount
+        }
+    }
+}
+
+query getDiscountCode(
+    $limit: Int = 10
+    $offset: Int = 0
+    $where: CouponsViewBoolExp = {}
+    $orderBy: [CouponsViewOrderBy!] = {}
+) {
+    couponsView(
+        limit: $limit
+        offset: $offset
+        where: $where
+        orderBy: $orderBy
+    ) {
+        couponCode
+        couponId
+        createAt
+        description
+        discountRate
+        discountType
+        discountValue
+        endDate
+        isActive
+        maximumAmount
+        sellerId
+        startDate
+        storeId
+        storeName
+        unlimitedUse
+        updateAt
+        usageLimit
+    }
+}
+
+mutation updatedCoupons(
+    $_inc: CouponsIncInput = {}
+    $_set: CouponsSetInput = {}
+    $where: CouponsBoolExp = {}
+) {
+    updateCoupons(_inc: $_inc, _set: $_set, where: $where) {
+        affectedRows
+        returning {
+            couponId
+            couponCode
+            description
+        }
+    }
+}
+
+query checkCouponCode($where: CouponsBoolExp = { couponCode: {} }) {
+    coupons(where: $where) {
+        couponId
+    }
+}

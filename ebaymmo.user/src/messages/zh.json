@@ -1,0 +1,1531 @@
+{
+    "english": "English",
+    "vietnamese": "Tiếng Việt",
+    "russian": "Русский",
+    "chinese": "中文",
+    "Products": "产品",
+    "Services": "服务",
+    "What are you looking for?": "你在找什么？",
+    "Search History": "搜索历史",
+    "No search history found": "没有搜索历史",
+    "Header": {
+        "hello": "你好",
+        "deposit": "充值",
+        "withdraw": "提现",
+        "storeManagement": "店铺管理",
+        "logout": "退出登录",
+        "vietnamese": "Tiếng Việt",
+        "russian": "Русский",
+        "chinese": "中文",
+        "english": "English",
+        "depositModalTitle": "USDT充值",
+        "walletAddress": "钱包地址",
+        "balance": "余额",
+        "networkCode": "网络代码",
+        "selectNetwork": "选择网络",
+        "amount": "金额",
+        "enterDepositAmount": "输入充值金额",
+        "continue": "继续",
+        "success": "成功",
+        "error": "错误",
+        "close": "关闭",
+        "addressBalance": "地址余额",
+        "accountManagement": "账户管理",
+        "orderManagement": "订单管理",
+        "transactionHistory": "交易历史",
+        "withdrawalHistory": "提现历史",
+        "depositHistory": "充值历史",
+        "resellerHistory": "分销历史",
+        "favoriteStore": "收藏店铺",
+        "contentManagement": "内容管理",
+        "dashboard": "控制面板",
+        "withdrawTitle": "提现请求",
+        "minWithdrawal": "最低提现金额为50 USDT",
+        "enterWithdrawAmount": "输入您想提现的金额（最低50）",
+        "2faVerificationCode": "双重验证码",
+        "enter2faCode": "输入Google Authenticator中的验证码",
+        "submitWithdrawal": "提现",
+        "2faRequired": "激活双重验证",
+        "2faRequiredMessage": "您需要激活双重验证才能提现。激活双重验证有助于保护您的账户和交易。",
+        "setup2fa": "立即激活",
+        "pleaseSelectWallet": "请选择钱包",
+        "selectWalletAddress": "选择钱包地址",
+        "walletRequired": "提现前请添加钱包",
+        "twoFactorRequired": "提现前请启用双重验证",
+        "pendingLimit": "您有3个待处理交易",
+        "fillAllFields": "请填写所有信息",
+        "insufficientBalance": "交易余额不足",
+        "incorrectCode": "验证码不正确",
+        "withdrawalSuccess": "提现请求已发送",
+        "cancel": "取消"
+    },
+    "HeaderMenuDropdown": {
+        "products": "产品",
+        "services": "服务",
+        "support": "支持",
+        "share": "分享",
+        "favoriteStore": "收藏店铺",
+        "Contact": "联系",
+        "2Fa": "2FA",
+        "FAQs": "FAQs",
+        "Email": "电子邮件",
+        "Software": "软件",
+        "Account": "账户",
+        "Other": "其他",
+        "Increase Interaction": "增加互动",
+        "Software Service": "软件服务",
+        "Blockchain": "区块链",
+        "Other Services": "其他服务",
+        "seller": "卖家",
+        "register seller": "注册卖家"
+    },
+    "BecomeSeller": {
+        "title": "成为卖家",
+        "description": "加入我们的平台，开始销售您的产品或服务。",
+        "registerButton": "立即注册"
+    },
+    "auction": {
+        "startauction": "开始时间：",
+        "endauction": "结束时间：",
+        "prepareauction": "拍卖正在进行中:",
+        "roonwaiting": "拍卖等候室",
+        "currentWaiting": "当前等待拍卖位置：",
+        "waitingTime": "拍卖将于："
+    },
+    "buttons": {
+        "submit": "提交",
+        "cancel": "取消",
+        "save": "保存",
+        "close": "关闭",
+        "continue": "继续",
+        "back": "返回",
+        "edit": "编辑"
+    },
+    "common": {
+        "buttons": {
+            "submit": "提交",
+            "cancel": "取消",
+            "save": "保存",
+            "close": "关闭",
+            "continue": "继续",
+            "back": "返回"
+        },
+        "statuses": {
+            "loading": "加载中...",
+            "success": "成功",
+            "error": "错误",
+            "warning": "警告"
+        }
+    },
+    "auth": {
+        "login": "登录",
+        "register": "注册",
+        "forgotPassword": "忘记密码",
+        "resetPassword": "重置密码",
+        "logout": "退出登录"
+    },
+    "navigation": {
+        "home": "首页",
+        "profile": "个人资料",
+        "settings": "设置",
+        "chat": "聊天"
+    },
+    "errors": {
+        "required": "此字段为必填项",
+        "invalidEmail": "邮箱地址无效",
+        "passwordMismatch": "密码不匹配",
+        "serverError": "服务器错误",
+        "orderFailed": "创建订单失败。请重试。",
+        "serviceFailed": "创建服务订单失败。请重试。",
+        "submitFailed": "提交订单失败。请重试。",
+        "ownProduct": "您不能购买自己的商品",
+        "noProduct": "未选择商品！",
+        "resellerDuplicate": "每个店铺只能注册一次分销商",
+        "resellerFailed": "提交请求失败。请重试。",
+        "noPreOrder": "此店铺不接受预订",
+        "futureDate": "请选择将来的日期",
+        "notEnoughBalance": "您的余额不足以支付此订单"
+    },
+    "success": {
+        "resellerRegistered": "分销商注册成功"
+    },
+    "product": {
+        "details": {
+            "stock": "库存",
+            "sold": "已售",
+            "product": "商品",
+            "warehouse": "仓库",
+            "quantity": "数量",
+            "price": "商品价格",
+            "totalPayment": "总付款",
+            "discount": "折扣",
+            "productDescription": "商品描述",
+            "noDescription": "暂无描述",
+            "seeMore": "查看更多",
+            "hide": "收起",
+            "reviews": "评价",
+            "noReviews": "暂无评价",
+            "preOrder": "预订",
+            "buyNow": "立即购买",
+            "selectDate": "请选择预计完成日期",
+            "placeOrder": "下单",
+            "quantityExceedsStock": "数量超过库存！",
+            "notDuplicate": "非重复",
+            "stockCount": "{count} 件商品",
+            "orderConfirmation": "订单确认",
+            "preOrderConfirmation": "预订确认",
+            "completionDate": "完成日期",
+            "selectCompletionDate": "请选择预计完成日期",
+            "productList": "商品列表",
+            "classify": "Классифицировать"
+        }
+    },
+    "store": {
+        "details": {
+            "favoriteStores": "收藏店铺",
+            "noFavoriteStores": "暂无收藏店铺",
+            "storeInformation": "店铺信息",
+            "online": "在线",
+            "lastSeen": "{time}前在线",
+            "level": "等级 {level}",
+            "registrationDate": "注册日期",
+            "purchased": "{count} 件商品",
+            "stores": "店铺",
+            "sold": "{count} 件商品",
+            "posts": "{count} 篇帖子",
+            "contact": "联系",
+            "connectWith": "联系 {username}"
+        },
+        "status": {
+            "active": "活跃",
+            "inactive": "不活跃"
+        },
+        "sponsor": "赞助商"
+    },
+    "seller": {
+        "title": "卖家控制台",
+        "nav": {
+            "title": "卖家账户",
+            "dashboard": "控制面板",
+            "productOrders": "商品订单",
+            "serviceOrders": "服务订单",
+            "pre-orders": "预订单",
+            "store-management": "店铺管理",
+            "reseller-list": "分销商列表",
+            "top-stores": "顶级店铺",
+            "reviews": "评价",
+            "complaint": "投诉",
+            "discount-codes": "优惠码",
+            "logout": "退出登录"
+        },
+        "dashboard": {
+            "title": "仪表板",
+            "order-number": "订单数量",
+            "sales": "销售额",
+            "30-day-near": "近30天",
+            "download": "下载",
+            "business-month": "营业月份",
+            "increate": "增加",
+            "decreate": "减少",
+            "so-with-the-previous-month": "与上月相比",
+            "temborary-hold": "临时保留"
+        },
+        "store-management": {
+            "shop": "商店",
+            "add-new": "新增",
+            "note": "注意",
+            "require": "您最多只能创建5个商店",
+            "actions": "操作",
+            "type": "类型",
+            "duplicate": "重复",
+            "reseller": "经销商",
+            "pre-order": "预订",
+            "stock": "库存",
+            "status": "状态",
+            "editShop": "编辑店铺",
+            "addService": "添加服务",
+            "addProduct": "添加产品",
+            "warehouseManagement": "仓库管理",
+            "noTransactions": "未找到交易。"
+        },
+        "product-order": {
+            "product-order": "商品订单",
+            "enter-order-code": "输入订单编号",
+            "enter-buyer-name": "输入买家姓名",
+            "all": "全部",
+            "search-order": "搜索订单",
+            "order-code": "订单编号",
+            "Sale Date": "销售日期",
+            "buyer": "买家",
+            "store": "商店",
+            "item": "商品",
+            "Quantity": "数量",
+            "price": "价格",
+            "discount": "折扣",
+            "total": "总计",
+            "refund": "退款",
+            "reseller": "经销商",
+            "platform": "平台",
+            "status": "状态",
+            "no-orders": "未找到订单"
+        },
+        "service-orders": {
+            "all": "全部",
+            "title": "服务订单",
+            "enter-order-code": "输入订单编号",
+            "search-orders": "搜索订单",
+            "no-orders": "未找到服务订单。当客户下单时，订单将显示在这里。",
+            "table": {
+                "action": "操作",
+                "orderCode": "订单编号",
+                "saleDate": "销售日期",
+                "buyer": "买家",
+                "store": "店铺",
+                "item": "商品",
+                "quantity": "数量",
+                "price": "价格",
+                "discounted": "已优惠",
+                "total": "总计",
+                "refund": "退款",
+                "reseller": "分销商",
+                "platform": "平台",
+                "status": "状态"
+            },
+            "actions": {
+                "acceptOrder": "查看",
+                "cancelOrder": "取消订单"
+            }
+        },
+        "pre-orders": {
+            "title": "预购订单",
+            "enter-order-code": "输入订单编号",
+            "search-orders": "搜索订单",
+            "no-orders": "未找到预购订单。当客户下单时，订单将显示在这里。"
+        },
+        "complaints": {
+            "all": "全部",
+            "title": "投诉订单",
+            "enter-order-code": "输入订单编号",
+            "enter-buyer-name": "输入买家姓名",
+            "search-complaints": "搜索投诉",
+            "chat-with": "与 {username} 聊天",
+            "date-complaint": "投诉日期",
+            "content": "内容",
+            "image": "图片",
+            "table": {
+                "chat": "聊天",
+                "dateComplaint": "投诉日期",
+                "image": "图片",
+                "content": "内容",
+                "code": "编号",
+                "store": "店铺",
+                "buyer": "买家",
+                "quantity": "数量",
+                "total": "总计",
+                "status": "状态"
+            }
+        },
+        "reseller-list": {
+            "title": "分销商管理",
+            "table": {
+                "action": "操作",
+                "store": "店铺",
+                "resellerName": "分销商名称",
+                "commissionRate": "佣金比例",
+                "requestDate": "申请日期",
+                "introduction": "介绍",
+                "status": "状态"
+            },
+            "actions": {
+                "accept": "接受",
+                "cancel": "取消",
+                "seeMore": "查看更多"
+            },
+            "modal": {
+                "introduction": "介绍",
+                "processing": "处理中...",
+                "approveSuccess": "分销商审核通过！",
+                "approveError": "分销商审核失败，请重试。",
+                "rejectSuccess": "分销商拒绝成功！",
+                "rejectError": "分销商拒绝失败，请重试。"
+            }
+        },
+        "reviews": {
+            "title": "回复",
+            "table": {
+                "orderCode": "订单编号",
+                "store": "店铺",
+                "creationDate": "创建日期",
+                "comment": "评论",
+                "reply": "回复",
+                "rating": "评分",
+                "viewComment": "查看评论"
+            },
+            "noReviews": "未找到评价。",
+            "error": "错误：{message}"
+        },
+        "discount-codes": {
+            "title": "优惠码",
+            "addNew": "新增 +",
+            "table": {
+                "actions": "操作",
+                "no": "序号",
+                "code": "优惠码",
+                "store": "商店",
+                "start": "开始时间",
+                "end": "结束时间",
+                "rate": "折扣率",
+                "maxDiscount": "最大折扣",
+                "amount": "折扣金额",
+                "usage": "使用次数",
+                "status": "状态"
+            },
+            "noData": "未找到优惠码。",
+            "modal": {
+                "title": "添加新优惠码"
+            },
+            "status": {
+                "active": "启用",
+                "inactive": "停用"
+            }
+        }
+    },
+    "custom-dropdown": {
+        "all": "全部",
+        "pending": "待处理",
+        "successed": "已完成",
+        "refunded": "已退款",
+        "cancelled": "已取消",
+        "refund": "退款"
+    },
+    "review": {
+        "title": "评价",
+        "response": "回复",
+        "noDate": "无日期",
+        "noReview": "暂无评价内容",
+        "loading": {
+            "userInfo": "正在加载用户信息...",
+            "review": "正在加载评价..."
+        },
+        "error": "错误：{message}",
+        "notFound": "未找到评价"
+    },
+    "2fa": {
+        "title": "验证器 - 从2FA字符串获取代码",
+        "publicKey": "公钥",
+        "publicKeyPlaceholder": "输入您的2FA字符串",
+        "confirm": "确认",
+        "loginCode": "您的登录代码：",
+        "timeRemaining": "剩余时间：",
+        "description": {
+            "line1": "• Authenticator是一个生成2FA代码的应用程序（每30秒更改一次的6个随机数字），即使其他人知道您的密码，也只有您才能登录您的帐户。",
+            "line2": "• 登录时，您需要使用2FA验证两个因素，您必须使用Authenticator获取登录代码。",
+            "line3": "• MMO Grocery上的商店销售的产品通常带有2FA，使用此应用程序获取登录代码。"
+        },
+        "saveString": {
+            "title": "保存此字符串",
+            "reminderName": "提醒名称",
+            "reminderPlaceholder": "输入您的提醒名称",
+            "cancel": "取消",
+            "save": "保存",
+            "note": "*注意：此功能将保存在您的浏览器中，如果您更改浏览器或删除cookie，它将丢失。"
+        },
+        "savedList": {
+            "title": "已保存的代码字符串列表",
+            "operation": "操作",
+            "reminderName": "提醒名称",
+            "currentCode": "当前代码",
+            "delete": "删除",
+            "noData": "暂无数据"
+        }
+    },
+    "faqs": {
+        "title": "常见问题",
+        "subtitle": "查找有关我们平台的常见问题解答",
+        "categories": {
+            "buyer": "买家指南",
+            "seller": "卖家指南",
+            "reseller": "分销商指南"
+        },
+        "buyer": {
+            "howToBuy": {
+                "question": "如何购买商品？",
+                "answer": "先充值到您的账户，然后使用余额支付订单。请注意，充值和发货过程是完全自动化的，因此系统处理可能需要一些时间。"
+            },
+            "nonDuplicateEmail": {
+                "question": "什么是非重复邮箱？",
+                "answer": "批量购买账户存在风险，特别是当不诚信的卖家可能将同一账户出售给多人时。我们的网站有账户重复检查机制（保证不会重复销售），以防止此类风险，并确保您购买的账户从未在我们的系统中出售给其他人。"
+            },
+            "howToAddMoney": {
+                "question": "如何充值？",
+                "answer": "在菜单中选择\"充值\"选项，然后按照说明操作。如果交易信息正确，资金将自动添加到您的账户。您可以发送任意金额（从1个单位开始）。"
+            },
+            "wrongTransfer": {
+                "question": "如果转错钱怎么办？",
+                "answer": "我们经常遇到这种情况，所以充值时请仔细检查。如果转错金额，请立即通过Facebook联系我们。我们将核实并退款。注意：为避免ABC诈骗，退款只退还给原始发送者。"
+            },
+            "intermediary": {
+                "question": "我需要中介吗？",
+                "answer": "卖家资金保留3天的政策意味着taphoammo已经作为安全交易的中介。请注意，我们只支持通过网站直接进行的交易，以确保您的安全并防止社交媒体上常见的诈骗。希望您考虑这个更安全的选择。"
+            }
+        },
+        "seller": {
+            "registerToSell": {
+                "question": "如何注册成为卖家？",
+                "answer": "请先登录，然后选择\"注册卖家\"并填写必要的验证信息。获得批准后，您就可以在平台上开始销售了。"
+            },
+            "createStore": {
+                "question": "如何创建店铺？",
+                "answer": "首先注册成为卖家，然后进入\"店铺管理\"部分创建新店铺。确保选择正确的商品类别。"
+            },
+            "optimizeStore": {
+                "question": "如何优化店铺？",
+                "answer": "从投资店铺形象、搜索关键词、清晰的标题和描述开始。然后，制定长期计划以确保产品质量。我们将帮助优化您的店铺，使其在社交媒体广告中最具吸引力。此外，店铺排名将根据您的销售业绩每周更新。"
+            },
+            "topPage": {
+                "question": "如何让店铺出现在页面顶部？",
+                "answer": "这完全取决于您的销售业绩和客户评价。排名每周更新。"
+            },
+            "salesRevenue": {
+                "question": "销售收入如何处理？",
+                "answer": "对于每个成功的订单，金额将在\"处理中\"状态保持3天。如果买家没有争议，您可以在此期间后立即提取金额。请参考平台的提现限额。"
+            },
+            "prohibitedItems": {
+                "question": "哪些商品被禁止？",
+                "answer": "平台上的禁止商品列表会持续更新。请注意这些更新，特别是与身份盗窃相关的商品，如通过非法活动获取的银行账户、Facebook账户和被黑的电子邮件账户，以及与政治或宗教相关的活动。"
+            },
+            "discount": {
+                "question": "订单折扣如何应用？",
+                "answer": "我们对每个成功的订单应用折扣，希望您理解这是共同发展关系的一部分。此外，分销商计划是增加销售的一个选择，但请记住，您必须为您的分销商提供折扣。"
+            },
+            "withdrawMoney": {
+                "question": "如何提现？",
+                "answer": "对于已批准的余额，您可以选择提现选项将资金转入您的账户。"
+            },
+            "buildTrust": {
+                "question": "如何在您的平台上为我的产品建立信任？",
+                "answer": "您还有另一个选择，就是为您的产品创建私有服务器并为我们的平台提供API。我们的技术团队将协调整合两个系统。但是，为了长期发展，您可以考虑建立信任的选项。"
+            },
+            "productExchange": {
+                "question": "如何处理客户的商品更换？",
+                "answer": "如果客户订单中有缺陷商品，请进入已售订单部分，选择维修选项，然后选择\"维修操作\"->输入需要维修的商品数量。系统将根据所需商品数量自动创建折扣码并发送给客户。"
+            }
+        },
+        "reseller": {
+            "becomeReseller": {
+                "question": "如何成为分销商？",
+                "answer": "已成功注册并更新个人信息（姓名、社交媒体账户、银行账户-用于提现等）的会员可以成为该平台的分销商。"
+            },
+            "startSelling": {
+                "question": "如何开始销售？",
+                "answer": "浏览店铺列表。允许分销的店铺会有分销商按钮。您应该主动与店主协商折扣率，并记得使用您的推荐链接。"
+            },
+            "withdrawRevenue": {
+                "question": "我可以提取销售收入吗？",
+                "answer": "是的。与卖家类似，每个订单的佣金将在平台上保留3天。在此期间后，如果订单没有争议，您可以申请提现。"
+            },
+            "additionalRewards": {
+                "question": "我能获得额外奖励吗？",
+                "answer": "是的。每月根据您的销售收入，如果您的收入达到某个阈值，我们将奖励额外的百分比。"
+            }
+        }
+    },
+    "contact": {
+        "title": "联系支持",
+        "faq": "常见问题解答",
+        "socialLinks": {
+            "facebook": "EbayMMO",
+            "telegram": "与客服聊天",
+            "email": "support@ebaymmo.com",
+            "workingHours": "周一至周六 08:00 - 22:00"
+        },
+        "supportMessage": "我们的支持团队将尽快解决您的投诉和问题。",
+        "form": {
+            "contactInfo": "联系信息",
+            "email": {
+                "label": "电子邮箱",
+                "placeholder": "请输入您的电子邮箱"
+            },
+            "phone": {
+                "label": "电话号码",
+                "placeholder": "请输入您的电话号码"
+            },
+            "consultationNeed": {
+                "title": "咨询需求",
+                "label": "咨询需求",
+                "placeholder": "请选择咨询需求",
+                "options": {
+                    "default": "请选择咨询需求",
+                    "option1": "选择咨询需求 1",
+                    "option2": "选择咨询需求 2",
+                    "option3": "选择咨询需求 3"
+                }
+            },
+            "content": {
+                "label": "内容",
+                "placeholder": "请输入具体咨询需求"
+            },
+            "submit": "发送问题",
+            "sending": "发送中..."
+        },
+        "validation": {
+            "email": {
+                "required": "请输入电子邮箱",
+                "invalid": "电子邮箱格式无效"
+            },
+            "phone": {
+                "required": "请输入电话号码",
+                "invalid": "电话号码格式无效",
+                "minLength": "电话号码至少需要10位数字",
+                "maxLength": "电话号码不能超过15位数字"
+            },
+            "need": {
+                "required": "请选择咨询需求"
+            },
+            "content": {
+                "required": "请输入内容",
+                "minLength": "内容至少需要10个字符"
+            }
+        },
+        "messages": {
+            "success": "联系信息发送成功！",
+            "error": "联系信息发送失败！"
+        }
+    },
+    "banner": {
+        "title": "充值更多资金以拥有最好的产品！",
+        "register": "注册销售"
+    },
+    "privacyPolicy": {
+        "title": "隐私政策",
+        "lastUpdated": "最后更新：2024年3月6日",
+        "introduction": {
+            "title": "1. 介绍",
+            "content": "欢迎来到EbayMMO。我们尊重您的隐私并致力于保护您的个人数据。本隐私政策将告知您我们如何保护您访问我们网站时的个人数据，并告诉您您的隐私权利以及法律如何保护您。"
+        },
+        "informationCollection": {
+            "title": "2. 我们收集的信息",
+            "content": "我们可能会收集、使用、存储和传输关于您的不同类型的个人数据，我们将其分组如下：",
+            "identityData": "身份数据包括名字、姓氏、用户名或类似标识符。",
+            "contactData": "联系数据包括电子邮件地址和电话号码。",
+            "financialData": "财务数据包括支付信息和交易历史。",
+            "technicalData": "技术数据包括互联网协议(IP)地址、浏览器类型和版本、时区设置和位置、浏览器插件类型和版本、操作系统和平台，以及您用于访问本网站的设备上的其他技术。",
+            "usageData": "使用数据包括有关您如何使用我们的网站、产品和服务的信息。"
+        },
+        "informationUsage": {
+            "title": "3. 我们如何使用您的信息",
+            "content": "我们只会在法律允许的情况下使用您的个人数据。最常见的情况是，我们会在以下情况下使用您的个人数据：",
+            "points": [
+                "将您注册为新客户或卖家。",
+                "处理和交付您的订单。",
+                "管理与您的关系。",
+                "使您能够参与我们服务的功能。",
+                "管理和保护我们的业务和本网站。",
+                "向您提供相关的网站内容和广告。",
+                "使用数据分析来改进我们的网站、产品/服务、营销、客户关系和体验。"
+            ]
+        },
+        "dataSecurity": {
+            "title": "4. 数据安全",
+            "content": "我们已经实施了适当的安全措施，以防止您的个人数据意外丢失、被未经授权使用或访问、被更改或披露。此外，我们将对您个人数据的访问限制在那些有业务需要知道的员工、代理、承包商和其他第三方。"
+        },
+        "dataRetention": {
+            "title": "5. 数据保留",
+            "content": "我们只会在实现收集目的所需的时间内保留您的个人数据，包括为了满足任何法律、会计或报告要求。"
+        },
+        "legalRights": {
+            "title": "6. 您的法律权利",
+            "content": "在某些情况下，您对您的个人数据拥有数据保护法规定的权利，包括以下权利：",
+            "points": [
+                "请求访问您的个人数据。",
+                "请求更正您的个人数据。",
+                "请求删除您的个人数据。",
+                "反对处理您的个人数据。",
+                "请求限制处理您的个人数据。",
+                "请求转移您的个人数据。",
+                "撤回同意的权利。"
+            ]
+        },
+        "cookies": {
+            "title": "7. Cookie",
+            "content": "我们使用cookie和类似的跟踪技术来跟踪我们服务上的活动并保存某些信息。Cookie是包含少量数据的文件，可能包含一个匿名的唯一标识符。"
+        },
+        "changes": {
+            "title": "8. 本隐私政策的变更",
+            "content": "我们可能会不时更新我们的隐私政策。我们将通过在此页面上发布新的隐私政策并更新本隐私政策顶部的'最后更新'日期来通知您任何变更。"
+        },
+        "contact": {
+            "title": "9. 联系我们",
+            "content": "如果您对本隐私政策有任何疑问，请联系我们：",
+            "address": "地址：越南北江省安勇县南边镇南山-安卢工业区",
+            "hotline": "热线：0396 112 998",
+            "email": "邮箱：support@ebaymmo.com"
+        }
+    },
+    "terms": {
+        "title": "使用条款",
+        "lastUpdated": "最后更新：2024年5月28日",
+        "faqLink": "如需了解更多问题，请访问",
+        "faqText": "常见问题",
+        "prohibitedItems": {
+            "title": "1. 网站上禁止（限制）的物品",
+            "content": "每次销售产品时，卖家有责任确保自己的商品符合现行法律法规，且不违反EbayMMO的使用条款和政策。请参考以下关于禁止/限制物品清单的说明。该清单可能根据实际情况变化，请定期更新以确保您的产品安全。以下是受限制（禁止）物品清单：",
+            "items": [
+                "银行卡（信用卡和借记卡...）：所有国内和国际银行卡、银行账户、用于创建虚拟卡的账户...",
+                "个人信息：用户的个人信息，如真实姓名、个人证件、电子账户和社交媒体账户，通过黑客、欺诈等方式获取的。",
+                "通过使用他人账户获得的产品：VPS、密钥等，通过盗窃或其他非法活动获得的。",
+                "请尊重EbayMMO原创程序员的辛苦付出。",
+                "所有网络的SIM卡（电话）号码，真实号码，虚拟号码。",
+                "违反法律的数字文档、电子书。"
+            ]
+        },
+        "sellingRules": {
+            "title": "2. 产品销售规则 - (针对店主)",
+            "rules": [
+                "不使用粗俗语言，制造敌意或影响其他商店。",
+                "不发布个人信息或任何ebaymmo.com以外的联系方式。",
+                "不使用侮辱性、制造敌意或影响组织个人的图片。",
+                "未经许可不使用名人图片。",
+                "如果您在3天内未处理订单退款，我们将代您处理退款。",
+                "使用平台上的直接保修功能，绝对不要通过任何其他渠道进行保修。"
+            ]
+        },
+        "generalRules": {
+            "title": "3. 所有用户的通用规则",
+            "rules": [
+                "不以任何形式使用漏洞。",
+                "不采取任何可能损害网站、商店或其他用户的行动。"
+            ]
+        },
+        "violations": {
+            "title": "4. 违反条款",
+            "content": "违反MMO杂货店的条款可能导致以下至少一项处罚：",
+            "penalties": [
+                "删除商店",
+                "限制账户",
+                "暂停或删除账户",
+                "要求赔偿损失"
+            ],
+            "shopOwnerPenalties": {
+                "title": "对于店主：每次违规都会受到处罚。处罚将逐步加重。",
+                "penalties": [
+                    "第1次：警告。",
+                    "第2次：警告。",
+                    "第3次：所有商店增加5%费用。",
+                    "第4次：继续增加5%费用。",
+                    "第5次：关闭所有商店并终止合作。"
+                ]
+            }
+        },
+        "contact": {
+            "title": "联系方式",
+            "content": "如果您对这些使用条款有任何疑问，请联系我们：",
+            "address": "地址：越南北江省安勇县南边镇南山工业区",
+            "hotline": "热线：0396 112 998",
+            "email": "邮箱：support@ebaymmo.com"
+        }
+    },
+
+    "sponsor": "赞助商",
+
+    "footer": {
+        "contactInformation": "联系信息",
+        "address": "地址",
+        "hotline": "热线",
+        "taxCode": "税码",
+        "email": "电子邮件",
+        "support": "支持",
+        "policy": "政策",
+        "terms of use": "使用条款",
+        "FAQs": "FAQs"
+    },
+
+    "FeatureSection": {
+        "title": "SHOP3提供的功能",
+        "feature1": {
+            "title": "检查重复产品",
+            "description": "整个商店承诺不销售重复商品。我们的系统将逐一检查每件产品，以确保交付给用户的产品从未在网站上销售给其他人，而且您购买的产品不能出售给其他人。"
+        },
+        "feature2": {
+            "title": "存款和自动付款",
+            "description": "您只需使用正确的语法充值，您的余额将在1-5分钟内更新。所有支付和交付步骤都立即完成。"
+        },
+        "feature3": {
+            "title": "订单保留3天",
+            "description": "购买后，订单将保持保留状态3天，有足够的时间让您检查和更改产品密码。如果有任何问题，请快速使用\"投诉\"功能。"
+        },
+        "feature4": {
+            "title": "合作伙伴功能",
+            "description": "请在\"常见问题解答-FAQ\"部分阅读更多内容。"
+        },
+        "slogan": {
+            "title": "一个诞生的产品，旨在使数字产品交易更加便捷和安全。",
+            "description": "在Taphoammo，您将获得更加安全的购物体验，我们将持有卖家的资金3天，检查所有售出的产品是否与其他产品相同，旨在创建一个用户可以信任的交易场所，一个卖家可以放心存放库存并公平竞争的网站。"
+        }
+    },
+    "categorysection": {
+        "category": "分类列表",
+        "store": "店铺列表",
+        "service": "服务列表",
+        "seemore": "查看更多"
+    },
+    "contactSection": {
+        "title": "联系支持",
+        "faq": "常见问题",
+        "social": {
+            "facebook": "EbayMMO",
+            "telegram": "与支持人员聊天",
+            "email": "support@ebaymmo.vn",
+            "workingHours": "周一至周六 08:00 - 22:00"
+        },
+        "supportMessage": "我们的支持团队将尽最大努力尽快处理您的投诉和问题。",
+        "contactInfo": "联系信息",
+        "emailLabel": "电子邮件",
+        "emailPlaceholder": "输入您的电子邮件",
+        "phoneLabel": "电话号码",
+        "phonePlaceholder": "输入您的电话号码",
+        "consultationNeed": "咨询需求",
+        "selectConsultation": "请选择咨询需求",
+        "option1": "选择咨询需求1",
+        "option2": "选择咨询需求2",
+        "option3": "选择咨询需求3",
+        "contentLabel": "内容",
+        "contentPlaceholder": "输入具体咨询需求",
+        "sendButton": "发送问题",
+        "sendingButton": "发送中..."
+    },
+    "warehouse": {
+        "title": "仓库管理",
+        "listProduct": "商品列表",
+        "productName": "商品名称",
+        "serviceName": "服务名称",
+        "status": "状态",
+        "action": "操作",
+        "addItem": "添加项目",
+        "deleteProduct": "删除商品",
+        "deleteService": "删除服务",
+        "confirmDelete": "确认删除",
+        "deleteConfirmation": "您确定要删除 \"{name}\" 吗？",
+        "delete": "删除",
+        "editProduct": "编辑商品",
+        "editService": "编辑服务",
+        "priceUsdt": "价格 (USDT)",
+        "priceRange": "价格必须在 0 到 1,000,000 USDT 之间",
+        "priceNegativeError": "价格不能为负数",
+        "priceExceedsLimitError": "价格不能超过 1,000,000 USDT",
+        "statusUpdateSuccess": "商品状态更新成功",
+        "statusUpdateError": "商品状态更新失败",
+        "productUpdateSuccess": "商品更新成功",
+        "serviceUpdateSuccess": "服务更新成功",
+        "productUpdateError": "商品更新失败",
+        "serviceUpdateError": "服务更新失败"
+    },
+    "popupAddProduct": {
+        "title": "添加产品",
+        "upload": {
+            "uploadFile": "上传文件",
+            "apiServer": "API服务器",
+            "dragDrop": "点击选择文件，或将文件拖放到此处",
+            "uploadFileTxt": "上传文件 (txt)",
+            "note": "注意：每个上传的行将是一个产品。每行的结构：",
+            "email": "电子邮件：username@gmail.com|password|.....",
+            "software": "软件：xxx....",
+            "account": "账户：username|password 和(或)其他内容",
+            "other": "其他：xxx...."
+        },
+        "table": {
+            "latestUploaded": "最新上传的文件",
+            "productName": "产品名称",
+            "fileName": "文件名",
+            "uploadDate": "上传日期",
+            "result": "结果",
+            "status": "状态",
+            "loading": "加载中...",
+            "errorLoadingData": "加载数据错误",
+            "noUploadsFound": "未找到上传",
+            "serialNumber": "序列号",
+            "product": "产品",
+            "createDate": "创建日期",
+            "saleDate": "销售日期"
+        },
+        "pagination": {
+            "previous": "上一页",
+            "next": "下一页"
+        },
+        "buttons": {
+            "deleteAll": "全部删除",
+            "deleting": "删除中...",
+            "downloadUnsold": "下载未售出产品",
+            "downloading": "下载中...",
+            "save": "保存"
+        },
+        "uploading": "上传中... {progress}%"
+    },
+    "popupAddWarehouse": {
+        "addProduct": "添加产品",
+        "addService": "添加服务",
+        "addNew": "添加新",
+        "store": "商店：",
+        "priceInvalid": "价格无效",
+        "priceGreaterThanZero": "价格必须大于0",
+        "priceTooHigh": "价格不能超过100,000",
+        "usePrivateWarehouse": "使用私有仓库",
+        "privateWarehouseNote": "(此设置要求您拥有自己的仓库服务器和API，以便向平台提供产品)",
+        "productName": "产品名称",
+        "serviceName": "服务名称",
+        "enterProductName": "输入产品名称",
+        "enterServiceName": "输入服务名称",
+        "price": "价格",
+        "enterPrice": "输入价格",
+        "productStatus": "产品状态",
+        "success": "产品添加成功",
+        "error": "添加产品失败: "
+    },
+    "popupReseller": {
+        "title": "分销商计划",
+        "becomeReseller": "成为分销商",
+        "description": "加入该店铺的分销商计划，从您销售的每笔订单的折扣金额中获得一定比例的收入。注意：一旦客户通过您的推荐链接访问，他们之后的所有订单都将自动与您的账户关联。",
+        "discountTitle": "设置您期望的折扣百分比",
+        "discountPlaceholder": "指定折扣百分比（最高35%）",
+        "detailsTitle": "附加详情",
+        "detailsPlaceholder": "提供关于您的折扣偏好的任何具体要求或说明。",
+        "submitButton": "提交请求"
+    },
+    "complainOrder": {
+        "title": "订单投诉",
+        "addImages": "添加投诉图片",
+        "optional": "（可选）",
+        "imageDescription": "添加图片以支持您的投诉。您最多可以添加7张图片",
+        "complainImage": "投诉图片",
+        "imageUpload": "上传图片",
+        "describeComplaint": "描述您对订单的投诉",
+        "textareaPlaceholder": "写下您的投诉详情",
+        "sendButton": "发送",
+        "submitting": "正在提交您的投诉...",
+        "submitSuccess": "您的投诉已成功提交",
+        "submitError": "提交投诉失败。请重试。",
+        "fileTypeError": "只允许JPEG、PNG、GIF、MP4、MOV或AVI文件"
+    },
+    "viewComplainModal": {
+        "title": "订单投诉详情",
+        "loadError": "加载投诉详情失败。请重试。",
+        "cancellingComplaint": "正在取消投诉...",
+        "cancelSuccess": "投诉已成功取消",
+        "cancelError": "取消投诉失败。请重试。",
+        "updatingStatus": "正在更新投诉状态...",
+        "disputeSuccess": "投诉状态已更新为争议",
+        "updateError": "更新投诉状态失败。请重试。",
+        "complaintInformation": "投诉信息",
+        "complaintDate": "投诉日期",
+        "complaintStatus": "投诉状态",
+        "complaintDetails": "投诉详情",
+        "noContent": "未提供内容",
+        "attachedImage": "附加图片",
+        "complainImage": "投诉图片",
+        "cancelButton": "取消投诉",
+        "disputeButton": "提出争议",
+        "noComplaintFound": "未找到此订单的投诉信息。",
+        "statusCancelled": "已取消",
+        "statusResolved": "已解决",
+        "statusDispute": "争议中",
+        "statusPending": "待处理",
+        "orderDetails": "订单详情",
+        "orderCode": "订单编号",
+        "storeName": "店铺名称",
+        "quantity": "数量",
+        "totalAmount": "总金额"
+    },
+    "donateModal": {
+        "title": "支持作者",
+        "amount": "金额",
+        "amountPlaceholder": "最低5,000 USDT",
+        "comment": "评论",
+        "commentPlaceholder": "输入具体内容请求",
+        "donateButton": "捐赠"
+    },
+    "depositModal": {
+        "title": "扫描二维码充值",
+        "walletAddress": "您的USDT钱包地址",
+        "balance": "余额",
+        "networks": {
+            "bsc": "币安智能链",
+            "ethereum": "以太坊",
+            "arbitrum": "Arbitrum"
+        }
+    },
+    "addModalShop": {
+        "shopName": "店铺名称 *",
+        "enterShopName": "输入您的店铺名称",
+        "businessType": "业务类型 *",
+        "selectBusinessType": "选择业务类型",
+        "shopType": "店铺类型 *",
+        "selectShopType": "选择店铺类型",
+        "discountedProductType": "折扣产品类型",
+        "selectDiscountedProductType": "选择折扣产品类型",
+        "refundRating": "退款率 (%) *",
+        "addRefundRating": "添加退款率",
+        "tag": "标签",
+        "selectTag": "选择标签",
+        "duplicateProduct": "重复产品",
+        "usePrivateStock": "使用私人库存",
+        "allowResellers": "允许分销商销售",
+        "allowPreOrder": "允许预订",
+        "shortDescription": "简短描述 *",
+        "enterShortDescription": "输入您的描述",
+        "detailedDescription": "详细描述 *",
+        "clickToUploadAvatar": "点击上传头像，或拖放",
+        "addNew": "添加新的",
+        "pleaseUploadImageFile": "请上传图片文件",
+        "fileSizeLessThan5MB": "文件大小必须小于5MB",
+        "imageDimensionsRequirement": "图片尺寸必须在 {minWidth}x{minHeight} 和 {maxWidth}x{maxHeight} 像素之间",
+        "shopNameRequired": "店铺名称为必填项",
+        "shopNameLengthError": "店铺名称必须少于 {maxLength} 个字符",
+        "businessTypeRequired": "业务类型为必填项",
+        "shopTypeRequired": "店铺类型为必填项",
+        "detailedDescriptionRequired": "详细描述为必填项",
+        "detailedDescriptionMinLength": "详细描述必须至少包含 {minLength} 个字符",
+        "refundRatingRequired": "退款率为必填项",
+        "refundRatingRange": "退款率必须在 {min} 和 {max} 之间",
+        "shortDescriptionRequired": "简短描述为必填项",
+        "shortDescriptionMinLength": "简短描述必须至少包含 {minLength} 个字符",
+        "shortDescriptionMaxLength": "简短描述必须少于 {maxLength} 个字符",
+        "shopAvatarRequired": "店铺头像为必填项",
+        "fillAllRequiredFields": "请正确填写所有必填字段",
+        "addStoreSuccess": "添加店铺成功",
+        "maxStore": "您只能创建最多5个店铺",
+        "addShop": "添加店铺"
+    },
+    "saleRegistration": {
+        "title": "合作机会",
+        "content": "我们为您提供各种机会加入我们并共同成长。请选择最适合您需求的选项，并向我们发送您的信息，以便我们与您联系。",
+        "storeInformation": "店铺信息",
+        "phoneNumber": "电话号码",
+        "enterPhoneNumber": "请输入您的电话号码",
+        "uploadIdCard": "上传您的身份证图片",
+        "uploadPortraitPhoto": "上传您的肖像照片",
+        "2faCode": "2FA 验证码",
+        "enter2faCode": "请输入2FA验证码",
+        "register": "注册",
+        "enable2fa": "启用双重认证",
+        "needEnable2fa": "您需要启用2FA才能注册成为卖家",
+        "2faProtection": "2FA有助于保护您的账户和交易",
+        "enableNow": "立即启用",
+        "validation": {
+            "phoneNumberRequired": "请输入您的电话号码",
+            "phoneNumberDigitsOnly": "电话号码只能包含数字",
+            "phoneNumberMinLength": "电话号码必须至少有10位数字",
+            "phoneNumberMaxLength": "电话号码不能超过11位数字"
+        },
+        "features": {
+            "secure": {
+                "title": "完全安全",
+                "description": "这些信息完全安全，我们将在必要时用它来联系您。"
+            },
+            "cooperate": {
+                "title": "合作 - 连接",
+                "description": "让我们连接并合作，共同发展在线赚钱社区。"
+            },
+            "support": {
+                "title": "支持团队",
+                "description": "我们的支持团队将与您联系，帮助优化您的销售业绩。"
+            },
+            "notifications": {
+                "title": "推送通知",
+                "description": "请前往账户信息(个人资料)部分，并将推送通知设置更新为Telegram，以免错过任何客户。"
+            },
+            "twoFactor": {
+                "title": "双重认证(2FA)",
+                "description": "这是注册成为卖家前的必要要求。请在您的个人资料中更新。"
+            }
+        }
+    },
+    "user": {
+        "title": "我的账户",
+        "nav": {
+            "title": "用户账户",
+            "account-management": "账户管理",
+            "address-balance": "地址余额",
+            "order-management": "订单管理",
+            "transaction-history": "交易历史",
+            "deposit-history": "存款历史",
+            "withdrawal-history": "提款历史",
+            "reseller-history": "经销商历史",
+            "favourite-store": "收藏店铺",
+            "content-management": "内容管理",
+            "favourite-post": "收藏帖子",
+            "logout": "退出登录"
+        },
+        "address-balance": {
+            "title": "余额管理",
+            "currentBalance": "当前余额: {balance} USDT",
+            "addWallet": "添加钱包",
+            "maxWallets": "您只能创建最多3个钱包",
+            "network": "网络",
+            "walletAddress": "钱包地址",
+            "createdAt": "创建日期",
+            "updatedAt": "更新日期",
+            "actions": "操作",
+            "viewMore": "查看更多",
+            "collapse": "折叠",
+            "edit": "编辑",
+            "editWallet": "编辑钱包地址",
+            "addNewWallet": "添加新的钱包地址",
+            "selectNetwork": "选择网络",
+            "enterWalletAddress": "输入钱包地址",
+            "enter2FACode": "输入2FA代码",
+            "saveChanges": "保存更改",
+            "addAddress": "添加地址",
+            "errors": {
+                "loginRequired": "请重新登录",
+                "fillAllFields": "请填写所有信息",
+                "incorrect2FA": "2FA验证码不正确",
+                "updateFailed": "钱包更新失败",
+                "addFailed": "添加钱包失败",
+                "maxWalletsReached": "您最多只能创建3个钱包",
+                "emptyAddress": "钱包地址不能为空",
+                "invalidAddressFormat": "钱包地址格式无效。请输入有效的BSC地址",
+                "duplicateAddress": "该钱包地址已存在"
+            },
+            "success": {
+                "walletUpdated": "钱包已更新",
+                "walletAdded": "钱包已添加"
+            },
+            "2FAWarning": {
+                "title": "启用双重认证",
+                "description": "您需要启用双重认证才能管理您的钱包",
+                "enableNow": "立即启用"
+            }
+        },
+        "account-management": {
+            "title": "账户管理",
+            "api-purchase": {
+                "title": "API购买",
+                "enabled": "已启用",
+                "not-enabled": "未启用",
+                "hint": "(启用API购买以使用此功能)"
+            },
+            "login-history": {
+                "title": "登录历史",
+                "ip": "IP",
+                "device": "设备"
+            },
+            "profile": {
+                "title": "账户信息",
+                "avatar": "头像",
+                "uploading": "上传中...",
+                "preview": "预览",
+                "upload": "上传",
+                "choose-picture": "选择头像",
+                "save": "保存",
+                "points": "积分等级",
+                "level": "等级 {level}",
+                "points-to-next": "{points} 积分升级到 {nextLevel}",
+                "account": "账户",
+                "kyc-verified": "KYC已验证",
+                "kyc-unverified": "KYC未验证",
+                "username": "用户名",
+                "fullName": "全名",
+                "fullNamePlaceholder": "输入您的全名",
+                "email": "电子邮件",
+                "password": "密码",
+                "passwordPlaceholder": "输入新密码",
+                "registration-date": "注册日期",
+                "editableField": {
+                    "oldPassword": "旧密码",
+                    "oldPasswordPlaceholder": "请输入旧密码",
+                    "newPassword": "新密码",
+                    "newPasswordPlaceholder": "请输入新密码",
+                    "confirmPassword": "确认密码",
+                    "confirmPasswordPlaceholder": "请再次输入新密码",
+                    "passwordMismatch": "两次输入的密码不一致",
+                    "passwordTooShort": "密码长度必须至少为8个字符",
+                    "passwordNeedsUppercase": "密码必须包含至少一个大写字母",
+                    "passwordNeedsNumber": "密码必须包含至少一个数字",
+                    "passwordNeedsSpecial": "密码必须包含至少一个特殊字符",
+                    "cancel": "取消",
+                    "confirm": "确认",
+                    "noValue": "没有{field}"
+                },
+                "fileTypeError": "只允许JPEG、PNG、GIF、MP4、MOV或AVI文件"
+            },
+            "telegram": {
+                "title": "连接Telegram",
+                "connected": "已连接",
+                "not-connected": "未连接",
+                "hint": "(立即连接Telegram)",
+                "success": "成功连接到Telegram！{name}",
+                "success-no-name": "成功连接到Telegram！"
+            },
+            "2fa": {
+                "title": "双重认证",
+                "hint": "(使用双重认证保护您的账户)",
+                "qr-code": "二维码",
+                "scan-instruction": "使用手机上的Google Authenticator应用扫描此代码",
+                "or": "或",
+                "secret-key": "使用此密钥在认证应用中配置",
+                "copy": "复制",
+                "note": "注意：",
+                "save-code": "保存此代码，如果丢失将无法登录。",
+                "get-otp": "获取OTP登录",
+                "enter-otp": "输入6位OTP",
+                "otp-placeholder": "输入OTP",
+                "verifying": "验证中...",
+                "confirm": "确认",
+                "save-reminder": "请保存此代码，如果丢失将无法登录。",
+                "enabled": "已启用",
+                "not-enabled": "未启用"
+            },
+            "stats": {
+                "purchased": "已购买",
+                "number-of-stores": "店铺数量",
+                "sold": "已售出",
+                "number-of-posts": "帖子数量",
+                "products": "产品",
+                "stores": "店铺",
+                "posts": "帖子",
+                "orders": "订单"
+            }
+        }
+    },
+    "order-management": {
+        "title": "订单管理",
+        "header": {
+            "title": "订单管理",
+            "searchPlaceholder": "您想找什么？",
+            "filter": {
+                "all": "全部",
+                "orderCode": "订单编号",
+                "seller": "卖家"
+            }
+        },
+        "table": {
+            "action": "操作",
+            "orderCode": "订单编号",
+            "orderDate": "订单日期",
+            "seller": "卖家",
+            "productName": "产品名称",
+            "quantity": "数量",
+            "price": "价格",
+            "reduce": "折扣",
+            "completedDate": "完成日期",
+            "status": "状态",
+            "orderType": "订单类型",
+            "totalMoney": "总金额"
+        },
+        "reviewOrder": "查看订单",
+        "complain": "投诉",
+        "viewComplain": "查看投诉",
+        "chat": "聊天",
+        "getProductData": "获取产品数据",
+        "modal": {
+            "product": "产品",
+            "value": "值",
+            "postback": "反向传递",
+            "noData": "没有数据",
+            "account": "账户",
+            "password": "密码",
+            "reportError": "报告产品错误",
+            "warnings": {
+                "deleteAfter30Days": "订单将在30天后删除，请保存它到您的电脑，以避免丢失订单",
+                "randomString": "如果产品不是登录账户，而是一个随机字符串、序列号或任何其他不相关的字符串，这意味着商店有一个系统网站检查。请投诉订单并通知平台支持以获得退款。",
+                "warranty": "请直接在平台上使用保修功能，以确保您的权利并避免获得已出售给其他人的产品。"
+            },
+            "buttons": {
+                "downloadOrder": "下载订单",
+                "uploadError": "上传产品错误"
+            },
+            "errors": {
+                "noDataToDownload": "没有数据下载"
+            }
+        }
+    },
+    "transaction-history": {
+        "title": "交易历史",
+        "searchPlaceholder": "您想找什么？",
+        "columns": {
+            "transactionDate": "交易日期",
+            "transactionCode": "交易代码",
+            "amount": "金额",
+            "orderStatus": "状态"
+        },
+        "noTransactions": "没有交易",
+        "showingEntries": "显示从 {from} 到 {to} 的 {total} 条记录"
+    },
+    "deposit-history": {
+        "title": "存款历史",
+        "errorLoading": "加载存款失败",
+        "table": {
+            "amount": "金额",
+            "description": "描述",
+            "depositAt": "存款日期",
+            "status": "状态",
+            "actions": "操作",
+            "viewDetails": "查看详情"
+        },
+        "modal": {
+            "title": "存款详情",
+            "depositLogs": "存款历史",
+            "processedAt": "处理时间",
+            "status": {
+                "completed": "已完成",
+                "pending": "处理中"
+            },
+            "noData": "暂无数据"
+        },
+        "noData": "暂无数据"
+    },
+    "reseller-history": {
+        "title": "经销商历史",
+        "storeList": "店铺列表",
+        "history": "历史",
+        "store": "店铺",
+        "resellerLink": "经销商链接",
+        "commission": "佣金",
+        "status": "状态",
+        "orderId": "订单ID",
+        "purchaseDate": "购买日期",
+        "quantity": "数量",
+        "unitPrice": "单价",
+        "totalAmount": "总金额",
+        "commissionAccount": "佣金账户",
+        "seeMore": "查看更多",
+        "tooltip": {
+            "note": "*注意: ",
+            "content": "客户只需要一次通过您的经销商链接访问网站，我们将保存cookie并应用佣金扣除所有后续订单（如果您的经销商链接仍然得到商店所有者的批准）"
+        },
+        "statuses": {
+            "active": "活跃",
+            "inactive": "不活跃",
+            "pending": "待处理",
+            "approved": "已批准"
+        }
+    },
+    "withdrawal-history": {
+        "title": "提款历史",
+        "requestDate": "请求日期",
+        "transactionAmount": "交易金额",
+        "status": "状态",
+        "description": "描述",
+        "balanceAddress": "余额地址",
+        "withdrawalRequest": "提款请求",
+        "statuses": {
+            "pending": "待处理",
+            "completed": "已完成",
+            "failed": "失败",
+            "processing": "处理中"
+        },
+        "modal": {
+            "title": "提款请求",
+            "amount": "金额",
+            "amountPlaceholder": "输入提款金额",
+            "submit": "提交",
+            "cancel": "取消",
+            "success": "提款请求已发送成功",
+            "error": "无法发送提款请求",
+            "missingFields": "请填写所有必填字段"
+        }
+    },
+    "favourite-post": {
+        "title": "收藏帖子",
+        "noPosts": "您还没有收藏帖子",
+        "error": "加载收藏帖子失败",
+        "donate": "捐赠"
+    },
+    "content-management": {
+        "title": "内容管理",
+        "publicPosts": "公开帖子",
+        "post": "帖子",
+        "postNotFound": "帖子未找到",
+        "search": {
+            "placeholder": "搜索帖子"
+        }
+    },
+
+    "checkLiveFB": {
+        "title": "检测Facebook UID存活",
+        "inputLabels": {
+            "uidList": "UID列表 (最多 1000 个 ID)",
+            "delimiter": "分隔符",
+            "column": "列",
+            "liveUids": "存活UID",
+            "deadUids": "死亡UID"
+        },
+        "stats": {
+            "total": "总数",
+            "success": "成功",
+            "failed": "失败"
+        },
+        "buttons": {
+            "check": "检测",
+            "checking": "检测中..."
+        },
+        "errors": {
+            "maxUidsExceeded": "UID数量超过限制（最多1000个）"
+        }
+    },
+
+    "shares": {
+        "placeholder": "搜索博客",
+        "searchBy": "搜索方式",
+        "post": "发布",
+        "noPost": "暂无博客"
+    },
+    "post": {
+        "donate": {
+            "enjoy": "喜欢这篇文章吗？",
+            "title": "捐赠",
+            "description": "如果您觉得内容有帮助，请考虑通过捐赠来支持作者。",
+            "relatedPost": "相关文章",
+            "errorRelated": "未找到相关文章"
+        },
+        "comment": {
+            "title": "评论",
+            "placeHolder": "请在此文章发表评论...",
+            "description": "您的评论将在发布前进行审核。",
+            "submit": "提交评论",
+            "viewReply": "查看回复",
+            "hideReply": "隐藏回复",
+            "noReply": "暂无回复。",
+            "loading": "加载中...",
+            "noComment": "暂无评论。"
+        }
+    },
+    "order-service": {
+        "service": "服务",
+        "status": {
+            "cancelled": "拒绝订单",
+            "pending": "等待确认",
+            "accepted": "处理中",
+            "completed": "已完成",
+            "updateSuccess": "订单状态更新成功",
+            "updateFailed": "更新订单状态失败",
+            "updateError": "更新订单状态时出错",
+            "noOrderId": "未找到订单ID"
+        },
+        "buttons": {
+            "accept": "接受订单",
+            "reject": "拒绝订单",
+            "confirmCompletion": "确认完成",
+            "contactBuyer": "联系买家",
+            "viewReviews": "查看评价",
+            "processing": "处理中..."
+        },
+        "stages": {
+            "ordered": "已下单",
+            "completed": "已完成",
+            "success": "成功"
+        },
+        "testMode": {
+            "title": "测试模式",
+            "currentStatus": "当前状态",
+            "stage": "阶段"
+        },
+        "default": {
+            "service": "设计服务",
+            "category": "设计",
+            "orderCode": "ORDER123"
+        },
+        "progress-bar": {
+            "processing": "处理中",
+            "confirmed": "已确认",
+            "completed": "已完成",
+            "cancelled": "已拒绝",
+            "stage-completed": "已完成"
+        }
+    },
+    "order-stages": {
+        "cancelled": {
+            "title": "订单被拒绝",
+            "description": "此订单已被拒绝，无法进一步处理。",
+            "actions": {
+                "viewReason": "查看拒绝原因",
+                "contact": "联系买家以获取更多信息",
+                "viewStats": "查看订单统计"
+            }
+        },
+        "pending": {
+            "title": "等待确认",
+            "description": "订单正在等待您的确认。",
+            "actions": {
+                "check": "检查订单详情",
+                "confirm": "确认可用性",
+                "decideAccept": "决定是否接受"
+            }
+        },
+        "accepted": {
+            "title": "处理中",
+            "description": "您目前正在执行这个服务订单。",
+            "actions": {
+                "continue": "继续处理订单",
+                "quality": "保持高质量标准",
+                "confirm": "完成后确认"
+            }
+        },
+        "completed": {
+            "title": "已完成",
+            "description": "订单已完成。",
+            "actions": {
+                "viewReviews": "查看客户评价",
+                "contact": "联系买家获取反馈",
+                "viewStats": "查看订单分析"
+            }
+        },
+        "unknown": {
+            "title": "未知状态",
+            "description": "请再次检查订单状态。"
+        },
+        "fields": {
+            "orderCode": "订单编号",
+            "orderDate": "订单日期",
+            "service": "服务",
+            "price": "价格",
+            "startDate": "开始日期",
+            "description": "描述",
+            "completionDate": "完成日期",
+            "buyer": "买家",
+            "quantity": "数量",
+            "orderStatus": "订单状态"
+        }
+    },
+    "order-buyer": {
+        "cancelled": {
+          "title": "失败",
+          "description": "此订单已被拒绝"
+        },
+        "pending": {
+          "title": "处理中",
+          "subtitle": "订单等待确认",
+          "message": "我们正在处理您的请求，并将尽快确认。"
+        },
+        "accepted": {
+          "title": "已确认",
+          "subtitle": "您的订单正在处理中",
+          "message": "我们的工作人员正在处理您的请求。完成后您将收到通知。"
+        },
+        "completed": {
+          "title": "成功",
+          "subtitle": "订单已完成",
+          "message": "恭喜！您的订单已成功完成。感谢您使用我们的服务！"
+        },
+        "buttons": {
+          "cancelOrder": "取消订单",
+          "contactSeller": "联系卖家",
+          "complaint": "投诉",
+          "review": "评价"
+        },
+        "orderInfo": "订单信息",
+        "requestDetails": "请求详情",
+        "defaultNotes": "客户要求设计极简风格的标志，使用绿色和白色作为主要颜色。",
+        "buyerInfo": "买家信息",
+        "fromDate": "*从 {date} 开始",
+        "fields": {
+          "quantity": "数量",
+          "price": "价格",
+          "orderDate": "下单日期",
+          "totalPayment": "总付款",
+          "completionDeadline": "完成期限",
+          "buyer": "买家",
+          "orderCode": "订单编号"
+        }
+      }
+}

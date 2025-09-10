@@ -1,0 +1,119 @@
+name: Deploy Shop3 Functions
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
+          fetch-depth: 0
+
+
+      - name: Debug Environment Variables
+        run: |
+          echo "CODEGEN_HASURA_ENDPOINT: ${{ vars.CODEGEN_HASURA_ENDPOINT || 'not set' }}"
+          echo "HASURA_ENDPOINT: ${{ vars.HASURA_ENDPOINT || 'not set' }}"
+          echo "HASURA_PORT: ${{ vars.HASURA_PORT || 'not set' }}"
+          echo "Checking file: codegen.js"
+          cat codegen.js
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+        env:
+          CODEGEN_HASURA_ENDPOINT: ${{ vars.CODEGEN_HASURA_ENDPOINT}}
+          CODEGEN_HASURA_GRAPHQL_ADMIN_SECRET: ${{ secrets.CODEGEN_HASURA_GRAPHQL_ADMIN_SECRET}}
+
+
+      - name: Debug GraphQL Schema
+        run: |
+          echo "Checking GraphQL endpoint: $CODEGEN_HASURA_ENDPOINT"
+          curl -X POST $CODEGEN_HASURA_ENDPOINT \
+            -H "Content-Type: application/json" \
+            -H "x-hasura-admin-secret: $CODEGEN_HASURA_GRAPHQL_ADMIN_SECRET" \
+            -d '{"query":"{ __schema { queryType { name } } }"}'
+        env:
+          CODEGEN_HASURA_ENDPOINT: ${{ vars.CODEGEN_HASURA_ENDPOINT }}
+          CODEGEN_HASURA_GRAPHQL_ADMIN_SECRET: ${{ secrets.CODEGEN_HASURA_GRAPHQL_ADMIN_SECRET}}
+
+      - name: Test GraphQL Endpoint
+        run: |
+          echo "Kiểm tra kết nối đến GraphQL endpoint..."
+          # Không hiển thị URL đầy đủ trong logs
+          curl -s -X POST "${CODEGEN_HASURA_ENDPOINT}" \
+            -H "Content-Type: application/json" \
+            -H "x-hasura-admin-secret: ${HASURA_GRAPHQL_ADMIN_SECRET}" \
+            -d '{"query":"{ __schema { queryType { name } } }"}' | grep -q "query_root" && echo "Kết nối thành công!" || echo "Không thể kết nối đến GraphQL endpoint!"
+        env:
+          CODEGEN_HASURA_ENDPOINT: ${{ vars.CODEGEN_HASURA_ENDPOINT }}
+          HASURA_GRAPHQL_ADMIN_SECRET: ${{ secrets.HASURA_GRAPHQL_ADMIN_SECRET }}
+
+
+      - name: Generate GraphQL code
+        run: npm run generate -- --ignore-errors
+        env:
+          CODEGEN_HASURA_ENDPOINT: ${{ vars.CODEGEN_HASURA_ENDPOINT }}
+          CODEGEN_HASURA_GRAPHQL_ADMIN_SECRET: ${{ secrets.CODEGEN_HASURA_GRAPHQL_ADMIN_SECRET }}
+
+      - name: Automated Version Bump
+        id: version-bump
+        uses: phips28/gh-action-bump-version@master
+        with:
+          tag-prefix: "v"
+          minor-wording: "feat,feature"
+          major-wording: "MAJOR,breaking"
+          patch-wording: "fix,patch"
+          rc-wording: "RELEASE,alpha,beta,rc"
+          commit-message: "ci: bump version to {{version}} [skip ci]"
+          skip-tag: "true"
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+
+      - name: Get version from package.json
+        id: package-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Phiên bản hiện tại: v$VERSION"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to DigitalOcean Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry:  registry.crbgroup.xyz
+          username: ${{ vars.DOCR_USERNAME }}
+          password: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile.prod
+          push: true
+          tags: |
+            registry.crbgroup.xyz/crbgroup/shop3-functions:latest
+            registry.crbgroup.xyz/crbgroup/shop3-functions:v${{ steps.package-version.outputs.VERSION }}
+          build-args: |
+            # Common env
+            NODE_ENV=production
+            # Function app
+            HASURA_ENDPOINT=${{ vars.CODEGEN_HASURA_ENDPOINT }}
+            CODEGEN_HASURA_ENDPOINT=${{ vars.CODEGEN_HASURA_ENDPOINT }}
+            HASURA_GRAPHQL_ADMIN_SECRET=${{ secrets.CODEGEN_HASURA_GRAPHQL_ADMIN_SECRET }}
+           

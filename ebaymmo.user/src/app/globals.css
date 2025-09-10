@@ -1,0 +1,148 @@
+/* @tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global.css hoặc tệp CSS của bạn */
+/* Tùy chỉnh thanh cuộn */
+@layer utilities {
+    .scrollbar::-webkit-scrollbar {
+        width: 8px; /* Độ rộng của thanh cuộn */
+        height: 8px; /* Độ cao của thanh cuộn ngang */
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background-color: #34d399; /* Màu xanh lá cây cho phần tay cầm */
+        border-radius: 4px; /* Làm tròn thanh cuộn */
+        border: none; /* Loại bỏ viền */
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        background-color: transparent; /* Ẩn nền của track */
+    }
+
+    .scrollbar::-webkit-scrollbar-corner {
+        background-color: transparent; /* Loại bỏ góc */
+    }
+
+    /* Tùy chỉnh khi thanh cuộn được hover */
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #10b981; /* Màu xanh lá cây đậm khi hover */
+    }
+}
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary: #2c995e;
+    --primary-light: #36b555;
+    --neutral-600: #000000;
+    --neutral-500: #1c1c1c;
+    --neutral-400: #3f3f3f;
+    --neutral-300: #6c6c6c;
+    --neutral-200: #9c9c9c;
+    --neutral-100: #d0d0d0;
+    --neutral-90: #e6e6e6;
+    --neutral-75: #f7f7f7;
+    --neutral-50: #ffffff;
+    --neutral-04: #8894aa;
+
+    --primary-600: #248c46;
+    --primary-500: #33a959;
+    --primary-400: #40c96d;
+    --primary-300: #6eec97;
+    --primary-200: #b9f7cd;
+    --primary-100: #e8ffef;
+
+    --secondary-600: #d33e3e;
+    --secondary-500: #f15959;
+    --secondary-400: #ff7272;
+    --secondary-300: #faa0a0;
+    --secondary-200: #ffd7d7;
+    --secondary-100: #fff1f1;
+
+    --seller-blue: #47a8df;
+    --star-yellow: #f8e008;
+    --badge-warning: #e2da035e;
+    --badge-warning-text: #ebc608;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+        --primary: #40c96d;
+        --background-modal: rgba(0, 0, 0, 0.7);
+        --background-modal-content: linear-gradient(
+            180deg,
+            #b2ffcb 0%,
+            rgba(255, 255, 255, 0) 35.32%
+        );
+    }
+}
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Đảm bảo rằng font đã được đăng ký chính xác */
+@font-face {
+    font-family: 'BT Beau Sans';
+    src: url('/fonts/BT-BeauSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BT Beau Sans';
+    src: url('/fonts/BT-BeauSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BT Beau Sans';
+    src: url('/fonts/BT-BeauSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ... existing code ... */
+
+@layer components {
+    .li-item-dropdown {
+        @apply flex items-center rounded-[6px] px-[20px] py-[13px] hover:bg-[#E8FFEF] cursor-pointer text-gray-700 justify-between;
+    }
+
+    .li-item-dropdown:hover img[alt='product'] {
+        @apply block;
+    }
+    .menu-item-dropdown {
+        @apply flex items-center gap-x-[10px] cursor-pointer text-gray-700;
+    }
+}
+
+.react-datepicker-wrapper {
+    width: 100% !important;
+}
+
+.react-datepicker__input-container {
+    width: 100%;
+}
+
+.ant-picker-dropdown {
+    position: absolute !important;
+    top: 100% !important; /* Đặt ngay bên dưới nút */
+    left: 0 !important; /* Căn trái theo nút */
+    margin-top: 8px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    width: 100% !important; /* Đảm bảo popup chiếm toàn bộ chiều rộng của container */
+    max-width: 300px !important; /* Giới hạn chiều rộng tối đa */
+}

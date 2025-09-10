@@ -1,0 +1,25 @@
+# Giữ lại fragment cũ
+fragment ProductItemFields on ProductItems {
+    productItemId
+    productId
+    dataText
+    content
+    status
+    exportedAt
+    createAt
+    updateAt
+    serialKey
+    expirationDate
+    isDuplicate
+    checkedAt
+}
+
+# Thêm mutation mới để insert nhiều productItems
+mutation CreateMultipleProductItems($objects: [ProductItemsInsertInput!]!) {
+    insertProductItems(objects: $objects) {
+        returning {
+            ...ProductItemFields
+        }
+        affectedRows
+    }
+}

@@ -1,0 +1,48 @@
+table:
+  name: complain_view
+  schema: public
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - complain_id
+        - content
+        - created_at
+        - image
+        - order_code
+        - order_id
+        - owner_id
+        - owner_username
+        - product_id
+        - quantity
+        - status
+        - store_id
+        - store_name
+        - total_amount
+        - user_id
+        - username
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - complain_id
+        - content
+        - created_at
+        - image
+        - order_code
+        - order_id
+        - owner_id
+        - owner_username
+        - product_id
+        - quantity
+        - status
+        - store_id
+        - store_name
+        - total_amount
+        - user_id
+        - username
+      filter: {}
+      allow_aggregations: true
+    comment: ""

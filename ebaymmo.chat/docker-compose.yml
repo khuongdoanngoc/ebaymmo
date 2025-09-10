@@ -1,0 +1,57 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: "${PROJECT_NAME}_mongodb"
+    volumes:
+      - mongo_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+    ports:
+      - ${MONGO_PORT}:27017
+    networks:
+      my_custom_network:
+        ipv4_address: ${MONGO_IP}
+    restart: always
+
+  api:
+    container_name: "${PROJECT_NAME}_chat"
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: development
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: npm run dev
+    restart: always
+    ports:
+      - ${PORT}:3000
+    depends_on:
+      - mongodb
+    networks:
+      my_custom_network:
+        ipv4_address: ${API_IP}
+
+  chat_redis:
+    image: redis:latest
+    container_name: "${PROJECT_NAME}_chat_redis"
+    volumes:
+      - redis_data:/data
+    restart: always
+    networks:
+      my_custom_network:
+        ipv4_address: ${REDIS_IP}
+
+networks:
+  my_custom_network:
+    external: true
+
+volumes:
+  mongo_data:
+    driver: local
+  redis_data:
+    driver: local

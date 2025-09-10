@@ -1,0 +1,38 @@
+subscription GetServicesList {
+    products(where: { isService: { _eq: true } }) {
+        # Basic product info
+        productId
+        productName
+        price
+        createAt
+        updateAt
+
+        # Store info
+        store {
+            storeId
+            storeName
+            user {
+                userId
+                username
+                email
+            }
+        }
+
+        # Order statistics
+        ordersAggregate {
+            aggregate {
+                count
+                sum {
+                    totalAmount
+                }
+            }
+        }
+
+        # Status tracking
+        productItemsAggregate {
+            aggregate {
+                count
+            }
+        }
+    }
+}

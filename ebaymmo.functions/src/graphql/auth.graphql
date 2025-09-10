@@ -1,0 +1,45 @@
+query GetUserByEmailForLogin($email: String!) {
+  users(where: {email: {_eq: $email}}) {
+    email
+    userId
+    password
+    username
+    fullName
+    role
+    sellerSince
+  }
+}
+
+query GetUserByEmail($email: String!) {
+  users(where: {email: {_eq: $email}}, limit: 1) {
+    userId
+    email
+    username
+  }
+}
+
+mutation ResetPasswordByEmail($email: String!, $hashedPassword: String!) {
+  updateUsers(
+    where: { email: { _eq: $email } }
+    _set: { password: $hashedPassword }
+  ) {
+    returning {
+      email
+    }
+  }
+}
+
+mutation changeUserPassword($userId: uuid!, $newPassword: String!) {
+  updateUsers(
+    where: { userId: { _eq: $userId } } 
+    _set: { password: $newPassword, updateAt: "now()" }
+  ) {
+    affectedRows
+    returning {
+      fullName
+      userId
+      updateAt
+    }
+  }
+}
+

@@ -1,0 +1,34 @@
+query GetSellerRegistration(
+    $where: StoreRegistrationsBoolExp = {}
+    $offset: Int
+    $limit: Int
+) {
+    storeRegistrations(where: $where, limit: $limit, offset: $offset) {
+        createdAt
+        adminNotes
+        idCardImage
+        phoneNumber
+        portraitPhoto
+        registrationId
+        status
+        updatedAt
+        user {
+            email
+            fullName
+        }
+    }
+    storeRegistrationsAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+mutation UpdateSellerRegistration(
+    $where: StoreRegistrationsBoolExp = {}
+    $_set: StoreRegistrationsSetInput = {}
+) {
+    updateStoreRegistrations(where: $where, _set: $_set) {
+        affectedRows
+    }
+}

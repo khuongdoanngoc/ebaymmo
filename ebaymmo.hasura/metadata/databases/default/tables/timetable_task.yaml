@@ -1,0 +1,15 @@
+table:
+  name: task
+  schema: timetable
+object_relationships:
+  - name: chain
+    using:
+      foreign_key_constraint_on: chain_id
+array_relationships:
+  - name: executionLogs
+    using:
+      foreign_key_constraint_on:
+        column: task_id
+        table:
+          name: execution_log
+          schema: timetable

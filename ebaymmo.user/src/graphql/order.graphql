@@ -1,0 +1,390 @@
+fragment OrdersFragment on Orders {
+    orderId
+    buyerId
+    productId
+    quantity
+    totalAmount
+    orderStatus
+    referralCode
+    createAt
+    updateAt
+    orderDate
+    orderCode
+    orderType
+    price
+    isPreOrder
+    completeDateService
+}
+
+fragment CouponsFragment on Coupons {
+    discountValue
+    discountType
+    store {
+        storeName
+    }
+}
+
+query getProductOrders(
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [OrdersOrderBy!] = {}
+    $where: OrdersBoolExp = {}
+) {
+    orders(limit: $limit, offset: $offset, where: $where, orderBy: $orderBy) {
+        ...OrdersFragment
+        coupon {
+            ...CouponsFragment
+        }
+        user {
+            fullName
+            email
+        }
+        product {
+            productName
+            isService
+            store {
+                storeName
+            }
+        }
+    }
+}
+
+query GetProductOrderView(
+    $limit: Int!
+    $offset: Int!
+    $orderBy: [GetProductOrdersViewOrderBy!] = {}
+    $where: GetProductOrdersViewBoolExp = {}
+) {
+    getProductOrdersView(
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+        where: $where
+    ) {
+        userUsername
+        orderId
+        buyerId
+        productId
+        quantity
+        totalAmount
+        orderStatus
+        referralCode
+        createAt
+        updateAt
+        orderDate
+        orderCode
+        orderType
+        price
+        isPreOrder
+        couponCode
+        discountType
+        discountValue
+        isService
+        productName
+        storeName
+        userEmail
+        completeDateSevice
+    }
+    getProductOrdersViewAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+query GetOrders(
+    $limit: Int!
+    $offset: Int!
+    $orderBy: [OrdersOrderBy!]!
+    $search: String = "%"
+    $userId: uuid!
+) {
+    orders(
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+        where: {
+            buyerId: { _eq: $userId }
+            product: { productName: { _ilike: $search } }
+        }
+    ) {
+        ...OrdersFragment
+        user {
+            username
+        }
+        product {
+            store {
+                storeId
+                storeName
+                user {
+                    username
+                }
+            }
+            productId
+            productName
+            storeId
+        }
+        coupon {
+            couponId
+            discountValue
+        }
+    }
+    ordersAggregate(where: { product: { productName: { _ilike: $search } } }) {
+        aggregate {
+            count
+        }
+    }
+}
+
+mutation CreateOrder($object: OrdersInsertInput!) {
+    insertOrdersOne(object: $object) {
+        ...OrdersFragment
+    }
+}
+
+mutation SubmitOrder(
+    $couponValue: numeric
+    $productId: uuid!
+    $quantity: Int!
+    $sellerId: uuid!
+    $isPreOrder: Boolean!
+    $referralCode: String
+) {
+    createOrder(
+        couponValue: $couponValue
+        productId: $productId
+        quantity: $quantity
+        sellerId: $sellerId
+        isPreOrder: $isPreOrder
+        referralCode: $referralCode
+    ) {
+        buyerId
+        createAt
+        orderCode
+        orderDate
+        orderId
+        orderStatus
+        price
+        quantity
+        referralCode
+        totalAmount
+        productId
+        isPreOrder
+    }
+}
+
+mutation CreateOrderServices(
+    $completeDateService: timestamp!
+    $couponValue: numeric!
+    $productId: uuid!
+    $sellerId: uuid!
+) {
+    createOrderServices(
+        complete_date_service: $completeDateService
+        coupon_value: $couponValue
+        product_id: $productId
+        seller_id: $sellerId
+    ) {
+        buyerId
+        couponId
+        createAt
+        orderCode
+        orderDate
+        orderId
+        orderStatus
+        updateAt
+        totalAmount
+        referralCode
+        quantity
+        price
+        orderType
+        productId
+    }
+}
+
+query GetProductItemsGroupedByOrderCode(
+    $userId: uuid!
+    $orderId: uuid!
+    $productId: uuid!
+    $saleAt: timestamp!
+) {
+    orders(where: { buyerId: { _eq: $userId }, orderId: { _eq: $orderId } }) {
+        orderCode
+        orderId
+        createAt
+        orderType
+        product {
+            productItems(
+                where: {
+                    productId: { _eq: $productId }
+                    saleAt: { _eq: $saleAt }
+                }
+            ) {
+                productItemId
+                productId
+                dataText
+                createAt
+                status
+            }
+        }
+    }
+}
+
+query GetListingOrders(
+    $userId: uuid!
+    $limit: Int!
+    $offset: Int!
+    $search: String = "%"
+    $orderBy: [ListingOrdersOrderBy!]!
+) {
+    listingOrders(
+        limit: $limit
+        where: { productName: { _ilike: $search }, buyerId: { _eq: $userId } }
+        offset: $offset
+        orderBy: $orderBy
+    ) {
+        couponId
+        buyerId
+        orderCode
+        orderDate
+        orderId
+        orderStatus
+        orderType
+        productName
+        productId
+        productPrice
+        storeId
+        storeName
+        totalAmount
+        sellerName
+        quantity
+        completeDateService
+        buyerName
+    }
+    listingOrdersAggregate(where: { buyerId: { _eq: $userId } }) {
+        aggregate {
+            count
+        }
+    }
+}
+
+query DashboardStats(
+    $monthStart: timestamptz!
+    $monthEnd: timestamptz!
+    $prevMonthStart: timestamptz!
+    $sellerId: uuid!
+) {
+    # Tổng số lượng đơn hàng trong tháng hiện tại
+    orderNumber: ordersAggregate(
+        where: {
+            orderDate: { _gte: $monthStart, _lt: $monthEnd }
+            product: { store: { sellerId: { _eq: $sellerId } } }
+        }
+    ) {
+        aggregate {
+            count
+            sum {
+                quantity
+            }
+        }
+    }
+
+    # Tổng doanh thu trong tháng hiện tại
+    sales: ordersAggregate(
+        where: {
+            orderDate: { _gte: $monthStart, _lt: $monthEnd }
+            orderStatus: { _eq: "successed" }
+            product: { store: { sellerId: { _eq: $sellerId } } }
+        }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    # Tổng số tiền tạm giữ trong tháng hiện tại (sửa _or)
+    temporaryHold: ordersAggregate(
+        where: {
+            orderDate: { _gte: $monthStart, _lt: $monthEnd }
+            _or: [
+                { orderStatus: { _eq: "pending" } }
+                { orderStatus: { _eq: "complained" } }
+                { orderStatus: { _eq: "dispute" } }
+            ]
+            product: { store: { sellerId: { _eq: $sellerId } } }
+        }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    # Tổng số lượng đơn hàng trong tháng trước
+    prevOrderNumber: ordersAggregate(
+        where: {
+            orderDate: { _gte: $prevMonthStart, _lt: $monthStart }
+            product: { store: { sellerId: { _eq: $sellerId } } }
+        }
+    ) {
+        aggregate {
+            count
+            sum {
+                quantity
+            }
+        }
+    }
+
+    # Tổng doanh thu trong tháng trước
+    prevSales: ordersAggregate(
+        where: {
+            orderDate: { _gte: $prevMonthStart, _lt: $monthStart }
+            orderStatus: { _eq: "successed" }
+            product: { store: { sellerId: { _eq: $sellerId } } }
+        }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    # Tổng số tiền tạm giữ trong tháng trước
+    prevTemporaryHold: ordersAggregate(
+        where: {
+            orderDate: { _gte: $prevMonthStart, _lt: $monthStart }
+            orderStatus: { _eq: "pending" }
+            product: { store: { sellerId: { _eq: $sellerId } } }
+        }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    # Dữ liệu biểu đồ: Tổng doanh thu theo ngày trong tháng hiện tại
+    chartData: orders(
+        where: {
+            orderDate: { _gte: $monthStart, _lt: $monthEnd }
+            orderStatus: { _eq: "successed" }
+            product: { store: { sellerId: { _eq: $sellerId } } }
+        }
+    ) {
+        orderDate
+        totalAmount
+    }
+}
+
+mutation UpdateOrder($where: OrdersBoolExp = {}, $_set: OrdersSetInput = {}) {
+    updateOrders(where: $where, _set: $_set) {
+        returning {
+            orderStatus
+        }
+    }
+}

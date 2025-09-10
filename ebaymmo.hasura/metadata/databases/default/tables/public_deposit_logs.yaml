@@ -1,0 +1,64 @@
+table:
+  name: deposit_logs
+  schema: public
+object_relationships:
+  - name: deposit
+    using:
+      foreign_key_constraint_on: deposit_id
+insert_permissions:
+  - role: user
+    permission:
+      check: {}
+      columns:
+        - payload
+        - payment_method
+        - transaction_id
+        - txhash
+        - amount
+        - error_message
+        - create_at
+        - processed_at
+        - update_at
+        - status
+        - deposit_id
+        - log_id
+        - order_id
+    comment: ""
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - payment_method
+        - transaction_id
+        - txhash
+        - amount
+        - error_message
+        - order_id
+        - payload
+        - status
+        - create_at
+        - processed_at
+        - update_at
+        - deposit_id
+        - log_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - payload
+        - payment_method
+        - transaction_id
+        - txhash
+        - amount
+        - error_message
+        - create_at
+        - processed_at
+        - update_at
+        - status
+        - deposit_id
+        - log_id
+        - order_id
+      filter: {}
+    comment: ""

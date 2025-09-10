@@ -1,0 +1,15 @@
+table:
+  name: user_statistics
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - total_blogs
+        - total_orders
+        - total_sold
+        - total_stores
+        - seller_since
+        - user_id
+      filter: {}
+    comment: ""

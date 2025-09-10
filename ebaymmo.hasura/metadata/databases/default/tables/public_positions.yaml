@@ -1,0 +1,112 @@
+table:
+  name: positions
+  schema: public
+object_relationships:
+  - name: category
+    using:
+      foreign_key_constraint_on: category_id
+  - name: store
+    using:
+      foreign_key_constraint_on: winner_stores
+array_relationships:
+  - name: bids
+    using:
+      foreign_key_constraint_on:
+        column: position_id
+        table:
+          name: bids
+          schema: public
+  - name: bidsHistories
+    using:
+      foreign_key_constraint_on:
+        column: position_id
+        table:
+          name: bids_history
+          schema: public
+insert_permissions:
+  - role: operator
+    permission:
+      check: {}
+      columns:
+        - position_name
+        - status
+        - bid_amount
+        - description
+        - create_at
+        - update_at
+        - end_date
+        - start_date
+        - category_id
+        - position_id
+        - winner_stores
+    comment: ""
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - position_name
+        - status
+        - bid_amount
+        - description
+        - create_at
+        - update_at
+        - end_date
+        - start_date
+        - category_id
+        - position_id
+        - winner_stores
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - position_name
+        - status
+        - description
+        - create_at
+        - update_at
+        - end_date
+        - start_date
+        - position_id
+        - winner_stores
+      filter: {}
+    comment: ""
+update_permissions:
+  - role: operator
+    permission:
+      columns:
+        - position_name
+        - status
+        - bid_amount
+        - description
+        - create_at
+        - update_at
+        - end_date
+        - start_date
+        - category_id
+        - position_id
+        - winner_stores
+      filter: {}
+      check: null
+    comment: ""
+delete_permissions:
+  - role: operator
+    permission:
+      filter: {}
+    comment: ""
+event_triggers:
+  - name: SyncPosition
+    definition:
+      delete:
+        columns: '*'
+      enable_manual: true
+      insert:
+        columns: '*'
+      update:
+        columns: '*'
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: '{{SEARCH_URL}}/elasticsearch-position/update'

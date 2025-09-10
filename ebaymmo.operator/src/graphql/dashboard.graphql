@@ -1,0 +1,188 @@
+query GetDashboardStats(
+    $today: timestamp!
+    $yesterday: timestamp!
+    $yesterdayEnd: timestamp!
+    $thisWeek: timestamp!
+    $lastWeek: timestamp!
+    $lastWeekEnd: timestamp!
+    $startOfThisMonth: timestamp!
+    $endOfThisMonth: timestamp!
+    $lastMonth: timestamp!
+    $lastMonthEnd: timestamp!
+) {
+    # Users stats
+    users_total: usersAggregate {
+        aggregate {
+            count
+        }
+    }
+    users_active: usersAggregate(
+        where: { twoFactorSecret: { _isNull: false } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+    users_suspended: usersAggregate(
+        where: { twoFactorSecret: { _isNull: true } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    # Stores stats
+    stores_total: storesAggregate {
+        aggregate {
+            count
+        }
+    }
+    stores_active: storesAggregate(where: { status: { _eq: "active" } }) {
+        aggregate {
+            count
+        }
+    }
+    stores_pending: storesAggregate(where: { status: { _eq: "pending" } }) {
+        aggregate {
+            count
+        }
+    }
+
+    # Orders stats
+    orders_total: ordersAggregate {
+        aggregate {
+            count
+            sum {
+                totalAmount
+            }
+        }
+    }
+    orders_completed: ordersAggregate(
+        where: { orderStatus: { _eq: "successed" } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+    orders_pending: ordersAggregate(
+        where: { orderStatus: { _eq: "pending" } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    # Users stats for current and last month
+    users_this_month: usersAggregate(
+        where: { createAt: { _gte: $startOfThisMonth, _lte: $endOfThisMonth } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+    users_last_month: usersAggregate(
+        where: { createAt: { _gte: $lastMonth, _lt: $lastMonthEnd } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    # Stores stats for current and last month
+    stores_this_month: storesAggregate(
+        where: { createAt: { _gte: $startOfThisMonth, _lte: $endOfThisMonth } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+    stores_last_month: storesAggregate(
+        where: { createAt: { _gte: $lastMonth, _lt: $lastMonthEnd } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    # Orders stats for current and last month
+    orders_this_month: ordersAggregate(
+        where: { createAt: { _gte: $startOfThisMonth, _lte: $endOfThisMonth } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+    orders_last_month: ordersAggregate(
+        where: { createAt: { _gte: $lastMonth, _lt: $lastMonthEnd } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    # Revenue stats
+    revenue_today: ordersAggregate(where: { createAt: { _gte: $today } }) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    revenue_yesterday: ordersAggregate(
+        where: { createAt: { _gte: $yesterday, _lt: $yesterdayEnd } }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    revenue_this_week: ordersAggregate(
+        where: { createAt: { _gte: $thisWeek } }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    revenue_last_week: ordersAggregate(
+        where: { createAt: { _gte: $lastWeek, _lt: $lastWeekEnd } }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    revenue_this_month: ordersAggregate(
+        where: { createAt: { _gte: $startOfThisMonth, _lte: $endOfThisMonth } }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    revenue_last_month: ordersAggregate(
+        where: { createAt: { _gte: $lastMonth, _lt: $lastMonthEnd } }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+}
+
+query GetMonthlyRevenue($startDate: timestamp!, $endDate: timestamp!) {
+    monthlyRevenue(where: { month: { _gte: $startDate, _lt: $endDate } }) {
+        month
+        totalAmount
+    }
+}

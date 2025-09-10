@@ -1,0 +1,33 @@
+{
+  "errors": {
+    "missingCredentials": "Missing username or password",
+    "emailAlreadyExists": "Email already exists",
+    "userNotFound": "User not found",
+    "invalidPassword": "Invalid password",
+    "failedToGenerateTokens": "Failed to generate tokens",
+    "invalidOrExpiredRefreshToken": "Invalid or expired refresh token",
+    "failedToCreateAccessToken": "Failed to create access token",
+    "failedToCreateRefreshToken": "Failed to create refresh token",
+    "resetPasswordFailed": "Failed to send reset password email",
+    "resetPasswordEmailSent": "errors.resetPasswordEmailSent",
+    "resetPasswordVerifyFailed": "Failed to reset password!",
+    "unhandledRejection": "error.unhandledRejection",
+    "uncaughtException": "error.uncaughtException",
+    "2faNotEnabled": "errors.2faNotEnabled",
+    "invalid2FAToken": "errors.invalid2FAToken",
+    "contactEmailFailed": "errors.contactEmailFailed",
+    "2faRequired": "errors.2faRequired"
+  },
+  "messages": {
+    "registerSuccess": "Register successfully",
+    "resetPasswordSuccess": "Reset password successfully!",
+    "resetPasswordEmailSent": "Reset password email has been sent",
+    "contactEmailSent": "messages.contactEmailSent"
+  },
+  "error": {
+    "unhandledRejection": "error.unhandledRejection",
+    "uncaughtException": "error.uncaughtException"
+  },
+  "Contact sent successfully": "Contact sent successfully",
+  "success": "success"
+}

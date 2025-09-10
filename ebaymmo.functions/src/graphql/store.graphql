@@ -1,0 +1,172 @@
+query GetStoresByCategory($categoryId: uuid!, $limit: Int) {
+  stores(
+    where: { categoryId: { _eq: $categoryId } }
+    orderBy: { averageRating: DESC }
+    limit: $limit
+  ) {
+    storeId
+    storeName
+    description
+    avatar
+    averageRating
+    category {
+      categoryId
+      categoryName
+    }
+
+    # Lấy thông tin người bán từ bảng users
+    user {
+      userId
+      username
+      images
+    }
+
+    # Tổng số lượng tồn kho của cửa hàng
+    totalStockCount
+
+    # Tổng số lượng sản phẩm đã bán trong cửa hàng
+    productsAggregate {
+      aggregate {
+        sum {
+          soldCount
+        }
+      }
+    }
+
+    # Danh sách tag của store
+    storeTag
+  }
+
+  # Lấy tổng số stores trong category này
+  storesAggregate(where: { categoryId: { _eq: $categoryId } }) {
+    aggregate {
+      count
+    }
+  }
+}
+
+query GetStoreById($storeId: uuid!) {
+  stores(where: { storeId: { _eq: $storeId } }) {
+    storeId
+    avatar
+    averageRating
+    categoryId
+    createAt
+    description
+    fiveStar
+    fourStar
+    oneStar
+    sellerId
+    totalStockCount
+    storeName
+    storePrice
+    storeTag
+    threeStar
+    twoStar
+    updateAt
+  }
+}
+
+mutation UpdateStoreStar($storeId: uuid!, $updateData: StoresSetInput!) {
+  updateStores(_set: $updateData, where: { storeId: { _eq: $storeId } }) {
+    returning {
+      storeId
+      oneStar
+      twoStar
+      threeStar
+      fourStar
+      fiveStar
+      averageRating
+      avatar
+      categoryId
+      createAt
+      description
+      sellerId
+      totalStockCount
+      storeName
+      storePrice
+      storeTag
+      updateAt
+    }
+  }
+}
+
+mutation CreateRate($object: StoreRatingsInsertInput = {}) {
+  insertStoreRatingsOne(object: $object) {
+    rating
+    review
+    storeId
+    image
+    userId
+    ratingId
+    updateAt
+  }
+}
+
+mutation UpdateRate($ratingId: uuid!, $updateData: StoreRatingsSetInput!) {
+  updateStoreRatings(
+    _set: $updateData
+    where: { ratingId: { _eq: $ratingId } }
+  ) {
+    returning {
+      rating
+      review
+      storeId
+      userId
+      image
+      ratingId
+      updateAt
+    }
+  }
+}
+
+query GetStoreRatings($ratingId: uuid!) {
+  storeRatings(where: { ratingId: { _eq: $ratingId } }) {
+    ratingId
+    rating
+    review
+    image
+    storeId
+    userId
+    ratingId
+    updateAt
+  }
+}
+
+mutation CalculateWeeklyStorePoints(
+  $p_revenue_weight: numeric = 0.5,
+  $p_priority_weight: numeric = 0.2,
+  $p_rating_weight: numeric = 0.3
+) {
+  calculateWeeklyStorePoints(
+    args: {
+      p_revenue_weight: $p_revenue_weight,
+      p_priority_weight: $p_priority_weight,
+      p_rating_weight: $p_rating_weight
+    }
+  ) {
+    storeId
+    weekStartDate
+    deltaRevenue
+    deltaPriority
+    deltaRating
+    previousAccumulatedPoints
+    accumulatedPoints
+    currentLevel
+  }
+}
+
+mutation DeleteStorePoints($weekStartDate: date!) {
+  deleteStorePoints(where: {
+    weekStartDate: { _eq: $weekStartDate }
+  }) {
+    affectedRows
+  }
+}
+
+mutation InsertStorePoints($points: [StorePointsInsertInput!]!) {
+  insertStorePoints(objects: $points) {
+    affectedRows
+  }
+}
+

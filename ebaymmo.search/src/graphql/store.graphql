@@ -1,0 +1,47 @@
+query GetAllStoresAsync($where: StoresBoolExp = {}, $offset: Int = 0, $limit: Int = 10) {
+  stores(where: $where, offset: $offset, limit: $limit) {
+    storeId
+    slug
+    storeName
+    subTitle
+    averageRating
+    ratingTotal
+    totalStockCount
+    totalSoldCount
+    duplicateProduct
+    status
+    category {
+      slug
+      type
+      category {
+        slug
+      }
+    }
+  }
+}
+
+query GetStore($where: ListingStoresBoolExp = {}) {
+  listingStores(where: $where) {
+    storeId
+    subTitle
+    storeTag
+    storeName
+    status
+    sold
+    stock
+    slug
+    avatar
+    duplicateProduct
+    sellerName
+    sellerId
+    sellerAvatar
+    ratingTotal
+    averageRating
+		lowestPrice
+    categoryName
+    categorySlug
+    categoryType
+    parentCategorySlug
+    parentCategoryName
+  }
+}

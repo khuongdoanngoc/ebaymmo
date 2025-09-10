@@ -1,0 +1,35 @@
+query FavouriteStore(
+    $limit: Int = 5
+    $offset: Int = 0
+    $where: WishlistBoolExp = {}
+    $orderBy: [WishlistOrderBy!] = { addedDate: DESC }
+) {
+    wishlist(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        store {
+            avatar
+            averageRating
+            slug
+            storeId
+            storeName
+            storePrice
+            storeTag
+            subTitle
+            description
+            totalStockCount
+            totalSoldCount
+            ratingTotal
+            category {
+                type
+            }
+        }
+        addedDate
+        createAt
+        wishlistId
+        updateAt
+    }
+    wishlistAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}

@@ -1,0 +1,83 @@
+table:
+  name: coupons
+  schema: public
+object_relationships:
+  - name: store
+    using:
+      foreign_key_constraint_on: store_id
+array_relationships:
+  - name: orders
+    using:
+      foreign_key_constraint_on:
+        column: coupon_id
+        table:
+          name: orders
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        store:
+          seller_id:
+            _eq: X-Hasura-User-Id
+      columns:
+        - unlimited_use
+        - coupon_code
+        - discount_type
+        - discount_rate
+        - maximum_amount
+        - usage_limit
+        - discount_value
+        - description
+        - create_at
+        - update_at
+        - end_date
+        - start_date
+        - coupon_id
+        - store_id
+    comment: ""
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - coupon_code
+        - coupon_id
+        - create_at
+        - description
+        - discount_rate
+        - discount_type
+        - discount_value
+        - end_date
+        - maximum_amount
+        - start_date
+        - store_id
+        - unlimited_use
+        - update_at
+        - usage_limit
+      filter:
+        orders:
+          buyer_id:
+            _eq: X-Hasura-User-Id
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - coupon_code
+        - coupon_id
+        - create_at
+        - deleted
+        - description
+        - discount_rate
+        - discount_type
+        - discount_value
+        - end_date
+        - maximum_amount
+        - start_date
+        - store_id
+        - unlimited_use
+        - update_at
+        - usage_limit
+      filter: {}
+      check: null
+    comment: ""

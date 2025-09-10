@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        container_name: shop3-app-dev
+        volumes:
+            - .:/app
+            - /app/node_modules
+        environment:
+            - NODE_ENV=development
+            - VITE_HOST=shop3-admin.crbgroup.live
+        env_file:
+            - .env
+        networks:
+            my_custom_network:
+                ipv4_address: ${APP_IP}
+        # Sử dụng APP_IP từ .env file cho development server
+        extra_hosts:
+            - 'host.docker.internal:${APP_IP:-host-gateway}'
+
+networks:
+    my_custom_network:
+        external: true

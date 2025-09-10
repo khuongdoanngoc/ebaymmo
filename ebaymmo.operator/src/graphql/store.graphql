@@ -1,0 +1,138 @@
+subscription getStore(
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [StoresOrderBy!] = {}
+    $where: StoresBoolExp = {}
+) {
+    stores(limit: $limit, offset: $offset, where: $where, orderBy: $orderBy) {
+        storeId
+        storeName
+        status
+        avatar
+        shortDescription
+        createAt
+        seller: user {
+            userId
+            username
+            email
+            lastLogin
+        }
+        category {
+            categoryId
+            categoryName
+        }
+        productsAggregate {
+            aggregate {
+                count
+                sum {
+                    stockCount
+                }
+            }
+        }
+        products {
+            productName
+            createAt
+            price
+            soldCount
+            status
+            hasDiscount
+            status
+            ordersAggregate {
+                aggregate {
+                    count
+                    sum {
+                        totalAmount
+                    }
+                }
+            }
+        }
+        storeRatingsAggregate {
+            aggregate {
+                avg {
+                    rating
+                }
+            }
+        }
+    }
+}
+
+subscription getStoreCount {
+    storesAggregate {
+        aggregate {
+            count
+        }
+    }
+}
+
+subscription getFilteredStoreCount($where: StoresBoolExp = {}) {
+    storesAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+mutation updateStore(
+    $_inc: StoresIncInput = {}
+    $_set: StoresSetInput = {}
+    $where: StoresBoolExp = {}
+) {
+    updateStores(_inc: $_inc, _set: $_set, where: $where) {
+        affectedRows
+        returning {
+            storeName
+            status
+        }
+    }
+}
+
+mutation updateStoresMany(
+    $_inc: StoresIncInput = {}
+    $_set: StoresSetInput = {}
+    $where: StoresBoolExp = {}
+) {
+    updateStoresMany(updates: { _inc: $_inc, _set: $_set, where: $where }) {
+        affectedRows
+        returning {
+            status
+            slug
+            storeId
+            storeName
+        }
+    }
+}
+
+query GetFavoriteStores {
+    stores(
+        where: { status: { _eq: "active" } }
+        orderBy: { wishlistsAggregate: { count: DESC } }
+    ) {
+        # Basic store info
+        storeId
+        storeName
+        shortDescription
+        averageRating
+        avatar
+
+        # Stats
+        productsAggregate {
+            aggregate {
+                count
+            }
+        }
+
+        # Count followers from wishlist table
+        wishlistsAggregate {
+            aggregate {
+                count
+            }
+        }
+    }
+}
+subscription getTotalStore {
+    storesAggregate {
+        aggregate {
+            count
+        }
+    }
+}

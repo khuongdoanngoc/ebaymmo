@@ -1,0 +1,92 @@
+table:
+  name: store_ratings
+  schema: public
+object_relationships:
+  - name: store
+    using:
+      foreign_key_constraint_on: store_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        user_id:
+          _eq: X-Hasura-User-Id
+      columns:
+        - image
+        - rating
+        - review
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - create_at
+        - image
+        - order_codes
+        - rating
+        - rating_date
+        - rating_id
+        - response
+        - response_date
+        - review
+        - store_id
+        - update_at
+        - user_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - image
+        - order_codes
+        - rating
+        - response
+        - review
+        - create_at
+        - update_at
+        - rating_date
+        - response_date
+        - rating_id
+        - store_id
+        - user_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - create_at
+        - image
+        - order_codes
+        - rating
+        - rating_date
+        - rating_id
+        - response
+        - response_date
+        - review
+        - store_id
+        - update_at
+        - user_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - image
+        - order_codes
+        - rating
+        - response
+        - response_date
+        - review
+      filter:
+        store:
+          seller_id:
+            _eq: X-Hasura-User-Id
+      check: null
+    comment: ""

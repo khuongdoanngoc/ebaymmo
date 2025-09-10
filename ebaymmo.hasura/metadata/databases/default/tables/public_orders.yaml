@@ -1,0 +1,135 @@
+table:
+  name: orders
+  schema: public
+object_relationships:
+  - name: coupon
+    using:
+      foreign_key_constraint_on: coupon_id
+  - name: product
+    using:
+      foreign_key_constraint_on: product_id
+  - name: user
+    using:
+      foreign_key_constraint_on: buyer_id
+array_relationships:
+  - name: complainOrders
+    using:
+      foreign_key_constraint_on:
+        column: order_id
+        table:
+          name: complain_order
+          schema: public
+  - name: ordersLogs
+    using:
+      foreign_key_constraint_on:
+        column: order_id
+        table:
+          name: orders_logs
+          schema: public
+  - name: resellerOrders
+    using:
+      foreign_key_constraint_on:
+        column: order_id
+        table:
+          name: reseller_orders
+          schema: public
+insert_permissions:
+  - role: operator
+    permission:
+      check: {}
+      columns:
+        - is_pre_order
+        - order_code
+        - order_status
+        - order_type
+        - referral_code
+        - quantity
+        - price
+        - total_amount
+        - complete_date_service
+        - create_at
+        - update_at
+        - order_date
+        - buyer_id
+        - coupon_id
+        - order_id
+        - product_id
+    comment: ""
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - is_pre_order
+        - order_code
+        - order_status
+        - order_type
+        - referral_code
+        - quantity
+        - price
+        - total_amount
+        - complete_date_service
+        - create_at
+        - update_at
+        - order_date
+        - buyer_id
+        - coupon_id
+        - order_id
+        - product_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - is_pre_order
+        - order_code
+        - order_status
+        - order_type
+        - referral_code
+        - quantity
+        - price
+        - total_amount
+        - complete_date_service
+        - create_at
+        - update_at
+        - order_date
+        - buyer_id
+        - coupon_id
+        - order_id
+        - product_id
+      filter: {}
+      limit: 20
+      allow_aggregations: true
+    comment: ""
+update_permissions:
+  - role: operator
+    permission:
+      columns:
+        - is_pre_order
+        - order_code
+        - order_status
+        - order_type
+        - referral_code
+        - quantity
+        - price
+        - total_amount
+        - complete_date_service
+        - create_at
+        - update_at
+        - order_date
+        - buyer_id
+        - coupon_id
+        - order_id
+        - product_id
+      filter: {}
+      check: null
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - order_status
+      filter:
+        buyer_id:
+          _eq: X-Hasura-User-Id
+      check: null
+    comment: ""

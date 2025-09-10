@@ -1,0 +1,101 @@
+table:
+  name: winner_stores
+  schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - wishlist_ids
+        - product_count
+        - avatar
+        - category_name
+        - category_slug
+        - category_type
+        - parent_category_name
+        - parent_category_slug
+        - position_name
+        - seller_avatar
+        - seller_name
+        - slug
+        - store_name
+        - store_tag
+        - sub_title
+        - average_rating
+        - rating_total
+        - total_sold_count
+        - total_stock_count
+        - highest_price
+        - lowest_price
+        - store_price
+        - category_id
+        - position_id
+        - seller_id
+        - store_id
+        - winner_stores
+      filter: {}
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - wishlist_ids
+        - product_count
+        - avatar
+        - category_name
+        - category_slug
+        - category_type
+        - parent_category_name
+        - parent_category_slug
+        - position_name
+        - seller_avatar
+        - seller_name
+        - slug
+        - store_name
+        - store_tag
+        - sub_title
+        - average_rating
+        - rating_total
+        - total_sold_count
+        - total_stock_count
+        - highest_price
+        - lowest_price
+        - store_price
+        - category_id
+        - position_id
+        - seller_id
+        - store_id
+        - winner_stores
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - wishlist_ids
+        - product_count
+        - avatar
+        - category_name
+        - category_slug
+        - category_type
+        - parent_category_name
+        - parent_category_slug
+        - position_name
+        - seller_avatar
+        - seller_name
+        - slug
+        - store_name
+        - store_tag
+        - sub_title
+        - average_rating
+        - rating_total
+        - total_sold_count
+        - total_stock_count
+        - highest_price
+        - lowest_price
+        - store_price
+        - category_id
+        - position_id
+        - seller_id
+        - store_id
+        - winner_stores
+      filter: {}
+      allow_aggregations: true
+    comment: ""

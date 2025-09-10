@@ -1,0 +1,13 @@
+mutation insertNotifications(
+    $objects: [NotificationsInsertInput!] = {}
+    $onConflict: NotificationsOnConflict = { constraint: notifications_pkey }
+) {
+    insertNotifications(objects: $objects, onConflict: $onConflict) {
+        affectedRows
+        returning {
+            notificationId
+            notificationType
+            sentDate
+        }
+    }
+}   

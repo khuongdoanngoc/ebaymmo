@@ -1,0 +1,20 @@
+services:
+  functions:
+    container_name: "${PROJECT_NAME}_functions"
+    build:
+      dockerfile: Dockerfile
+      context: .
+      #target: production
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: npm run dev
+    restart: always
+    networks:
+      my_custom_network:
+        ipv4_address: ${FUNCTION_IP}
+
+networks:
+  my_custom_network:
+    external: true

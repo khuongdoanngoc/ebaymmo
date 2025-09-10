@@ -1,0 +1,175 @@
+table:
+  name: products
+  schema: public
+object_relationships:
+  - name: store
+    using:
+      foreign_key_constraint_on: store_id
+array_relationships:
+  - name: orders
+    using:
+      foreign_key_constraint_on:
+        column: product_id
+        table:
+          name: orders
+          schema: public
+  - name: productItems
+    using:
+      foreign_key_constraint_on:
+        column: product_id
+        table:
+          name: product_items
+          schema: public
+  - name: productUploadLogs
+    using:
+      foreign_key_constraint_on:
+        column: product_id
+        table:
+          name: product_upload_logs
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        store:
+          seller_id:
+            _eq: X-Hasura-User-Id
+      columns:
+        - api_private_sold
+        - api_private_stock
+        - complete_date_service
+        - create_at
+        - end_date
+        - end_is_featured
+        - has_discount
+        - is_enabled
+        - is_service
+        - last_time_sync
+        - listing_date
+        - price
+        - product_id
+        - product_name
+        - sold_count
+        - start_is_featured
+        - status
+        - stock_count
+        - store_id
+        - update_at
+        - use_private_warehouse
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - is_enabled
+        - is_service
+        - use_private_warehouse
+        - product_name
+        - status
+        - has_discount
+        - sold_count
+        - price
+        - stock_count
+        - complete_date_service
+        - create_at
+        - end_is_featured
+        - start_is_featured
+        - update_at
+        - end_date
+        - listing_date
+        - product_id
+        - store_id
+      filter: {}
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - is_enabled
+        - is_service
+        - use_private_warehouse
+        - product_name
+        - status
+        - last_time_sync
+        - api_private_sold
+        - api_private_stock
+        - has_discount
+        - sold_count
+        - price
+        - stock_count
+        - complete_date_service
+        - create_at
+        - end_is_featured
+        - start_is_featured
+        - update_at
+        - end_date
+        - listing_date
+        - product_id
+        - store_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - api_private_sold
+        - api_private_stock
+        - complete_date_service
+        - create_at
+        - end_date
+        - end_is_featured
+        - has_discount
+        - is_enabled
+        - is_service
+        - last_time_sync
+        - listing_date
+        - price
+        - product_id
+        - product_name
+        - sold_count
+        - start_is_featured
+        - status
+        - stock_count
+        - store_id
+        - update_at
+        - use_private_warehouse
+      filter: {}
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - api_private_sold
+        - api_private_stock
+        - complete_date_service
+        - create_at
+        - end_date
+        - end_is_featured
+        - has_discount
+        - is_enabled
+        - is_service
+        - last_time_sync
+        - listing_date
+        - price
+        - product_id
+        - product_name
+        - sold_count
+        - start_is_featured
+        - status
+        - stock_count
+        - store_id
+        - update_at
+        - use_private_warehouse
+      filter:
+        store:
+          seller_id:
+            _eq: X-Hasura-User-Id
+      check: null
+    comment: ""
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        store:
+          seller_id:
+            _eq: X-Hasura-User-Id
+    comment: ""

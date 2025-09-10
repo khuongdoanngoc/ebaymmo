@@ -1,0 +1,19 @@
+table:
+  name: user_order_summary
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - completed_orders
+        - pending_orders
+        - stores_ordered_from
+        - total_orders
+        - username
+        - total_spent
+        - last_order_date
+        - user_id
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+    comment: ""

@@ -1,0 +1,90 @@
+table:
+  name: categories
+  schema: public
+object_relationships:
+  - name: category
+    using:
+      foreign_key_constraint_on: parent_category_id
+  - name: discountedProductType
+    using:
+      foreign_key_constraint_on: discounted_product_type_id
+array_relationships:
+  - name: categories
+    using:
+      foreign_key_constraint_on:
+        column: parent_category_id
+        table:
+          name: categories
+          schema: public
+  - name: discountedProductTypes
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: discounted_product_type
+          schema: public
+  - name: positions
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: positions
+          schema: public
+  - name: stores
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: stores
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - category_name
+        - description
+        - images_url
+        - slug
+        - type
+        - keywords
+        - create_at
+        - update_at
+        - category_id
+        - parent_category_id
+      filter: {}
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - category_name
+        - description
+        - images_url
+        - slug
+        - type
+        - keywords
+        - create_at
+        - update_at
+        - status
+        - category_id
+        - discounted_product_type_id
+        - parent_category_id
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - category_id
+        - category_name
+        - create_at
+        - description
+        - discounted_product_type_id
+        - images_url
+        - keywords
+        - parent_category_id
+        - slug
+        - type
+        - update_at
+      filter: {}
+      limit: 100
+      allow_aggregations: true
+    comment: ""

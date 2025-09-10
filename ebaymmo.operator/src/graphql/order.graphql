@@ -1,0 +1,174 @@
+fragment OrdersFragment on Orders {
+    orderId
+    buyerId
+    productId
+    quantity
+    totalAmount
+    orderStatus
+    referralCode
+    createAt
+    updateAt
+    orderDate
+    orderCode
+    orderType
+    price
+    isPreOrder
+}
+
+subscription GetOrder(
+    $limit: Int
+    $offset: Int
+    $orderBy: [OrdersOrderBy!] = {}
+    $where: OrdersBoolExp = {}
+) {
+    orders(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        ...OrdersFragment
+    }
+}
+
+subscription GetOrderComplaint(
+    $limit: Int
+    $offset: Int
+    $orderBy: [OrdersOrderBy!] = {}
+    $where: OrdersBoolExp = {}
+) {
+    orders(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        ...OrdersFragment
+        user {
+            username
+            userId
+            images
+        }
+        product {
+            productName
+            productId
+            store {
+                sellerId
+                user {
+                    username
+                    images
+                }
+            }
+        }
+        complainOrders {
+            complainId
+            image
+            content
+            orderId
+            createdAt
+            updatedAt
+        }
+    }
+}
+
+query GetOrderStatusData {
+    pending: ordersAggregate(where: { orderStatus: { _eq: "pending" } }) {
+        aggregate {
+            count
+        }
+    }
+    refunded: ordersAggregate(where: { orderStatus: { _eq: "refunded" } }) {
+        aggregate {
+            count
+        }
+    }
+    successed: ordersAggregate(where: { orderStatus: { _eq: "successed" } }) {
+        aggregate {
+            count
+        }
+    }
+    canceled: ordersAggregate(where: { orderStatus: { _eq: "canceled" } }) {
+        aggregate {
+            count
+        }
+    }
+    complained: ordersAggregate(where: { orderStatus: { _eq: "complained" } }) {
+        aggregate {
+            count
+        }
+    }
+}
+
+subscription GetSuccessedOrdersByMonth {
+    ordersByMonth {
+        monthNumber
+        monthName
+        successedCount
+    }
+}
+
+mutation UpdateOrderStatus($orderId: uuid!, $status: String!) {
+    updateOrdersByPk(
+        pkColumns: { orderId: $orderId }
+        _set: { orderStatus: $status }
+    ) {
+        orderId
+        orderStatus
+        updateAt
+    }
+}
+
+query getOrderStore(
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [OrdersOrderBy!] = {}
+    $where: OrdersBoolExp = {}
+) {
+    orders(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        orderId
+        orderDate
+        orderStatus
+        orderCode
+        price
+        quantity
+        referralCode
+        totalAmount
+        isPreOrder
+        product {
+            productName
+        }
+        user {
+            fullName
+        }
+    }
+}
+query GetOrderInfo {
+    orders {
+        buyerId
+        orderId
+        orderDate
+        totalAmount
+        orderStatus
+        isPreOrder
+        orderCode
+        user {
+            fullName
+            username
+        }
+    }
+}
+
+query GetOrderDaily($where: OrdersPerDayBoolExp = {}) {
+    ordersPerDay(where: $where) {
+        orderDate
+        totalOrders
+    }
+}
+
+mutation UpdateComplain(
+    $where: ComplainOrderBoolExp = {}
+    $_set: ComplainOrderSetInput = {}
+) {
+    updateComplainOrder(where: $where, _set: $_set) {
+        affectedRows
+        returning {
+            complainId
+            content
+            createdAt
+            orderId
+            status
+            updatedAt
+            image
+        }
+    }
+}

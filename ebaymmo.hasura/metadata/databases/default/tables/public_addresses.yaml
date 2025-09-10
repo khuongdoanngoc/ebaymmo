@@ -1,0 +1,73 @@
+table:
+  name: addresses
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+array_relationships:
+  - name: withdrawals
+    using:
+      foreign_key_constraint_on:
+        column: address_id
+        table:
+          name: withdrawals
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        user_id:
+          _eq: X-Hasura-User-Id
+      columns:
+        - address
+        - address_id
+        - create_at
+        - network
+        - network_name
+        - update_at
+        - user_id
+    comment: ""
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - address
+        - address_id
+        - create_at
+        - network
+        - network_name
+        - user_id
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - address
+        - address_id
+        - create_at
+        - network
+        - network_name
+        - update_at
+        - user_id
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+      allow_aggregations: true
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - address
+        - address_id
+        - create_at
+        - network
+        - network_name
+        - update_at
+        - user_id
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+      check: null
+    comment: ""

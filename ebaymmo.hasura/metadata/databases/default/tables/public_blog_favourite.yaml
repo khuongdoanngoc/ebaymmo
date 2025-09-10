@@ -1,0 +1,55 @@
+table:
+  name: blog_favourite
+  schema: public
+object_relationships:
+  - name: blog
+    using:
+      foreign_key_constraint_on: blog_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        user_id:
+          _eq: X-Hasura-User-Id
+      columns:
+        - blog_id
+        - created_at
+        - favourite_id
+        - user_id
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - blog_id
+        - created_at
+        - favourite_id
+        - user_id
+      filter:
+        blog:
+          is_deleted:
+            _is_null: true
+      limit: 20
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - blog_id
+        - created_at
+        - favourite_id
+        - user_id
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+      allow_aggregations: true
+    comment: ""
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+    comment: ""

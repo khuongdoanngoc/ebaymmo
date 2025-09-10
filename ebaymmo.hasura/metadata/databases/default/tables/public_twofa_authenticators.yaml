@@ -1,0 +1,64 @@
+table:
+  name: twofa_authenticators
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        user_id:
+          _eq: X-Hasura-User-Id
+      columns:
+        - activated_at
+        - created_at
+        - device_name
+        - id
+        - is_active
+        - last_used_at
+        - secret_key
+        - two_secret_key
+        - user_id
+    comment: ""
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - is_active
+        - two_secret_key
+        - device_name
+        - secret_key
+        - activated_at
+        - created_at
+        - last_used_at
+        - id
+        - user_id
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - is_active
+        - two_secret_key
+        - device_name
+        - secret_key
+        - activated_at
+        - created_at
+        - last_used_at
+        - id
+        - user_id
+      filter: {}
+      check: {}
+    comment: ""
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+    comment: ""

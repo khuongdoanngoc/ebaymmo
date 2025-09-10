@@ -1,0 +1,13 @@
+mutation SendContactEmail(
+    $email: String!
+    $phone: String!
+    $need: String!
+    $content: String!
+) {
+    sendContactEmail(
+        input: { email: $email, phone: $phone, need: $need, content: $content }
+    ) {
+        success
+        message
+    }
+}

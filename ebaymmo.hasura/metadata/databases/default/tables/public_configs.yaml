@@ -1,0 +1,13 @@
+table:
+  name: configs
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - name
+        - value
+        - create_at
+        - update_at
+      filter: {}
+    comment: ""

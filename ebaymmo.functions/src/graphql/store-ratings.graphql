@@ -1,0 +1,25 @@
+query GetStoreRatingById($ratingId: uuid!) {
+  storeRatings(where: {ratingId: {_eq: $ratingId}}) {
+    ratingId
+    storeId
+    userId
+    rating
+    review
+    response
+    responseDate
+  }
+}
+
+mutation UpdateReviewResponse($ratingId: uuid!, $response: String!) {
+  updateStoreRatings(
+    where: {ratingId: {_eq: $ratingId}}, 
+    _set: {response: $response}
+  ) {
+    affectedRows
+    returning {
+      ratingId
+      response
+      responseDate
+    }
+  }
+}

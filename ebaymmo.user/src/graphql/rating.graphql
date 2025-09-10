@@ -1,0 +1,78 @@
+fragment StoreRatingsFragment on StoreRatings {
+    ratingId
+    rating
+    ratingDate
+    image
+    createAt
+    updateAt
+    review
+    ratingDate
+    response
+    user {
+        userId
+        username
+        fullName
+        images
+    }
+    store {
+        ...StoresFragment
+    }
+}
+
+fragment StoresFragment on Stores {
+    user {
+        username
+        images
+    }
+}
+
+query getStoreReview(
+    $distinctOn: [StoreRatingsSelectColumn!] = userId
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [StoreRatingsOrderBy!] = {}
+    $where: StoreRatingsBoolExp = {}
+) {
+    storeRatings(
+        distinctOn: $distinctOn
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+        where: $where
+    ) {
+        ...StoreRatingsFragment
+    }
+    storeRatingsAggregate(where: $where) {
+        ...StoreRatingAggregate
+    }
+}
+
+fragment StoreRatingAggregate on StoreRatingsAggregate {
+    aggregate {
+        count
+    }
+}
+
+mutation actionCreateRate($input: CreateStoreRatingInput!) {
+    createRate(input: $input) {
+        ratingId
+        rating
+        review
+        userId
+        image
+        updatedAt
+        storeId
+    }
+}
+
+mutation actionUpdateRate($id: String!, $input: UpdateStoreRatingInput!) {
+    updateRate(id: $id, input: $input) {
+        ratingId
+        rating
+        review
+        image
+        userId
+        updatedAt
+        storeId
+    }
+}

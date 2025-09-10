@@ -1,0 +1,29 @@
+table:
+  name: reseller_orders_view
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - buyer_email
+        - buyer_id
+        - commission_amount
+        - commission_rate
+        - create_at
+        - order_date
+        - order_id
+        - product_name
+        - quantity
+        - status
+        - store_name
+        - total_amount
+        - unit_price
+        - update_at
+      filter:
+        _or:
+          - buyer_id:
+              _eq: X-Hasura-User-Id
+          - reseller_id:
+              _eq: X-Hasura-User-Id
+      allow_aggregations: true
+    comment: ""

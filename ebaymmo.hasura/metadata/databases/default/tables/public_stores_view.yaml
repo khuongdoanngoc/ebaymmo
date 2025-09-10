@@ -1,0 +1,94 @@
+table:
+  name: stores_view
+  schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - active_coupons
+        - total_orders
+        - total_products
+        - deleted
+        - avatar
+        - category_name
+        - email
+        - seller_name
+        - short_description
+        - store_name
+        - store_tag
+        - sub_title
+        - average_rating
+        - total_sold_count
+        - total_stock_count
+        - store_price
+        - total_product_quantity
+        - total_revenue
+        - create_at
+        - update_at
+        - last_login
+        - status
+        - category_id
+        - seller_id
+        - store_id
+      filter: {}
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - active_coupons
+        - total_orders
+        - total_products
+        - deleted
+        - avatar
+        - category_name
+        - email
+        - seller_name
+        - short_description
+        - store_name
+        - store_tag
+        - sub_title
+        - average_rating
+        - total_sold_count
+        - total_stock_count
+        - store_price
+        - total_product_quantity
+        - total_revenue
+        - create_at
+        - update_at
+        - last_login
+        - status
+        - category_id
+        - seller_id
+        - store_id
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - active_coupons
+        - total_orders
+        - total_products
+        - deleted
+        - avatar
+        - category_name
+        - email
+        - seller_name
+        - short_description
+        - store_name
+        - store_tag
+        - sub_title
+        - average_rating
+        - total_sold_count
+        - total_stock_count
+        - store_price
+        - total_product_quantity
+        - total_revenue
+        - create_at
+        - update_at
+        - last_login
+        - status
+        - category_id
+        - seller_id
+        - store_id
+      filter: {}
+    comment: ""

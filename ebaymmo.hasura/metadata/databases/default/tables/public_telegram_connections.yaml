@@ -1,0 +1,48 @@
+table:
+  name: telegram_connections
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: referral_code
+insert_permissions:
+  - role: user
+    permission:
+      check: {}
+      columns:
+        - referral_code
+        - telegram_first_name
+        - telegram_id
+        - telegram_last_name
+        - telegram_username
+        - created_at
+        - id
+    comment: ""
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - referral_code
+        - telegram_first_name
+        - telegram_id
+        - telegram_last_name
+        - telegram_username
+        - created_at
+        - id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - referral_code
+        - telegram_first_name
+        - telegram_id
+        - telegram_last_name
+        - telegram_username
+        - created_at
+        - id
+      filter: {}
+      check: null
+    comment: ""

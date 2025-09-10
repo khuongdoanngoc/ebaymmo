@@ -1,0 +1,125 @@
+fragment ResellerInfo on Resellers {
+    resellerId
+    status
+    requestDate
+    commissionRate
+    notes
+    approvalDate
+    isActive
+    store {
+        storeId
+        storeName
+        slug
+    }
+    user {
+        userId
+        username
+        referralCode
+    }
+}
+
+fragment ResellerOrdersViewFragment on ResellerOrdersView {
+    buyerId
+    commissionAmount
+    commissionRate
+    createAt
+    orderDate
+    orderId
+    productName
+    quantity
+    status
+    storeName
+    totalAmount
+    unitPrice
+}
+
+mutation RegisterReseller($object: ResellersInsertInput = {}) {
+    insertResellersOne(object: $object) {
+        ...ResellerInfo
+    }
+}
+
+query GetResellerProducts(
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [ResellersOrderBy!] = {}
+    $resellerId: UuidComparisonExp = {}
+    $limit1: Int = 10
+    $distinctOn1: [ResellerStoreLinksSelectColumn!] = commissionRate
+    $offset1: Int = 0
+    $orderBy1: [ResellerStoreLinksOrderBy!] = {}
+    $resellerId1: UuidComparisonExp = {}
+    $where: ResellersBoolExp = {}
+) {
+    resellers(
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+        where: $where
+    ) {
+        ...ResellerInfo
+    }
+    resellersAggregate {
+        aggregate {
+            count
+        }
+    }
+}
+
+mutation UpdatedReseller(
+    $where: ResellersBoolExp = {}
+    $_set: ResellersSetInput = {}
+) {
+    updateResellers(where: $where, _set: $_set) {
+        returning {
+            ...ResellerInfo
+        }
+    }
+}
+
+query GetResellerHistory(
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [ResellerOrdersViewOrderBy!] = {}
+    $where: ResellerOrdersViewBoolExp = {}
+) {
+    resellerOrdersView(
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+        where: $where
+    ) {
+        ...ResellerOrdersViewFragment
+    }
+    resellerOrdersViewAggregate {
+        aggregate {
+            count
+        }
+    }
+}
+
+query GetResellerStoreLinks(
+    $where: ResellerStoreLinksBoolExp
+    $limit: Int
+    $offset: Int
+    $orderBy: [ResellerStoreLinksOrderBy!]
+) {
+    resellerStoreLinks(
+        where: $where
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+    ) {
+        resellerId
+        storeId
+        status
+        isActive
+        commissionRate
+        referralCode
+        userId
+        storeName
+        storeSlug
+        shareLink
+        userBalance
+    }
+}

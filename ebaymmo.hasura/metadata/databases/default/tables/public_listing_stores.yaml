@@ -1,0 +1,67 @@
+table:
+  name: listing_stores
+  schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - allow_pre_order
+        - avatar
+        - average_rating
+        - category_name
+        - category_slug
+        - category_type
+        - duplicate_product
+        - highest_price
+        - lowest_price
+        - parent_category_name
+        - parent_category_slug
+        - product_count
+        - rating_total
+        - seller_avatar
+        - seller_id
+        - seller_name
+        - slug
+        - sold
+        - status
+        - stock
+        - store_id
+        - store_name
+        - store_price
+        - store_tag
+        - sub_title
+        - wishlist_ids
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - allow_pre_order
+        - avatar
+        - average_rating
+        - category_name
+        - category_slug
+        - category_type
+        - duplicate_product
+        - highest_price
+        - lowest_price
+        - parent_category_name
+        - parent_category_slug
+        - product_count
+        - rating_total
+        - seller_avatar
+        - seller_id
+        - seller_name
+        - slug
+        - sold
+        - status
+        - stock
+        - store_id
+        - store_name
+        - store_price
+        - store_tag
+        - sub_title
+        - wishlist_ids
+      filter: {}
+      allow_aggregations: true
+    comment: ""

@@ -1,0 +1,13 @@
+mutation loginOperator($email: String!, $password: String!) {
+    loginOperator(input: { email: $email, password: $password }) {
+        accessToken
+        refreshToken
+    }
+}
+
+mutation RefreshTokenOperator($refreshToken: String!) {
+    refreshTokenOperator(refreshToken: $refreshToken) {
+        accessToken
+        refreshToken
+    }
+}

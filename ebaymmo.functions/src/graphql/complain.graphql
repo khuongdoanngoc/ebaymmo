@@ -1,0 +1,29 @@
+fragment ComplainOrderInfo on ComplainOrder{
+   complainId
+    content
+    createdAt
+    image
+    order {
+      user{
+        userId
+        username
+      }
+      quantity
+      orderCode
+      orderId
+      product {
+        productId
+        store {
+          storeName
+          storeId
+        }
+      }
+    }
+    status
+} 
+
+mutation CreateComplain($object: ComplainOrderInsertInput = {}) {
+  insertComplainOrderOne(object: $object) {
+   ...ComplainOrderInfo
+  }
+}

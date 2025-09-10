@@ -1,0 +1,12 @@
+query MyQuery($where: UsersBoolExp = {}) {
+  users(where: $where) {
+    fullName
+    images
+    userId
+    username
+    role
+    createAt
+    sellerSince
+    updateAt
+  }
+}

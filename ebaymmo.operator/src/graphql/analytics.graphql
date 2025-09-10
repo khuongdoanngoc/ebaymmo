@@ -1,0 +1,155 @@
+fragment ProductsFragment on Products {
+    store {
+        storeName
+    }
+}
+
+subscription TopSellingProducts(
+    $limit: Int = 5
+    $offset: Int = 0
+    $orderBy: [ProductsOrderBy!]
+    $where: ProductsBoolExp = { soldCount: { _isNull: false } }
+) {
+    products(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        productName
+        soldCount
+        price
+    }
+}
+
+subscription TopPerformingStores(
+    $limit: Int = 5
+    $offset: Int = 0
+    $orderBy: [OrdersOrderBy!] = { quantity: DESC }
+    $where: OrdersBoolExp = { quantity: { _isNull: false } }
+) {
+    orders(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        price
+        quantity
+        product {
+            ...ProductsFragment
+        }
+    }
+}
+query GetFromLastMonth(
+    $startOfThisMonth: timestamp!
+    $endOfThisMonth: timestamp!
+    $lastMonth: timestamp!
+    $lastMonthEnd: timestamp!
+) {
+    # Users stats for current and last month
+    users_this_month: usersAggregate(
+        where: { createAt: { _gte: $startOfThisMonth, _lte: $endOfThisMonth } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+    users_last_month: usersAggregate(
+        where: { createAt: { _gte: $lastMonth, _lt: $lastMonthEnd } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    # Active stores stats
+    stores_this_month: storesAggregate(
+        where: {
+            createAt: { _gte: $startOfThisMonth, _lte: $endOfThisMonth }
+            status: { _eq: "active" }
+        }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    stores_last_month: storesAggregate(
+        where: {
+            createAt: { _gte: $lastMonth, _lt: $lastMonthEnd }
+            status: { _eq: "active" }
+        }
+    ) {
+        aggregate {
+            count
+        }
+    }
+    # Orders count stats
+    orders_this_month: ordersAggregate(
+        where: { createAt: { _gte: $startOfThisMonth, _lte: $endOfThisMonth } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+    orders_last_month: ordersAggregate(
+        where: { createAt: { _gte: $lastMonth, _lt: $lastMonthEnd } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    revenue_this_month: ordersAggregate(
+        where: { createAt: { _gte: $startOfThisMonth, _lte: $endOfThisMonth } }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+
+    revenue_last_month: ordersAggregate(
+        where: { createAt: { _gte: $lastMonth, _lt: $lastMonthEnd } }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+}
+query GetAnalyticStats($startDate: timestamp!, $endDate: timestamp!) {
+    # Users stats in selected range
+    users_in_range: usersAggregate(
+        where: { createAt: { _gte: $startDate, _lte: $endDate } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    # Active Stores stats in selected range
+    stores_in_range: storesAggregate(
+        where: {
+            createAt: { _gte: $startDate, _lte: $endDate }
+            status: { _eq: "active" }
+        }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    # Orders stats in selected range
+    orders_in_range: ordersAggregate(
+        where: { createAt: { _gte: $startDate, _lte: $endDate } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+
+    # Revenue stats in selected range
+    revenue_in_range: ordersAggregate(
+        where: { createAt: { _gte: $startDate, _lte: $endDate } }
+    ) {
+        aggregate {
+            sum {
+                totalAmount
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+table:
+  name: tags
+  schema: public
+array_relationships:
+  - name: blogTags
+    using:
+      foreign_key_constraint_on:
+        column: tag_id
+        table:
+          name: blog_tags
+          schema: public

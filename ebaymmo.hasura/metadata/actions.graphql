@@ -1,0 +1,569 @@
+type Mutation {
+  addReviewResponse(
+    ratingId: String!
+    response: String!
+  ): ReviewResponseOutput
+}
+
+type Mutation {
+  calculateResellerCommission(
+    order_id: uuid!
+  ): CalculateCommissionOutput
+}
+
+type Mutation {
+  changePassword(
+    input: ChangePasswordInput!
+  ): ChangePasswordResponse
+}
+
+type Mutation {
+  createComplain(
+    input: CreateComplainInput!
+  ): ComplainResponse!
+}
+
+type Mutation {
+  createDeposit(
+    networkCode: String!
+    amount: Float!
+    urlCallback: String!
+    orderId: String!
+    userId: String!
+  ): TransactionResponse!
+}
+
+type Mutation {
+  createOrder(
+    sellerId: uuid!
+    productId: uuid!
+    quantity: Int!
+    couponValue: numeric
+    isPreOrder: Boolean
+  ): OrderResponse!
+}
+
+type Mutation {
+  createOrderServices(
+    seller_id: uuid!
+    product_id: uuid!
+    coupon_value: numeric
+    complete_date_service: timestamp!
+  ): OrdersOutput
+}
+
+type Mutation {
+  createRate(
+    input: CreateStoreRatingInput!
+  ): StoreRatingResponse!
+}
+
+type Mutation {
+  createTransaction(
+    input: TransactionInput!
+  ): TransactionResult
+}
+
+type Mutation {
+  donateToBlogAction(
+    blogId: String!
+    donationAmount: numeric!
+    comment: String
+  ): DonateToBlogOutput
+}
+
+type Mutation {
+  enable2FA: Enable2FAOutput
+}
+
+type Mutation {
+  finalizeBidAuctionAction(
+    input: FinalizeBidInput!
+  ): BidsHistoryOutput
+}
+
+type Mutation {
+  forgotPassword(
+    email: String!
+  ): ForgotPasswordResponse
+}
+
+type Mutation {
+  getPresignedUrl(
+    input: GetPresignedUrlInput!
+  ): GetPresignedUrlResponse
+}
+
+type Mutation {
+  googleLogin(
+    profile: GoogleProfileInput!
+    accessToken: String!
+  ): LoginResponse!
+}
+
+type Mutation {
+  holdBidAmountAction(
+    input: HoldBidAmountInput!
+  ): BidsHistoryOutput
+}
+
+type Mutation {
+  login(
+    email: String!
+    password: String!
+  ): LoginResponse
+}
+
+type Mutation {
+  loginOperator(
+    input: LoginInputOperator!
+  ): LoginResponseOperator
+}
+
+type Mutation {
+  processWithdrawalAction(
+    amount: Float!
+    balanceAddress: String!
+  ): WithdrawalResponse
+}
+
+type Mutation {
+  refreshToken(
+    refreshToken: String!
+  ): TokenResponse
+}
+
+type Mutation {
+  refreshTokenOperator(
+    refreshToken: String!
+  ): RefreshTokenOperatorOutput
+}
+
+type Mutation {
+  registerUser(
+    input: RegisterInput!
+  ): RegisterOutput
+}
+
+type Mutation {
+  resetPassword(
+    token: String!
+    newPassword: String!
+  ): ResetPasswordResponse
+}
+
+type Mutation {
+  sendContactEmail(
+    input: SendContactEmailInput!
+  ): SendContactEmailResponse
+}
+
+type Mutation {
+  updateRate(
+    id: String!
+    input: UpdateStoreRatingInput!
+  ): StoreRatingResponse!
+}
+
+type Mutation {
+  uploadFile(
+    input: dataUploadInput!
+    productId: String!
+  ): UploadResponse
+}
+
+type Mutation {
+  verify2FACode(
+    twoFactorToken: String!
+  ): AddressBalanceResponse!
+}
+
+type Mutation {
+  verify2FAToken(
+    token: String!
+  ): verifyResponse
+}
+
+input RegisterInput {
+  username: String!
+  password: String!
+  email: String!
+}
+
+input GetPresignedUrlInput {
+  userId: String!
+  fileName: String!
+  fileExtension: String!
+}
+
+input SendContactEmailInput {
+  email: String!
+  phone: String!
+  need: String!
+  content: String!
+}
+
+input GoogleProfileInput {
+  email: String!
+  name: String!
+  sub: String!
+  images: String!
+}
+
+input CreateStoreRatingInput {
+  storeId: String!
+  rating: Int!
+  review: String
+  image: String
+}
+
+input UpdateStoreRatingInput {
+  rating: Int
+  review: String
+  image: String
+}
+
+input SampleInput {
+  username: String!
+  password: String!
+}
+
+input ChangePasswordInput {
+  token: String!
+  oldPassword: String!
+  newPassword: String!
+}
+
+input TransactionInput {
+  idStore: uuid!
+  idProduct: uuid!
+  idUser: uuid!
+  quantity: Int!
+  discount: Int!
+  totalAmount: Float!
+}
+
+input UploadFileInput {
+  storeId: Int!
+  fileContent: String!
+}
+
+input CreateComplainInput {
+  orderId: String!
+  image: String
+  content: String!
+}
+
+input dataUploadInput {
+  fileName: String!
+  fileType: String!
+  productId: String!
+}
+
+input HoldBidAmountInput {
+  storeId: uuid!
+  positionId: uuid!
+  bidAmount: numeric!
+  bidId: uuid!
+}
+
+input FinalizeBidInput {
+  bidId: uuid!
+}
+
+input DonateToBlogInput {
+  blogId: String!
+  donationAmount: numeric!
+}
+
+input LoginInputOperator {
+  email: String!
+  password: String!
+}
+
+input TelegramConnectionInput {
+  telegramId: String!
+  telegramUsername: String
+  telegramFirstName: String
+  telegramLastName: String
+  telegramPhotoUrl: String
+}
+
+type SendContactEmailResponse {
+  success: Boolean!
+  message: String!
+}
+
+type LoginResponse {
+  accessToken: String!
+  refreshToken: String!
+}
+
+type RegisterOutput {
+  message: String!
+}
+
+type GoogleLoginResponse {
+  accessToken: String!
+  refreshToken: String!
+}
+
+type TokenResponse {
+  accessToken: String!
+  refreshToken: String!
+}
+
+type ForgotPasswordResponse {
+  message: String!
+  success: Boolean!
+}
+
+type ResetPasswordResponse {
+  success: Boolean!
+  message: String!
+  error: String
+}
+
+type ContactEmailResponse {
+  success: Boolean!
+  message: String!
+}
+
+type StoreRatingResponse {
+  ratingId: String
+  storeId: String
+  userId: String
+  rating: Int
+  review: String
+  image: String
+  createdAt: timestamptz
+  updatedAt: timestamptz
+}
+
+type Enable2FAOutput {
+  secret: String!
+  qrCodeUrl: String!
+}
+
+type Verify2FATokenOutput {
+  success: Boolean!
+}
+
+type GetPresignedUrlResponse {
+  url: String!
+}
+
+type SampleOutput {
+  accessToken: String!
+}
+
+type ChangePasswordResponse {
+  success: Boolean!
+  message: String!
+}
+
+type TransactionResult {
+  transactionId: uuid
+  totalAmount: Float
+  message: String
+}
+
+type OrderResponse {
+  orderId: String!
+  totalAmount: Float
+  createAt: String
+  orderCode: String
+  orderDate: String
+  orderStatus: String
+  price: Float
+  referralCode: String
+  buyerId: String
+  quantity: Int
+  productId: String!
+  isPreOrder: Boolean
+}
+
+type CalculateCommissionOutput {
+  success: Boolean!
+  message: String
+  commission_amount: numeric
+}
+
+type UploadFileOutput {
+  success: Boolean!
+  message: String!
+  productId: Int
+}
+
+type ComplainResponse {
+  complainId: String
+  orderId: String
+  status: String
+  content: String
+  image: String
+  createdAt: timestamptz
+  updatedAt: timestamptz
+}
+
+type UploadResponse {
+  success: Boolean!
+  url: String
+}
+
+type ReviewResponseOutput {
+  ratingId: String!
+  response: String!
+  success: Boolean!
+}
+
+type BidsHistoryOutput {
+  action: String!
+  bidAmount: numeric!
+  bidDate: timestamptz!
+  bidId: uuid!
+  historyId: uuid!
+  createAt: timestamptz!
+  positionId: uuid!
+  status: String!
+  storeId: uuid
+  updateAt: timestamptz
+  description: String
+}
+
+type WithdrawalResponse {
+  withdrawalId: String!
+  userId: String!
+  amount: Float!
+  withdrawalStatus: String!
+  requestDate: String!
+  processedDate: String
+  description: String
+  createAt: String!
+  updateAt: String!
+  balanceAddress: String!
+}
+
+type DonationResult {
+  id: uuid!
+  amount: numeric!
+  status: String!
+  message: String!
+}
+
+type DonateToBlogOutput {
+  donationId: uuid
+  blogId: String
+  userId: uuid
+  amount: numeric
+  donationDate: timestamptz
+  comment: String
+  createAt: timestamptz
+  updateAt: timestamptz
+  success: Boolean!
+  message: String
+}
+
+type SyncBlogPostsOutput {
+  message: String!
+  total: Int!
+  synced: Int!
+  failed: Int!
+}
+
+type AddressBalanceResponse {
+  status: Boolean!
+}
+
+type AddressBalance {
+  id: String!
+  userId: String!
+  network: String!
+  address: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type verifyResponse {
+  success: Boolean!
+}
+
+type OrdersOutput {
+  orderId: uuid!
+  buyerId: uuid!
+  orderDate: timestamptz!
+  totalAmount: numeric!
+  orderStatus: String!
+  createAt: timestamptz!
+  updateAt: timestamptz!
+  productId: uuid!
+  quantity: Int!
+  price: numeric!
+  orderType: String!
+  orderCode: String!
+  couponId: uuid
+  referralCode: String
+}
+
+type LoginResponseOperator {
+  accessToken: String!
+  refreshToken: String!
+}
+
+type TelegramConnection {
+  userId: String!
+  telegramId: String!
+  telegramUsername: String
+  telegramFirstName: String
+  telegramLastName: String
+}
+
+type TelegramConnectionResponse {
+  success: Boolean!
+  message: String!
+  data: TelegramConnectionData
+}
+
+type RefreshTokenOperatorOutput {
+  accessToken: String!
+  refreshToken: String
+}
+
+type TelegramConnectionData {
+  user: User
+  telegramConnection: TelegramConnection
+}
+
+type User {
+  userId: String!
+  username: String
+  referralCode: String
+}
+
+type Wallet {
+  walletId: String!
+  address: String!
+}
+
+type PaymentMethod {
+  paymentMethodId: String!
+  networkCode: String!
+  chainId: Int!
+  vmType: String!
+}
+
+type TransactionResponse {
+  transactionId: String!
+  walletId: String!
+  merchantId: String!
+  paymentMethodId: String!
+  orderId: String!
+  amount: Float!
+  createdAt: String!
+  wallet: Wallet!
+  paymentMethod: PaymentMethod!
+  qrUrl: String!
+  paymentPageUrl: String!
+}
+
+""" Custom scalar for file uploads """ scalar Upload
+

@@ -1,0 +1,3 @@
+table:
+  name: delete_product_logs
+  schema: public

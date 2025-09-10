@@ -1,0 +1,32 @@
+table:
+  name: donation_comments_view
+  schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - amount
+        - blog_id
+        - blog_title
+        - comment
+        - donation_date
+        - images
+        - user_id
+        - username
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - amount
+        - blog_id
+        - blog_title
+        - comment
+        - donation_date
+        - images
+        - user_id
+        - username
+      filter: {}
+      allow_aggregations: true
+    comment: ""

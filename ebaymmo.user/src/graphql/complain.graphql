@@ -1,0 +1,65 @@
+query GetComplainOrder(
+    $where: ComplainViewBoolExp = {}
+    $offset: Int
+    $limit: Int
+    $orderBy: [ComplainViewOrderBy!] = {}
+) {
+    complainView(
+        where: $where
+        offset: $offset
+        limit: $limit
+        orderBy: $orderBy
+    ) {
+        complainId
+        content
+        createdAt
+        image
+        orderCode
+        orderId
+        productId
+        quantity
+        status
+        storeId
+        storeName
+        username
+        userId
+        totalAmount
+        ownerId
+        ownerUsername
+    }
+    complainViewAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+mutation CreateComplainAction($input: CreateComplainInput!) {
+    createComplain(input: $input) {
+        complainId
+        content
+        createdAt
+        image
+        orderId
+        status
+        updatedAt
+    }
+}
+
+mutation UpdateComplain(
+    $where: ComplainOrderBoolExp = {}
+    $_set: ComplainOrderSetInput = {}
+) {
+    updateComplainOrder(where: $where, _set: $_set) {
+        affectedRows
+        returning {
+            complainId
+            content
+            createdAt
+            orderId
+            status
+            updatedAt
+            image
+        }
+    }
+}

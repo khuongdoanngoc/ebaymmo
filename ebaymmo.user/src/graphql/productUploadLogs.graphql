@@ -1,0 +1,100 @@
+fragment ProductUploadLogFields on ProductUploadLogs {
+    productUploadLogsId
+    productId
+    userId
+    fileSize
+    fileName
+    validRowCount
+    invalidRowCount
+    createdAt
+    status
+}
+
+mutation CreateProductUploadLog($object: ProductUploadLogsInsertInput!) {
+    insertProductUploadLogsOne(object: $object) {
+        ...ProductUploadLogFields
+    }
+}
+
+query GetProductUploadLogsByProductId(
+    $productId: uuid!
+    $limit: Int = 2
+    $offset: Int = 0
+) {
+    # Dữ liệu cho bảng hiển thị
+    productUploadLogs(
+        where: { productId: { _eq: $productId } }
+        orderBy: { createdAt: DESC }
+        limit: $limit
+        offset: $offset
+    ) {
+        productUploadLogsId
+        fileName
+        validRowCount
+        invalidRowCount
+        createdAt
+        status
+        product {
+            productName
+        }
+    }
+
+    # Thông tin phân trang
+    productUploadLogsAggregate(where: { productId: { _eq: $productId } }) {
+        aggregate {
+            count
+        }
+    }
+
+    # Lấy riêng 2 file mới nhất cho bảng 1
+    latest_uploads: productUploadLogs(
+        where: { productId: { _eq: $productId } }
+        orderBy: { createdAt: DESC }
+        limit: 2
+    ) {
+        productUploadLogsId
+        fileName
+        validRowCount
+        invalidRowCount
+        createdAt
+        status
+        product {
+            productName
+        }
+    }
+}
+
+query GetUnsoldProductItems($productId: uuid!) {
+    productItems(
+        where: { productId: { _eq: $productId }, status: { _eq: "notsale" } }
+        orderBy: { createAt: ASC }
+    ) {
+        productItemId
+        dataText
+        createAt
+        isDuplicate
+    }
+}
+
+mutation DeleteUnsoldProductItems($productId: uuid!) {
+    deleteProductItems(
+        where: { productId: { _eq: $productId }, status: { _eq: "notsale" } }
+    ) {
+        affectedRows
+    }
+}
+
+query GetProductItemCount($productId: uuid!) {
+    productItemsAggregate(where: { productId: { _eq: $productId } }) {
+        aggregate {
+            count
+        }
+    }
+    unsoldItems: productItemsAggregate(
+        where: { productId: { _eq: $productId }, status: { _eq: "notsale" } }
+    ) {
+        aggregate {
+            count
+        }
+    }
+}

@@ -1,0 +1,3 @@
+table:
+  name: deposit_log_view
+  schema: public

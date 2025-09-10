@@ -1,0 +1,18 @@
+mutation InsertStoreRegistration(
+    $userId: uuid!
+    $phoneNumber: String!
+    $idCardImage: String!
+    $portraitPhoto: String!
+) {
+    insertStoreRegistrationsOne(
+        object: {
+            userId: $userId
+            phoneNumber: $phoneNumber
+            idCardImage: $idCardImage
+            portraitPhoto: $portraitPhoto
+            status: "Pending"
+        }
+    ) {
+        registrationId
+    }
+}

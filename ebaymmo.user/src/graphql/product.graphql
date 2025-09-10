@@ -1,0 +1,158 @@
+mutation InsertProduct(
+    $productName: String!
+    $price: numeric!
+    $stockCount: numeric!
+    $storeId: uuid!
+    $status: String!
+    $usePrivateWarehouse: Boolean!
+    $isService: Boolean!
+) {
+    insertProductsOne(
+        object: {
+            productName: $productName
+            price: $price
+            stockCount: $stockCount
+            storeId: $storeId
+            status: $status
+            usePrivateWarehouse: $usePrivateWarehouse
+            isService: $isService
+        }
+    ) {
+        productId
+        productName
+        price
+        stockCount
+        status
+        storeId
+        usePrivateWarehouse
+        createAt
+        updateAt
+    }
+}
+
+query GetProductsByStore($storeId: uuid!) {
+    products(where: { storeId: { _eq: $storeId }, isEnabled: { _eq: true } }) {
+        productId
+        productName
+        price
+        stockCount
+        status
+        usePrivateWarehouse
+        createAt
+        updateAt
+        store {
+            storeId
+            totalStockCount
+            storeName
+            avatar
+        }
+    }
+}
+
+mutation UpdateProductStatus($productId: uuid!, $status: String!) {
+    updateProductsByPk(
+        pkColumns: { productId: $productId }
+        _set: { status: $status }
+    ) {
+        productId
+        status
+    }
+}
+
+mutation UpdateProduct(
+    $productId: uuid!
+    $productName: String
+    $price: numeric
+    $status: String
+) {
+    updateProductsByPk(
+        pkColumns: { productId: $productId }
+        _set: { productName: $productName, price: $price, status: $status }
+    ) {
+        productId
+        productName
+        price
+        status
+    }
+}
+
+query GetProductItems($productId: uuid!) {
+    productItems(where: { productId: { _eq: $productId } }) {
+        productItemId
+    }
+}
+
+mutation DeleteProductUploadLogs($productId: uuid!) {
+    deleteProductUploadLogs(where: { productId: { _eq: $productId } }) {
+        affectedRows
+    }
+}
+
+mutation DeleteProductItems($productId: uuid!) {
+    deleteProductItems(where: { productId: { _eq: $productId } }) {
+        affectedRows
+    }
+}
+
+mutation DeleteProduct($productId: uuid!) {
+    deleteProductsByPk(productId: $productId) {
+        productId
+    }
+}
+
+query GetProductsById($productId: uuid!) {
+    products(where: { productId: { _eq: $productId } }) {
+        productId
+        productName
+        price
+        stockCount
+        status
+        usePrivateWarehouse
+        apiPrivateStock
+        createAt
+        updateAt
+        store {
+            storeId
+            sellerId
+            avatar
+        }
+    }
+}
+
+mutation UpdateProductStockCount($productId: uuid!, $incrementBy: numeric!) {
+    updateProductsByPk(
+        pkColumns: { productId: $productId }
+        _inc: { stockCount: $incrementBy }
+    ) {
+        productId
+        stockCount
+    }
+}
+
+mutation UpdateApiPrivateStock($productId: uuid!, $stockCount: Int!) {
+    updateProductsByPk(
+        pkColumns: { productId: $productId }
+        _inc: { apiPrivateStock: $stockCount }
+    ) {
+        productId
+        apiPrivateStock
+        stockCount
+        updateAt
+    }
+}
+
+query CheckProductInOrders($productId: uuid!) {
+    orders(where: { productId: { _eq: $productId } }) {
+        orderId
+    }
+}
+
+mutation UpdateProductEnabled($productId: uuid!, $isEnabled: Boolean!) {
+    updateProductsByPk(
+        pkColumns: { productId: $productId }
+        _set: { isEnabled: $isEnabled }
+    ) {
+        productId
+        isEnabled
+    }
+}

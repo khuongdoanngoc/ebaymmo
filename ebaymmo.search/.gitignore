@@ -1,0 +1,21 @@
+# Dependencies
+node_modules
+dist
+bin
+uploads
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Configuration
+*/config.yaml
+*/dump.sql
+
+# Logs
+logs
+*.log
+
+# Generated files
+src/sdk

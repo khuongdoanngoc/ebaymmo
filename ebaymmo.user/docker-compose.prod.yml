@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile.prod
+        environment:
+            NODE_ENV: production
+        networks:
+            my_custom_network:
+                ipv4_address: ${PROD_APP_IP}
+        restart: unless-stopped
+        healthcheck:
+            test: ['CMD', 'curl', '-f', 'http://localhost:3000/health']
+            interval: 30s
+            timeout: 10s
+            retries: 3
+
+networks:
+    my_custom_network:
+        external: true

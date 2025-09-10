@@ -1,0 +1,421 @@
+fragment BasicStoreFragment on Stores {
+    subTitle
+    storeId
+    storeName
+    description
+    shortDescription
+    avatar
+    storePrice
+    refundRating
+    duplicateProduct
+    privateWarehouse
+    allowReseller
+    allowPreOrder
+    totalSoldCount
+    totalStockCount
+    slug
+    category {
+        categoryId
+        categoryName
+        slug
+        type
+        parentCategoryId
+    }
+    user {
+        # Sửa từ users thành user vì đây là tên relationship trong schema
+        userId
+        username
+        images
+        lastLogin
+    }
+    storeTag
+    averageRating
+    fiveStar
+    fourStar
+    oneStar
+    twoStar
+    threeStar
+    ratingTotal
+    sellerId
+}
+fragment StoreAggregate on StoresAggregate {
+    aggregate {
+        count
+    }
+}
+
+fragment ProductDetails on Products {
+    productId
+    productName
+    stockCount
+    soldCount
+    price
+    isService
+}
+
+query GetStores(
+    $where: StoresBoolExp
+    $limit: Int
+    $offset: Int = 0
+    $orderBy: [StoresOrderBy!] = { averageRating: DESC }
+) {
+    stores(where: $where, limit: $limit, offset: $offset, orderBy: $orderBy) {
+        ...BasicStoreFragment
+    }
+}
+
+query GetPaginationStores(
+    $where: StoresBoolExp
+    $limit: Int
+    $offset: Int = 0
+    $orderBy: [StoresOrderBy!] = { averageRating: DESC }
+    $userId: uuid!
+) {
+    stores(where: $where, limit: $limit, offset: $offset, orderBy: $orderBy) {
+        ...BasicStoreFragment
+        subTitle
+        ratingTotal
+        is_favorite: wishlists(where: { userId: { _eq: $userId } }) {
+            wishlistId
+        }
+    }
+    storesAggregate(where: $where) {
+        ...StoreAggregate
+    }
+}
+
+query GetStoresWithProducts(
+    $where: StoresBoolExp
+    $limit: Int
+    $offset: Int = 0
+    $orderBy: [StoresOrderBy!] = { averageRating: DESC }
+) {
+    stores(where: $where, limit: $limit, offset: $offset, orderBy: $orderBy) {
+        ...BasicStoreFragment
+        products {
+            ...ProductDetails
+        }
+    }
+}
+
+query GetStoreManagementList($sellerId: uuid!) {
+    stores(where: { sellerId: { _eq: $sellerId } }) {
+        storeId
+        storeName
+        avatar
+        storePrice
+        totalStockCount
+        duplicateProduct
+        createAt
+        status
+        category {
+            type
+        }
+        allowReseller
+        allowPreOrder
+    }
+    storesAggregate(where: { sellerId: { _eq: $sellerId } }) {
+        ...StoreAggregate
+    }
+}
+mutation CreateStore($input: [StoresInsertInput!]!) {
+    insertStores(objects: $input) {
+        returning {
+            storeId
+            storeName
+            description
+            categoryId
+            storePrice
+            avatar
+            shortDescription
+            refundRating
+            duplicateProduct
+            privateWarehouse
+            allowReseller
+            allowPreOrder
+            sellerId
+            status
+            createAt
+            updateAt
+            category {
+                categoryId
+                categoryName
+                type
+            }
+        }
+    }
+}
+
+query GetStoreView(
+    $where: ListingStoresBoolExp = {}
+    $limit: Int
+    $offset: Int
+    $orderBy: [ListingStoresOrderBy!] = {}
+) {
+    listingStores(
+        where: $where
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+    ) {
+        storeId
+        subTitle
+        storeTag
+        storeName
+        status
+        sold
+        stock
+        slug
+        avatar
+        duplicateProduct
+        sellerName
+        sellerId
+        sellerAvatar
+        ratingTotal
+        averageRating
+        lowestPrice
+        categoryName
+        categorySlug
+        categoryType
+        parentCategorySlug
+        parentCategoryName
+        shortDescription
+    }
+    listingStoresAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+fragment BasicStoreDetailsFragment on StoreDetails {
+    storeId
+    storeName
+    subTitle
+    description
+    avatar
+    storePrice
+    totalSoldCount
+    totalStockCount
+    slug
+    categoryId
+    categoryName
+    categoryType
+    storeTag
+    averageRating
+    ratingTotal
+    shortDescription
+}
+
+query GetStoredetail(
+    $distinctOn: [StoreDetailsSelectColumn!] = activeProductCount
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [StoreDetailsOrderBy!]
+    $where: StoreDetailsBoolExp
+) {
+    storeDetails(
+        distinctOn: $distinctOn
+        limit: $limit
+        offset: $offset
+        where: $where
+        orderBy: $orderBy
+    ) {
+        ...BasicStoreDetailsFragment
+        activeProductCount
+        createdAt
+        favoriteCount
+        maxPrice
+        minPrice
+        productCount
+        recentReviews
+        resellerInfo
+        sellerAvatar
+        sellerFullName
+        sellerId
+        sellerSince
+        sellerUsername
+        status
+        totalOrders
+        totalSalesAmount
+        updatedAt
+        wishlistCount
+        allowPreOrder
+        products {
+            ...ProductDetails
+        }
+    }
+}
+
+mutation UpdateStore($storeId: uuid!, $input: StoresSetInput!) {
+    updateStoresByPk(pkColumns: { storeId: $storeId }, _set: $input) {
+        ...BasicStoreFragment
+    }
+}
+
+query GetStoreDetail($storeId: uuid!) {
+    storesByPk(storeId: $storeId) {
+        ...BasicStoreFragment
+        storeId
+        categoryId
+        status
+    }
+}
+query GetRelatedStores(
+    $where: RelatedStoresBoolExp
+    $limit: Int
+    $offset: Int = 1
+    $orderBy: [RelatedStoresOrderBy!] = {}
+) {
+    relatedStores(
+        where: $where
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+    ) {
+        storeId
+        storeName
+        subTitle
+        description
+        shortDescription
+        avatar
+        storePrice
+        duplicateProduct
+        privateWarehouse
+        totalSoldCount
+        totalStockCount
+        slug
+        storeTag
+        categoryId
+        categoryName
+        sellerId
+        sellerName
+        sellerAvatar
+        duplicateStatus
+        sold
+        stockCount
+        price
+        lowestPrice
+        isService
+        serviceSlug
+        status
+        totalRating
+        averageRating
+    }
+}
+
+query GetStoreDuplicateProductSetting($productId: uuid!) {
+    productsByPk(productId: $productId) {
+        store {
+            duplicateProduct
+        }
+    }
+}
+
+mutation IncrementCount($storeId: uuid!) {
+    updateStoresByPk(
+        pkColumns: { storeId: $storeId }
+        _inc: { accessCount: 1 }
+    ) {
+        storeId
+        accessCount
+    }
+}
+
+mutation InsertStoreAccessLog($storeId: uuid!, $userId: uuid!) {
+    insertStoreAccessLogsOne(
+        object: { storeId: $storeId, userId: $userId, accessDate: "today" }
+        onConflict: {
+            constraint: store_access_logs_unique_daily_visit
+            updateColumns: []
+        }
+    ) {
+        storeAccessLogsId
+        storeId
+        userId
+        accessDate
+    }
+}
+
+query CheckExistingUserLog($storeId: uuid!, $userId: uuid!) {
+    storeAccessLogs(
+        where: {
+            storeId: { _eq: $storeId }
+            userId: { _eq: $userId }
+            accessDate: { _eq: "today" }
+        }
+    ) {
+        storeAccessLogsId
+        storeId
+        userId
+        accessDate
+    }
+}
+
+query CheckExistingUserLog2(
+    $storeId: uuid!
+    $userId: uuid!
+    $exactDate: date!
+) {
+    storeAccessLogs(
+        where: {
+            storeId: { _eq: $storeId }
+            userId: { _eq: $userId }
+            accessDate: { _eq: $exactDate }
+        }
+    ) {
+        storeAccessLogsId
+        storeId
+        userId
+        accessDate
+    }
+}
+
+query CheckSimpleUserLog($userId: uuid!, $exactDate: date!) {
+    storeAccessLogs(
+        where: { userId: { _eq: $userId }, accessDate: { _eq: $exactDate } }
+    ) {
+        storeAccessLogsId
+        storeId
+    }
+}
+
+query GetStoreInfo($storeId: uuid!) {
+    storesByPk(storeId: $storeId) {
+        accessCount
+        storeName
+    }
+}
+query GetStorePoints($where: StorePointsBoolExp!) {
+    storePointsAggregate(where: $where) {
+        aggregate {
+            sum {
+                previousAccumulatedPoints
+                accumulatedPoints
+            }
+        }
+    }
+    storePoints(where: $where) {
+        storePointsId
+        storeId
+        weekStartDate
+        deltaRevenue
+        deltaPriority
+        deltaRating
+        previousAccumulatedPoints
+        accumulatedPoints
+        currentLevel
+        createdAt
+        updatedAt
+    }
+}
+
+mutation UpdateStoreTotalStock($storeId: uuid!, $decrementBy: Int!) {
+    updateStoresByPk(
+        pkColumns: { storeId: $storeId }
+        _inc: { totalStockCount: $decrementBy }
+    ) {
+        storeId
+        totalStockCount
+    }
+}

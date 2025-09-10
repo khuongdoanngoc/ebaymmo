@@ -1,0 +1,29 @@
+mutation processWithdrawalAction($amount: Float!,$balanceAddress: String!) {
+  processWithdrawalAction(amount: $amount, balanceAddress: $balanceAddress) {
+    withdrawalStatus
+    withdrawalId
+    userId
+    updateAt
+    requestDate
+    processedDate
+    description
+    createAt
+    balanceAddress
+    amount
+  }
+} 
+
+mutation ProcessWithdrawal($p_amount: float8, $p_user_id: uuid!, $p_balance_address: String! ) {
+  processWithdrawal(args: {p_amount: $p_amount, p_user_id: $p_user_id, p_balance_address: $p_balance_address}) {
+    withdrawalStatus
+    withdrawalId
+    userId
+    updateAt
+    requestDate
+    processedDate
+    description
+    createAt
+    balanceAddress
+    amount
+  }
+}

@@ -1,0 +1,253 @@
+fragment BlogsData on Blogs {
+    blogId
+    description
+    images
+    postingDay
+    title
+    slug
+    updateAt
+    totalView
+    isDeleted
+    ghostId
+    email
+    donationCount
+    donateAmount
+    authorUsername
+}
+
+query GetBlogs(
+    $where: BlogsBoolExp = {}
+    $limit: Int = 10
+    $offset: Int = 10
+    $orderBy: [BlogsOrderBy!] = { postingDay: DESC }
+) {
+    blogs(where: $where, limit: $limit, offset: $offset, orderBy: $orderBy) {
+        ...BlogsData
+    }
+}
+
+query GetBlogApis(
+    $where: BlogsBoolExp = {}
+    $limit: Int = 10
+    $offset: Int = 10
+    $orderBy: [BlogsOrderBy!] = { postingDay: DESC }
+) {
+    blogs(where: $where, limit: $limit, offset: $offset, orderBy: $orderBy) {
+        ...BlogsData
+        isDeleted
+        user {
+            username
+            userId
+            images
+        }
+    }
+    blogsAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+subscription BlogCommnet($blogId: String!) {
+    blogComments(
+        where: { blogId: { _eq: $blogId }, parentId: { _isNull: true } }
+        orderBy: { sentDate: DESC }
+    ) {
+        commentId
+        messageContent
+        sentDate
+        blogId
+        parentId
+        isDeleted
+        updateAt
+        user {
+            userId
+            username
+            images
+        }
+        blogComments {
+            commentId
+            messageContent
+            sentDate
+            isDeleted
+            updateAt
+            createAt
+            user {
+                userId
+                username
+                images
+            }
+        }
+    }
+}
+
+query GetBlogBySlug($slug: String!) {
+    blogs(where: { slug: { _eq: $slug } }, limit: 1) {
+        blogId
+    }
+}
+
+mutation CreateBlogComment($object: BlogCommentsInsertInput!) {
+    insertBlogCommentsOne(object: $object) {
+        commentId
+        messageContent
+        sentDate
+        createAt
+        user {
+            username
+            images
+        }
+    }
+}
+
+mutation DonateToBlog(
+    $blogId: String!
+    $donationAmount: numeric!
+    $comment: String!
+) {
+    donateToBlogAction(
+        blogId: $blogId
+        donationAmount: $donationAmount
+        comment: $comment
+    ) {
+        amount
+        blogId
+        comment
+        createAt
+        donationDate
+        donationId
+        message
+        success
+        updateAt
+        userId
+    }
+}
+
+subscription BlogDonationComments(
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [DonationCommentsViewOrderBy!] = {}
+    $blogId: String!
+) {
+    donationCommentsView(
+        limit: $limit
+        offset: $offset
+        orderBy: $orderBy
+        where: { blogId: { _eq: $blogId } }
+    ) {
+        userId
+        blogId
+        amount
+        blogTitle
+        comment
+        donationDate
+        images
+        username
+    }
+}
+
+mutation updateBlog(
+    $_inc: BlogsIncInput = {}
+    $_set: BlogsSetInput = {}
+    $where: BlogsBoolExp = {}
+) {
+    updateBlogs(_inc: $_inc, _set: $_set, where: $where) {
+        affectedRows
+        returning {
+            blogId
+            totalView
+        }
+    }
+}
+
+mutation AddBlogFavorite($blogId: String!, $userId: uuid!) {
+    insertBlogFavouriteOne(object: { blogId: $blogId, userId: $userId }) {
+        favouriteId
+        blog {
+            favoriteCount
+        }
+    }
+}
+
+mutation RemoveBlogFavorite($blogId: String!, $userId: uuid!) {
+    deleteBlogFavourite(
+        where: { blogId: { _eq: $blogId }, userId: { _eq: $userId } }
+    ) {
+        affectedRows
+        returning {
+            blog {
+                favoriteCount
+            }
+        }
+    }
+}
+
+query GetUserFavoriteBlogs($userId: uuid!, $limit: Int = 10, $offset: Int = 0) {
+    blogFavourite(
+        where: { userId: { _eq: $userId } }
+        limit: $limit
+        offset: $offset
+        orderBy: { createdAt: DESC }
+    ) {
+        favouriteId
+        blog {
+            blogId
+            title
+            description
+            images
+            postingDay
+            favoriteCount
+            totalView
+            slug
+            user {
+                username
+                images
+            }
+        }
+    }
+    blogFavouriteAggregate {
+        aggregate {
+            count
+        }
+    }
+}
+
+subscription GetMainComments($blogId: String!) {
+    blogsCommentView(
+        where: { blogId: { _eq: $blogId }, parentId: { _isNull: true } }
+        orderBy: { sentDate: DESC }
+    ) {
+        commentId
+        messageContent
+        sentDate
+        blogId
+        userId
+        isDeleted
+        createAt
+        updateAt
+        parentId
+        isLiked
+        username
+        images
+    }
+}
+
+subscription GetReplies($blogId: String!, $parentId: uuid!) {
+    blogsCommentView(
+        where: { blogId: { _eq: $blogId }, parentId: { _eq: $parentId } }
+        orderBy: { sentDate: DESC }
+    ) {
+        commentId
+        messageContent
+        sentDate
+        blogId
+        userId
+        isDeleted
+        createAt
+        updateAt
+        parentId
+        isLiked
+        username
+        images
+    }
+}

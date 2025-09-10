@@ -1,0 +1,97 @@
+table:
+  name: related_stores
+  schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - duplicateProduct
+        - isService
+        - privateWarehouse
+        - avatar
+        - categoryName
+        - sellerAvatar
+        - sellerName
+        - shortDescription
+        - slug
+        - storeName
+        - storeTag
+        - subTitle
+        - sold
+        - stockCount
+        - totalSoldCount
+        - totalStockCount
+        - price
+        - storePrice
+        - description
+        - duplicateStatus
+        - serviceSlug
+        - status
+        - categoryId
+        - sellerId
+        - storeId
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - duplicateProduct
+        - isService
+        - privateWarehouse
+        - avatar
+        - categoryName
+        - sellerAvatar
+        - sellerName
+        - shortDescription
+        - slug
+        - storeName
+        - storeTag
+        - subTitle
+        - sold
+        - stockCount
+        - totalSoldCount
+        - totalStockCount
+        - price
+        - storePrice
+        - description
+        - duplicateStatus
+        - serviceSlug
+        - status
+        - categoryId
+        - sellerId
+        - storeId
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - duplicateProduct
+        - isService
+        - privateWarehouse
+        - avatar
+        - categoryName
+        - sellerAvatar
+        - sellerName
+        - shortDescription
+        - slug
+        - storeName
+        - storeTag
+        - subTitle
+        - sold
+        - stockCount
+        - totalSoldCount
+        - totalStockCount
+        - price
+        - storePrice
+        - description
+        - duplicateStatus
+        - serviceSlug
+        - status
+        - categoryId
+        - sellerId
+        - storeId
+      filter: {}
+      allow_aggregations: true
+    comment: ""

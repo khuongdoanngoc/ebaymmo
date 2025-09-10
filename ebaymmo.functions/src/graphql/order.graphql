@@ -1,0 +1,78 @@
+fragment OrderInfo on Orders {
+  orderId
+  totalAmount
+  createAt
+  orderCode
+  orderDate
+  orderStatus
+  price
+  referralCode
+  buyerId
+  quantity
+  productId
+  orderType
+  couponId
+  updateAt
+}
+
+mutation UpdateOrder($where: OrdersBoolExp = {}, $_set: OrdersSetInput = {}) {
+  updateOrders(where: $where, _set: $_set) {
+    returning {
+      ...OrderInfo
+    }
+  }
+}
+
+
+mutation SubmitOrderProduct(
+  $sellerId: uuid = "",
+  $buyerId: uuid = "", 
+  $couponValue: numeric = 0, 
+  $productId: uuid = "", 
+  $quantity: Int = 10,
+  $isPreOrder: Boolean = false) {
+  submitOrderProduct(args: 
+  {
+    seller_id: $sellerId,
+    buyer_id: $buyerId, 
+    coupon_value: $couponValue, 
+    product_id: $productId, 
+    quantity: $quantity,
+    is_pre_order: $isPreOrder
+  }) {
+    ...OrderInfo
+  }
+}
+
+
+mutation SubmitOrderService(
+  $buyerId: uuid!, 
+  $completeDateService: timestamp!, 
+  $couponValue: numeric, 
+  $productId: uuid!, 
+  $sellerId: uuid!) 
+  {
+  submitOrderServices(args: {
+    buyer_id: $buyerId, 
+    complete_date_service: $completeDateService, 
+    coupon_value: $couponValue, 
+    product_id: $productId, 
+    seller_id: $sellerId
+  }) {
+    ...OrderInfo
+  }
+}
+
+query GetOrders($where: OrdersBoolExp = {}) {
+  orders(orderBy: {orderDate: ASC}, where: $where) {
+    ...OrderInfo
+  }
+}
+
+mutation DeleteOrder($where: OrdersBoolExp = {}) {
+  deleteOrders(where: $where) {
+    returning {
+      ...OrderInfo
+    }
+  }
+}

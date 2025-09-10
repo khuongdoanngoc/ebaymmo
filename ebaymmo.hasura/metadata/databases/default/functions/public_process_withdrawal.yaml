@@ -1,0 +1,8 @@
+function:
+  name: process_withdrawal
+  schema: public
+configuration:
+  custom_root_fields: {}
+  exposed_as: mutation
+permissions:
+  - role: user

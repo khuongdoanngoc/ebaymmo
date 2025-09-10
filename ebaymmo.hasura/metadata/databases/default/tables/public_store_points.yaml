@@ -1,0 +1,80 @@
+table:
+  name: store_points
+  schema: public
+object_relationships:
+  - name: store
+    using:
+      foreign_key_constraint_on: store_id
+insert_permissions:
+  - role: user
+    permission:
+      check: {}
+      columns:
+        - week_start_date
+        - accumulated_points
+        - current_level
+        - delta_priority
+        - delta_rating
+        - delta_revenue
+        - delta_traffic
+        - previous_accumulated_points
+        - created_at
+        - updated_at
+        - store_id
+        - store_points_id
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - week_start_date
+        - accumulated_points
+        - current_level
+        - delta_priority
+        - delta_rating
+        - delta_revenue
+        - previous_accumulated_points
+        - created_at
+        - updated_at
+        - store_id
+        - store_points_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - accumulated_points
+        - created_at
+        - current_level
+        - delta_priority
+        - delta_rating
+        - delta_revenue
+        - delta_traffic
+        - previous_accumulated_points
+        - store_id
+        - store_points_id
+        - updated_at
+        - week_start_date
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - week_start_date
+        - accumulated_points
+        - current_level
+        - delta_priority
+        - delta_rating
+        - delta_revenue
+        - delta_traffic
+        - previous_accumulated_points
+        - created_at
+        - updated_at
+        - store_id
+        - store_points_id
+      filter: {}
+      check: {}
+    comment: ""

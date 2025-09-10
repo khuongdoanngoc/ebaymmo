@@ -1,0 +1,21 @@
+query GetDiscountedProductTypes(
+    $where: DiscountedProductTypeBoolExp! = {}
+    $offset: Int = 10
+    $limit: Int = 10
+    $orderBy: [DiscountedProductTypeOrderBy!] = {}
+) {
+    discountedProductType(
+        where: $where
+        offset: $offset
+        limit: $limit
+        orderBy: $orderBy
+    ) {
+        discountedProductTypeId
+        typeName
+        discountPercentage
+        description
+        createAt
+        updateAt
+        categoryId
+    }
+}

@@ -1,0 +1,21 @@
+query GetUsersForAddressBalance($where: UsersBoolExp!) {
+  users(where: $where) {
+    userId
+    twoFactorEnabled
+    twoFactorSecret
+  }
+}
+
+query GetAddressBalance($where: AddressesBoolExp!) {
+  addresses(where: $where) {
+    addressId
+    userId
+    address
+    network
+    networkName
+    createAt
+    updateAt
+  }
+}
+
+

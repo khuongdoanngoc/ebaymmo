@@ -1,0 +1,15 @@
+mutation getPresignedUrl(
+    $userId: String!
+    $fileName: String!
+    $fileExtension: String!
+) {
+    getPresignedUrl(
+        input: {
+            userId: $userId
+            fileName: $fileName
+            fileExtension: $fileExtension
+        }
+    ) {
+        url
+    }
+}

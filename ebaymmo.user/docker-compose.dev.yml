@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/app
+            - /app/node_modules
+        environment:
+            NODE_ENV: ${NODE_ENV}
+        command: npm run dev
+        networks:
+            my_custom_network:
+                ipv4_address: ${APP_IP}
+        restart: always
+
+networks:
+    my_custom_network:
+        external: true

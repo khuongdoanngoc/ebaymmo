@@ -1,0 +1,8 @@
+- "!include public_calculate_weekly_store_points.yaml"
+- "!include public_donate_to_blog.yaml"
+- "!include public_finalize_bid_aution.yaml"
+- "!include public_hold_bid_amount.yaml"
+- "!include public_process_delayed_payment.yaml"
+- "!include public_process_withdrawal.yaml"
+- "!include public_submit_order_product.yaml"
+- "!include public_submit_order_services.yaml"

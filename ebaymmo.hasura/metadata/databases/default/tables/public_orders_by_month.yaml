@@ -1,0 +1,12 @@
+table:
+  name: orders_by_month
+  schema: public
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - successed_count
+        - month_number
+        - month_name
+      filter: {}
+    comment: ""

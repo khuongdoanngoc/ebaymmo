@@ -1,0 +1,23 @@
+query GetBlogsWithIds($_in: [String!] = "", $orderBy: [BlogsOrderBy!] = [{createAt: DESC}]) {
+  blogs(where: {blogId: {_in: $_in}}, orderBy: $orderBy) {
+    authorUsername
+    blogId
+    createAt
+    description
+    donateAmount
+    donationCount
+    email
+    ghostId
+    images
+    postingDay
+    slug
+    title
+    updateAt
+    totalView
+    user {
+      username
+      userId
+      images
+    }
+  }
+}

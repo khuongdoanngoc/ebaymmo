@@ -1,0 +1,5 @@
+function:
+  name: calculate_weekly_store_points
+  schema: public
+permissions:
+  - role: user

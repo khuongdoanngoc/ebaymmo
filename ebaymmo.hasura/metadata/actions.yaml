@@ -1,0 +1,263 @@
+actions:
+  - name: addReviewResponse
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/store-ratings/add-response'
+  - name: calculateResellerCommission
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/reseller-commission/calculate'
+  - name: changePassword
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/change-password'
+    permissions:
+      - role: user
+  - name: createComplain
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/complain/create'
+    permissions:
+      - role: user
+  - name: createDeposit
+    definition:
+      kind: synchronous
+      handler: https://paylinker-api.crbgroup.live/api/transactions
+      forward_client_headers: true
+      headers:
+        - name: api-key
+          value: API-1b8c7f66-a49e-4210-ac7e-54e656de6b51
+        - name: Content-Type
+          value: application/json
+      request_transform:
+        body:
+          action: transform
+          template: |-
+            {
+              "networkCode": "{{$body.input.networkCode}}",
+              "amount": {{$body.input.amount}},
+              "urlCallback": "{{$body.input.urlCallback}}",
+              "orderId": "{{$body.input.orderId}}",
+              "userId": "{{$body.input.userId}}"
+            }
+        method: POST
+        query_params: {}
+        template_engine: Kriti
+        version: 2
+    permissions:
+      - role: user
+  - name: createOrder
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/order/create'
+    permissions:
+      - role: user
+  - name: createOrderServices
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/order/service'
+    permissions:
+      - role: user
+  - name: createRate
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/store-ratings/create'
+    permissions:
+      - role: user
+  - name: createTransaction
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/transaction/add'
+    permissions:
+      - role: user
+  - name: donateToBlogAction
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/donations/donate-blog'
+    permissions:
+      - role: user
+  - name: enable2FA
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/enable-2fa'
+    permissions:
+      - role: user
+  - name: finalizeBidAuctionAction
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auction/finalize-bid'
+    permissions:
+      - role: user
+  - name: forgotPassword
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/forgot-password'
+    permissions:
+      - role: anonymous
+  - name: getPresignedUrl
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/s3/presigned-url'
+    permissions:
+      - role: anonymous
+      - role: user
+  - name: googleLogin
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/google/callback'
+    permissions:
+      - role: user
+      - role: anonymous
+  - name: holdBidAmountAction
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auction/hold-bid'
+    permissions:
+      - role: user
+  - name: login
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/login'
+    permissions:
+      - role: user
+      - role: anonymous
+  - name: loginOperator
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/operator/login'
+    permissions:
+      - role: anonymous
+      - role: user
+      - role: operator
+  - name: processWithdrawalAction
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/withdrawal'
+    permissions:
+      - role: anonymous
+      - role: user
+  - name: refreshToken
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/refresh-token'
+    permissions:
+      - role: user
+      - role: anonymous
+  - name: refreshTokenOperator
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/refresh-token-operator'
+      request_transform:
+        query_params: {}
+        template_engine: Kriti
+        version: 2
+    permissions:
+      - role: anonymous
+      - role: operator
+  - name: registerUser
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/register'
+    permissions:
+      - role: user
+      - role: anonymous
+  - name: resetPassword
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/reset-password'
+    permissions:
+      - role: anonymous
+    comment: resetPassword
+  - name: sendContactEmail
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/send-contact-email'
+    permissions:
+      - role: user
+  - name: updateRate
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/store-ratings/update'
+    permissions:
+      - role: user
+  - name: uploadFile
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/upload/file'
+    permissions:
+      - role: user
+  - name: verify2FACode
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/verify/2fa-code'
+    permissions:
+      - role: user
+  - name: verify2FAToken
+    definition:
+      kind: synchronous
+      handler: '{{SERVERLESS_URL}}/auth/verify-2fa-token'
+    permissions:
+      - role: user
+custom_types:
+  enums: []
+  input_objects:
+    - name: RegisterInput
+    - name: GetPresignedUrlInput
+    - name: SendContactEmailInput
+    - name: GoogleProfileInput
+    - name: CreateStoreRatingInput
+    - name: UpdateStoreRatingInput
+    - name: SampleInput
+    - name: ChangePasswordInput
+    - name: TransactionInput
+    - name: UploadFileInput
+    - name: CreateComplainInput
+    - name: dataUploadInput
+    - name: HoldBidAmountInput
+    - name: FinalizeBidInput
+    - name: DonateToBlogInput
+    - name: LoginInputOperator
+    - name: TelegramConnectionInput
+  objects:
+    - name: SendContactEmailResponse
+    - name: LoginResponse
+    - name: RegisterOutput
+    - name: GoogleLoginResponse
+    - name: TokenResponse
+    - name: ForgotPasswordResponse
+    - name: ResetPasswordResponse
+    - name: ContactEmailResponse
+    - name: StoreRatingResponse
+    - name: Enable2FAOutput
+    - name: Verify2FATokenOutput
+    - name: GetPresignedUrlResponse
+    - name: SampleOutput
+    - name: ChangePasswordResponse
+    - name: TransactionResult
+    - name: OrderResponse
+    - name: CalculateCommissionOutput
+    - name: UploadFileOutput
+    - name: ComplainResponse
+    - name: UploadResponse
+    - name: ReviewResponseOutput
+    - name: BidsHistoryOutput
+    - name: WithdrawalResponse
+    - name: DonationResult
+    - name: DonateToBlogOutput
+    - name: SyncBlogPostsOutput
+    - name: AddressBalanceResponse
+    - name: AddressBalance
+    - name: verifyResponse
+    - name: OrdersOutput
+    - name: LoginResponseOperator
+    - name: TelegramConnection
+    - name: TelegramConnectionResponse
+    - name: RefreshTokenOperatorOutput
+    - name: TelegramConnectionData
+    - name: User
+    - name: Wallet
+    - name: PaymentMethod
+    - name: TransactionResponse
+  scalars:
+    - name: Upload
+      description: Custom scalar for file uploads

@@ -1,0 +1,1514 @@
+{
+    "english": "English",
+    "vietnamese": "Tiếng Việt",
+    "russian": "Русский",
+    "chinese": "中文",
+
+    "Products": "Products",
+    "Services": "Services",
+    "What are you looking for?": "What are you looking for?",
+    "Search History": "Search History",
+    "No search history found": "No search history found",
+    "Header": {
+        "hello": "Hello",
+        "deposit": "Deposit",
+        "withdraw": "Withdraw",
+        "storeManagement": "Store Management",
+        "logout": "Logout",
+        "vietnamese": "Tiếng Việt",
+        "russian": "Русский",
+        "chinese": "中文",
+        "english": "English",
+        "depositModalTitle": "Deposit USDT",
+        "walletAddress": "Wallet Address",
+        "balance": "Balance",
+        "networkCode": "Network Code",
+        "selectNetwork": "Select Network",
+        "amount": "Amount",
+        "enterDepositAmount": "Enter deposit amount",
+        "continue": "Continue",
+        "success": "Success",
+        "error": "Error",
+        "close": "Close",
+        "addressBalance": "Address Balance",
+        "accountManagement": "Account Management",
+        "orderManagement": "Order Management",
+        "transactionHistory": "Transaction History",
+        "withdrawalHistory": "Withdrawal History",
+        "depositHistory": "Deposit History",
+        "resellerHistory": "Reseller History",
+        "favoriteStore": "Favorite Store",
+        "contentManagement": "Content Management",
+        "dashboard": "Dashboard",
+        "withdrawTitle": "Withdrawal Request",
+        "minWithdrawal": "Minimum withdrawal amount is 50 USDT",
+        "enterWithdrawAmount": "Enter the amount you want to withdraw (minimum 50)",
+        "2faVerificationCode": "2FA Verification Code",
+        "enter2faCode": "Enter the verification code from Google Authenticator",
+        "submitWithdrawal": "Withdraw",
+        "2faRequired": "Activate 2FA",
+        "2faRequiredMessage": "You need to activate 2FA to withdraw money. Activating 2FA helps protect your account and transactions.",
+        "setup2fa": "Activate now",
+        "pleaseSelectWallet": "Please select a wallet",
+        "selectWalletAddress": "Select a wallet address",
+        "walletRequired": "Please add a wallet before withdrawing",
+        "twoFactorRequired": "Please enable two-factor authentication before withdrawing",
+        "pendingLimit": "You have 3 pending transactions",
+        "fillAllFields": "Please fill in all information",
+        "insufficientBalance": "Insufficient balance for transaction",
+        "incorrectCode": "Verification code is incorrect",
+        "withdrawalSuccess": "Withdrawal request sent",
+        "cancel": "Cancel"
+    },
+    "HeaderMenuDropdown": {
+        "products": "Products",
+        "services": "Services",
+        "support": "Support",
+        "share": "Shares",
+        "favoriteStore": "Favorite Stores",
+        "Contact": "Contacts",
+        "2Fa": "2FA",
+        "FAQs": "FAQs",
+        "Email": "Email",
+        "Software": "Software",
+        "Account": "Account",
+        "Other": "Other",
+        "Increase Interaction": "Increase Interaction",
+        "Software Service": "Software Services",
+        "Blockchain": "Blockchain",
+        "Other Services": "Other Services",
+        "seller": "SELLER",
+        "register seller": "Register to sell"
+    },
+    "BecomeSeller": {
+        "title": "Become a Seller",
+        "description": "Join our platform and start selling your products or services.",
+        "registerButton": "Join Now"
+    },
+    "FeatureSection": {
+        "title": "FEATURES AVAILABLE AT EBAYMMO",
+        "feature1": {
+            "title": "Check duplicate products",
+            "description": "The entire store is committed to not selling duplicates. Our system will check each product one by one to ensure that the product delivered to the user has never been sold to anyone else on the site, and the product you have purchased cannot be sold to anyone else."
+        },
+        "feature2": {
+            "title": "Deposit & Auto Payment",
+            "description": "You just need to top up with the correct syntax, your balance will be updated after 1-5 minutes. All payment and delivery steps are done immediately."
+        },
+        "feature3": {
+            "title": "Hold order for 3 days",
+            "description": "After you purchase, the order will be in Hold status for 3 days, enough time for you to check and change the product password. If there is any problem, please quickly use the \"Complaint\" feature."
+        },
+        "feature4": {
+            "title": "Features for collaborators",
+            "description": "Please read more in the \"FAQs – Frequently Asked Questions\" section."
+        },
+        "slogan": {
+            "title": "A product born with the purpose of making digital product transactions more convenient and safer.",
+            "description": "At Taphoammo, you will have a much more secure shopping experience, we will hold the seller's money for 3 days, check all products sold to see if they are the same as others, aiming to create a trading place that users can trust, a site where sellers can rest assured to place inventory, and compete fairly."
+        }
+    },
+    "auction": {
+        "startauction": "Starting in:",
+        "endauction": "Ending in:",
+        "prepareauction": "Auction is ongoing",
+        "roonwaiting": "Auction Waiting Room",
+        "currentWaiting": "Currently waiting for auction position:",
+        "waitingTime": "Auction will start in:"
+    },
+    "common": {
+        "buttons": {
+            "submit": "Submit",
+            "cancel": "Cancel",
+            "save": "Save",
+            "close": "Close",
+            "continue": "Continue",
+            "back": "Back",
+            "edit": "Edit"
+        },
+        "statuses": {
+            "loading": "Loading...",
+            "success": "Success",
+            "error": "Error",
+            "warning": "Warning"
+        }
+    },
+    "auth": {
+        "login": "Log In",
+        "register": "Register",
+        "forgotPassword": "Forgot Password",
+        "resetPassword": "Reset Password",
+        "logout": "Log Out"
+    },
+    "navigation": {
+        "home": "Home",
+        "profile": "Profile",
+        "settings": "Settings",
+        "chat": "Chat"
+    },
+    "errors": {
+        "required": "This field is required",
+        "invalidEmail": "Invalid email address",
+        "passwordMismatch": "Passwords do not match",
+        "serverError": "Server error occurred",
+        "orderFailed": "Failed to create order. Please try again.",
+        "serviceFailed": "Failed to create service order. Please try again.",
+        "submitFailed": "Failed to submit order. Please try again.",
+        "ownProduct": "You cannot buy your own product",
+        "noProduct": "No product selected!",
+        "resellerDuplicate": "You can only register as a reseller once per shop",
+        "resellerFailed": "Failed to submit request. Please try again.",
+        "noPreOrder": "This store does not accept pre-orders",
+        "futureDate": "Please select a future date",
+        "notEnoughBalance": "Your balance does not have enough funds to pay for this order"
+    },
+    "success": {
+        "resellerRegistered": "Register reseller successfully"
+    },
+    "product": {
+        "details": {
+            "stock": "Stock",
+            "sold": "Sold",
+            "product": "Product",
+            "warehouse": "Warehouse",
+            "quantity": "Quantity",
+            "price": "Product price",
+            "totalPayment": "Total Payment",
+            "discount": "Discount",
+            "productDescription": "Product Description",
+            "noDescription": "No description available",
+            "seeMore": "See more",
+            "hide": "Hide",
+            "reviews": "Reviews",
+            "noReviews": "No reviews",
+            "preOrder": "Pre-order",
+            "buyNow": "Buy Now",
+            "selectDate": "Please select the expected completion date",
+            "placeOrder": "Place Order",
+            "quantityExceedsStock": "Quantity exceeds available stock!",
+            "notDuplicate": "Not Duplicate",
+            "stockCount": "{count} products",
+            "orderConfirmation": "Order Confirmation",
+            "preOrderConfirmation": "Pre-order Confirmation",
+            "completionDate": "Completion Date",
+            "selectCompletionDate": "Please select the expected completion date",
+            "productList": "Product List",
+            "classify": "Classify"
+        }
+    },
+    "store": {
+        "details": {
+            "favoriteStores": "Favourite Stores",
+            "noFavoriteStores": "No favorite stores found",
+            "storeInformation": "Store information",
+            "online": "Online",
+            "lastSeen": "Online {time} ago",
+            "level": "LV {level}",
+            "registrationDate": "Registration Date",
+            "purchased": "{count} products",
+            "stores": "Stores",
+            "sold": "{count} products",
+            "posts": "{count} posts",
+            "contact": "Contact",
+            "connectWith": "Connect with {username}"
+        },
+        "status": {
+            "active": "Active",
+            "inactive": "Inactive"
+        },
+        "sponsor": "Sponsor"
+    },
+    "warehouse": {
+        "title": "Warehouse Management",
+        "listProduct": "List Product",
+        "productName": "Product Name",
+        "serviceName": "Service Name",
+        "status": "Status",
+        "action": "Action",
+        "addItem": "Add Item",
+        "deleteProduct": "Delete Product",
+        "deleteService": "Delete Service",
+        "confirmDelete": "Confirm Delete",
+        "deleteConfirmation": "Are you sure you want to delete \"{name}\"?",
+        "delete": "Delete",
+        "editProduct": "Edit Product",
+        "editService": "Edit Service",
+        "priceUsdt": "Price (USDT)",
+        "priceRange": "Price must be between 0 and 1,000,000 USDT",
+        "priceNegativeError": "Price cannot be negative",
+        "priceExceedsLimitError": "Price cannot exceed 1,000,000 USDT",
+        "statusUpdateSuccess": "Product status updated successfully",
+        "statusUpdateError": "Failed to update product status",
+        "productUpdateSuccess": "Product updated successfully",
+        "serviceUpdateSuccess": "Service updated successfully",
+        "productUpdateError": "Failed to update product",
+        "serviceUpdateError": "Failed to update service"
+    },
+    "popupAddProduct": {
+        "title": "Add Product",
+        "upload": {
+            "uploadFile": "Upload File",
+            "apiServer": "API Server",
+            "dragDrop": "Click to select a file, or drag and drop a file here",
+            "uploadFileTxt": "Upload File (txt)",
+            "note": "Note: Each uploaded line will be a product. Structure of each line:",
+            "email": "Email: username@gmail.com|password|.....",
+            "software": "Software: xxx....",
+            "account": "Account: username|password and(or) anything else",
+            "other": "Other: xxx...."
+        },
+        "table": {
+            "latestUploaded": "Latest uploaded file",
+            "productName": "Product name",
+            "fileName": "File name",
+            "uploadDate": "Upload date",
+            "result": "Result",
+            "status": "Status",
+            "loading": "Loading...",
+            "errorLoadingData": "Error loading data",
+            "noUploadsFound": "No uploads found",
+            "serialNumber": "Serial number",
+            "product": "Product",
+            "createDate": "Create date",
+            "saleDate": "Sale date"
+        },
+        "pagination": {
+            "previous": "Previous",
+            "next": "Next"
+        },
+        "buttons": {
+            "deleteAll": "Delete all",
+            "deleting": "Deleting...",
+            "downloadUnsold": "Download unsold products",
+            "downloading": "Downloading...",
+            "save": "Save"
+        },
+        "uploading": "Uploading... {progress}%"
+    },
+    "popupAddWarehouse": {
+        "addProduct": "Add Product",
+        "addService": "Add Service",
+        "addNew": "Add New",
+        "store": "Store: ",
+        "priceInvalid": "Invalid price",
+        "priceGreaterThanZero": "Price must be greater than 0",
+        "priceTooHigh": "Price cannot exceed 100,000",
+        "usePrivateWarehouse": "Use private warehouse",
+        "privateWarehouseNote": "(This setting requires you to have a private warehouse server and an API to provide products to the platform)",
+        "productName": "Product Name",
+        "serviceName": "Service Name",
+        "enterProductName": "Enter product name",
+        "enterServiceName": "Enter service name",
+        "price": "Price",
+        "enterPrice": "Enter price",
+        "productStatus": "Product Status",
+        "success": "Product added successfully",
+        "error": "Failed to add product: "
+    },
+    "popupReseller": {
+        "title": "Reseller Program",
+        "becomeReseller": "Become a Reseller",
+        "description": "Join the reseller program for this store and earn a percentage of revenue from the discounted amount on each order you sell. Note: Once customers visit through your referral link, all their subsequent orders will automatically be associated with your account.",
+        "discountTitle": "Set Your Desired Discount Percentage",
+        "discountPlaceholder": "Specify the discount percentage (max 35%)",
+        "detailsTitle": "Additional Details",
+        "detailsPlaceholder": "Provide any specific requests or clarifications about your discount preferences.",
+        "submitButton": "Submit Request"
+    },
+    "complainOrder": {
+        "title": "Order Complaints",
+        "addImages": "Add Complaint Images",
+        "optional": "(optional)",
+        "imageDescription": "Add images to support your complaint. You can add up to 7 images",
+        "complainImage": "Complaint Image",
+        "imageUpload": "Image Upload",
+        "describeComplaint": "Describe your complaint for Order",
+        "textareaPlaceholder": "Write your complaint details",
+        "sendButton": "Send",
+        "submitting": "Submitting your complaint...",
+        "submitSuccess": "Your complaint has been submitted successfully",
+        "submitError": "Failed to submit complaint. Please try again.",
+        "fileTypeError": "Only JPEG, PNG, GIF, MP4, MOV, or AVI files are allowed"
+    },
+    "viewComplainModal": {
+        "title": "Complaint Details for Order",
+        "loadError": "Failed to load complaint details. Please try again.",
+        "cancellingComplaint": "Cancelling complaint...",
+        "cancelSuccess": "Complaint cancelled successfully",
+        "cancelError": "Failed to cancel complaint. Please try again.",
+        "updatingStatus": "Updating complaint status...",
+        "disputeSuccess": "Complaint status updated to dispute",
+        "updateError": "Failed to update complaint status. Please try again.",
+        "complaintInformation": "Complaint Information",
+        "complaintDate": "Complaint Date",
+        "complaintStatus": "Complaint Status",
+        "complaintDetails": "Complaint Details",
+        "noContent": "No content provided",
+        "attachedImage": "Attached Image",
+        "complainImage": "Complaint Image",
+        "cancelButton": "Cancel Complaint",
+        "disputeButton": "Dispute",
+        "noComplaintFound": "No complaint information found for this order.",
+        "statusCancelled": "Cancelled",
+        "statusResolved": "Resolved",
+        "statusDispute": "Dispute",
+        "statusPending": "Pending"
+    },
+    "donateModal": {
+        "title": "Support the Author",
+        "amount": "Amount",
+        "amountPlaceholder": "Minimum 5,000 USDT",
+        "comment": "Comment",
+        "commentPlaceholder": "Enter specific content requests",
+        "donateButton": "Donate"
+    },
+    "depositModal": {
+        "title": "Scan QR code to deposit",
+        "walletAddress": "Your USDT wallet address",
+        "balance": "Balance",
+        "networks": {
+            "bsc": "Binance Smart Chain",
+            "ethereum": "Ethereum",
+            "arbitrum": "Arbitrum"
+        }
+    },
+    "addModalShop": {
+        "shopName": "Shop Name *",
+        "enterShopName": "Enter your shop name",
+        "businessType": "Business Type *",
+        "selectBusinessType": "Select business type",
+        "shopType": "Shop Type *",
+        "selectShopType": "Select shop type",
+        "discountedProductType": "Discounted Product Type",
+        "selectDiscountedProductType": "Select discounted product type",
+        "refundRating": "Refund Rating (%) *",
+        "addRefundRating": "Add refund rating",
+        "tag": "Tag",
+        "selectTag": "Select tag",
+        "duplicateProduct": "Duplicate Product",
+        "usePrivateStock": "Use private stock",
+        "allowResellers": "Allow resellers to sell",
+        "allowPreOrder": "Allow pre-order",
+        "shortDescription": "Short Description *",
+        "enterShortDescription": "Enter your description",
+        "detailedDescription": "Detailed Description *",
+        "clickToUploadAvatar": "Click to upload avatar, or drag and drop",
+        "addNew": "Add New",
+        "pleaseUploadImageFile": "Please upload an image file",
+        "fileSizeLessThan5MB": "File size must be less than 5MB",
+        "imageDimensionsRequirement": "Image dimensions must be between {minWidth}x{minHeight} and {maxWidth}x{maxHeight} pixels",
+        "shopNameRequired": "Shop name is required",
+        "shopNameLengthError": "Shop name must be less than {maxLength} characters",
+        "businessTypeRequired": "Business type is required",
+        "shopTypeRequired": "Shop type is required",
+        "detailedDescriptionRequired": "Detailed description is required",
+        "detailedDescriptionMinLength": "Detailed description must be at least {minLength} characters",
+        "refundRatingRequired": "Refund rating is required",
+        "refundRatingRange": "Refund rating must be between {min} and {max}",
+        "shortDescriptionRequired": "Short description is required",
+        "shortDescriptionMinLength": "Short description must be at least {minLength} characters",
+        "shortDescriptionMaxLength": "Short description must be less than {maxLength} characters",
+        "shopAvatarRequired": "Shop avatar is required",
+        "fillAllRequiredFields": "Please fill in all required fields correctly",
+        "addStoreSuccess": "Add store successfully",
+        "maxStore": "You can only create up to 5 shops",
+        "addShop": "Add Shop"
+    },
+    "seller": {
+        "title": "Seller Dashboard",
+        "nav": {
+            "title": "Seller Acount",
+            "dashboard": "Dashboard",
+            "productOrders": "Product Orders",
+            "serviceOrders": "Service Orders",
+            "pre-orders": "Pre-Orders",
+            "store-management": "Store Management",
+            "reseller-list": "Reseller List",
+            "top-stores": "Top Stores",
+            "reviews": "Reviews",
+            "complaint": "Complaint",
+            "discount-codes": "Discount Codes",
+            "logout": "Logout"
+        },
+        "dashboard": {
+            "title": "Dashboard",
+            "order-number": "Order number",
+            "sales": "Sales",
+            "30-day-near": "30 days near",
+            "download": "Download",
+            "business-month": "Business month",
+            "increate": "Increase",
+            "decreate": "Decrease",
+            "so-with-the-previous-month": "so with the previous month",
+            "temborary-hold": "Temborary hold"
+        },
+        "store-management": {
+            "shop": "Shop",
+            "add-new": "Add New",
+            "note": "Note",
+            "require": " You can create up to 5 shops only",
+            "actions": "Actions",
+            "type": "Type",
+            "duplicate": "Duplicate",
+            "reseller": "Reseller",
+            "pre-order": "Pre-order",
+            "stock": "Stock",
+            "status": "Status",
+            "editShop": "Edit Shop",
+            "addService": "Add Service",
+            "addProduct": "Add Product",
+            "warehouseManagement": "Warehouse Management",
+            "noTransactions": "No transactions found."
+        },
+        "product-order": {
+            "product-order": "Product Order",
+            "enter-order-code": "Enter order code",
+            "enter-buyer-name": "Enter buyer's name",
+            "all": "all",
+            "searcg-order": "Searcg Order",
+            "order-code": "Order Code",
+            "Sale Date": "Sale Date",
+            "buyer": "Buyer",
+            "store": "Store",
+            "item": "Item",
+            "Quantity": "Quantity",
+            "price": "Price",
+            "discount": "Discounted",
+            "total": "Total",
+            "refund": "Refund",
+            "reseller": "Reseller",
+            "platform": "Platform",
+            "status": "Status",
+            "search-order": "Search Order",
+            "no-orders": "No orders found."
+        },
+        "service-orders": {
+            "all": "All",
+            "title": "Service Orders",
+            "enter-order-code": "Enter order code",
+            "search-orders": "Search Orders",
+            "no-orders": "No service orders found. Service orders will appear here when customers place them.",
+            "table": {
+                "action": "Action",
+                "orderCode": "Order Code",
+                "saleDate": "Sale Date",
+                "buyer": "Buyer",
+                "store": "Store",
+                "item": "Item",
+                "quantity": "Quantity",
+                "price": "Price",
+                "discounted": "Discounted",
+                "total": "Total",
+                "refund": "Refund",
+                "reseller": "Reseller",
+                "platform": "Platform",
+                "status": "Status"
+            },
+            "actions": {
+                "acceptOrder": "View",
+                "cancelOrder": "Cancel Order"
+            }
+        },
+        "pre-orders": {
+            "title": "Pre-Orders",
+            "enter-order-code": "Enter order code",
+            "search-orders": "Search Orders",
+            "no-orders": "No pre-orders found. Pre-orders will appear here when customers place them."
+        },
+        "complaints": {
+            "all": "All",
+            "title": "Complaint Orders",
+            "enter-order-code": "Enter order code",
+            "enter-buyer-name": "Enter buyer's name",
+            "search-complaints": "Search Complaints",
+            "chat-with": "Chat with {username}",
+            "date-complaint": "Date Complaint",
+            "content": "Content",
+            "image": "Image",
+            "table": {
+                "chat": "Chat",
+                "dateComplaint": "Date Complaint",
+                "image": "Image",
+                "content": "Content",
+                "code": "Code",
+                "store": "Store",
+                "buyer": "Buyer",
+                "quantity": "Quantity",
+                "total": "Total",
+                "status": "Status"
+            }
+        },
+        "reseller-list": {
+            "title": "Reseller Management",
+            "table": {
+                "action": "Action",
+                "store": "Store",
+                "resellerName": "Reseller Name",
+                "commissionRate": "Commission Rate",
+                "requestDate": "Request Date",
+                "introduction": "Introduction",
+                "status": "Status"
+            },
+            "actions": {
+                "accept": "Accept",
+                "cancel": "Cancel",
+                "seeMore": "See more"
+            },
+            "modal": {
+                "introduction": "Introduction",
+                "processing": "Processing...",
+                "approveSuccess": "Reseller approved successfully!",
+                "approveError": "Failed to approve reseller. Please try again.",
+                "rejectSuccess": "Reseller rejected successfully!",
+                "rejectError": "Failed to reject reseller. Please try again."
+            }
+        },
+        "reviews": {
+            "title": "Replies",
+            "table": {
+                "orderCode": "Order Code",
+                "store": "Store",
+                "creationDate": "Creation Date",
+                "comment": "Comment",
+                "reply": "Reply",
+                "rating": "Rating",
+                "viewComment": "View Comment"
+            },
+            "noReviews": "No reviews found.",
+            "error": "Error: {message}"
+        },
+        "discount-codes": {
+            "title": "Discount Codes",
+            "addNew": "Add new +",
+            "table": {
+                "actions": "Actions",
+                "no": "No.",
+                "code": "Discount Code",
+                "store": "Store",
+                "start": "Start",
+                "end": "End",
+                "rate": "Discount Rate",
+                "maxDiscount": "Max Discount",
+                "amount": "Discount Amount",
+                "usage": "Usage Count",
+                "status": "Status"
+            },
+            "noData": "No discount codes found.",
+            "modal": {
+                "title": "Add new discount code"
+            },
+            "status": {
+                "active": "Active",
+                "inactive": "Inactive"
+            }
+        }
+    },
+    "custom-dropdown": {
+        "all": "All",
+        "pending": "Pending",
+        "successed": "Successed",
+        "refunded": "Refunded",
+        "cancelled": "Cancelled",
+        "refund": "Refund"
+    },
+    "review": {
+        "title": "Review",
+        "response": "Response",
+        "noDate": "No date",
+        "noReview": "No review content",
+        "loading": {
+            "userInfo": "Loading user information...",
+            "review": "Loading review..."
+        },
+        "error": "Error: {message}",
+        "notFound": "Review not found"
+    },
+    "banner": {
+        "title": "TOP UP MORE MONEY TO OWN THE BEST PRODUCTS!",
+        "register": "Register to sell"
+    },
+    "footer": {
+        "contactInformation": "Contact Information",
+        "address": "Address",
+        "hotline": "Hotline",
+        "taxCode": "Tax Code",
+        "email": "Email",
+        "support": "Support",
+        "policy": "Policy",
+        "terms of use": "Terms of use",
+        "FAQs": "FAQs"
+    },
+    "privacyPolicy": {
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: March 6, 2024",
+        "introduction": {
+            "title": "1. Introduction",
+            "content": "Welcome to EbayMMO. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you."
+        },
+        "informationCollection": {
+            "title": "2. Information We Collect",
+            "content": "We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:",
+            "identityData": "Identity Data includes first name, last name, username or similar identifier.",
+            "contactData": "Contact Data includes email address and telephone numbers.",
+            "financialData": "Financial Data includes payment information and transaction histories.",
+            "technicalData": "Technical Data includes internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.",
+            "usageData": "Usage Data includes information about how you use our website, products and services."
+        },
+        "informationUsage": {
+            "title": "3. How We Use Your Information",
+            "content": "We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:",
+            "points": [
+                "To register you as a new customer or seller.",
+                "To process and deliver your orders.",
+                "To manage our relationship with you.",
+                "To enable you to participate in features of our service.",
+                "To administer and protect our business and this website.",
+                "To deliver relevant website content and advertisements to you.",
+                "To use data analytics to improve our website, products/services, marketing, customer relationships and experiences."
+            ]
+        },
+        "dataSecurity": {
+            "title": "4. Data Security",
+            "content": "We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know."
+        },
+        "dataRetention": {
+            "title": "5. Data Retention",
+            "content": "We will only retain your personal data for as long as necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, accounting, or reporting requirements."
+        },
+        "legalRights": {
+            "title": "6. Your Legal Rights",
+            "content": "Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to:",
+            "points": [
+                "Request access to your personal data.",
+                "Request correction of your personal data.",
+                "Request erasure of your personal data.",
+                "Object to processing of your personal data.",
+                "Request restriction of processing your personal data.",
+                "Request transfer of your personal data.",
+                "Right to withdraw consent."
+            ]
+        },
+        "cookies": {
+            "title": "7. Cookies",
+            "content": "We use cookies and similar tracking technologies to track the activity on our Service and hold certain information. Cookies are files with small amount of data which may include an anonymous unique identifier."
+        },
+        "changes": {
+            "title": "8. Changes to This Privacy Policy",
+            "content": "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the \"last updated\" date at the top of this Privacy Policy."
+        },
+        "contact": {
+            "title": "9. Contact Us",
+            "content": "If you have any questions about this Privacy Policy, please contact us:",
+            "address": "Address: Nham Son - Yen Lu Industrial Park, Nham Bien Town, Yen Dung District, Bac Giang, Vietnam",
+            "hotline": "Hotline: 0396 112 998",
+            "email": "Email: support@ebaymmo.com"
+        }
+    },
+    "terms": {
+        "title": "Terms of use",
+        "lastUpdated": "Latest update: 28/05/2024",
+        "faqLink": "For more questions, please visit the",
+        "faqText": "FAQs",
+        "prohibitedItems": {
+            "title": "1. Prohibited items (restricted) on the page",
+            "content": "Each time you sell a product, the seller is responsible for ensuring that their goods comply with the current laws and regulations and do not violate the Terms of use and the Policy of EbayMMO. Please read the following instructions below about the prohibited/restricted items list. The list may change based on the actual situation, please update regularly to ensure the safety of your products. The following is a list of restricted (prohibited) items:",
+            "items": [
+                "Bank cards (Credit cards and debit cards...): all types of domestic and international bank cards, bank accounts bank accounts, accounts to create virtual cards...",
+                "Personal information: personal information of users such as real name, personal documents, electronic accounts and social media accounts obtained from hacking, phishing, etc.",
+                "Products obtained from the use of other people's accounts: VPS, keys, etc. obtained by stealing or illegal activities.",
+                "Cracked software or malware: Please respect the hard work of the genuine EbayMMo coders.",
+                "Sim (phone) numbers from all networks, real numbers, virtual numbers.",
+                "Digital documents, e-books violate the law."
+            ]
+        },
+        "sellingRules": {
+            "title": "2. Rules for selling products - (for shop owners)",
+            "rules": [
+                "Do not use vulgar language, create hostility, or affect other shops.",
+                "Do not post personal information or any other contact information except EbayMMO.com.",
+                "Do not use offensive images, create hostility, or affect personal organizations.",
+                "Do not use images of famous people without permission.",
+                "If you do not handle the refund of the order within 3 days, we will handle the refund on your behalf.",
+                "Use the warranty feature directly on the platform, absolutely do not warranty through any other channel."
+            ]
+        },
+        "generalRules": {
+            "title": "3. General rules for all users",
+            "rules": [
+                "Do not use bugs in any form.",
+                "Do not perform any actions that damage the page, shop, or other users."
+            ]
+        },
+        "violations": {
+            "title": "4. Violation of terms",
+            "content": "Violation of the Tạp Hóa MMO terms can lead to at least one of the following penalties:",
+            "penalties": [
+                "Shop deleted",
+                "Account limited",
+                "Account suspended or deleted",
+                "Request compensation for losses"
+            ],
+            "shopOwnerPenalties": {
+                "title": "For shop owners: Each violation will receive a penalty. The penalty will increase gradually.",
+                "penalties": [
+                    "1st time: Warning.",
+                    "2nd time: Warning.",
+                    "3rd time: +5% fee for all shops.",
+                    "4th time: Continue +5% fee for all shops.",
+                    "5th time: Close all shops and stop cooperation."
+                ]
+            }
+        },
+        "contact": {
+            "title": "Contact",
+            "content": "If you have any questions about these terms of use, please contact us:",
+            "address": "Address: Nham Son - Yen Lu Industrial Park, Nham Bien Town, Yen Dung District, Bac Giang, Vietnam",
+            "hotline": "Hotline: 0396 112 998",
+            "email": "Email: support@ebaymmo.com"
+        }
+    },
+    "2fa": {
+        "title": "Authenticator - Get code from 2FA string",
+        "publicKey": "Public Key",
+        "publicKeyPlaceholder": "Enter your 2FA string",
+        "confirm": "Confirm",
+        "loginCode": "Your login code:",
+        "timeRemaining": "Time remaining:",
+        "description": {
+            "line1": "• Authenticator is an app that generates 2FA codes (6 random numbers that change every 30 seconds) and is designed to let only you log into your account, even if someone else knows your password.",
+            "line2": "• When you log in, you need to verify 2 factors using 2FA, you must use Authenticator to get the login code.",
+            "line3": "• The stall on MMO Grocery sells products that often come with 2FA, use this app to get the login code."
+        },
+        "saveString": {
+            "title": "Save this string",
+            "reminderName": "Reminder name",
+            "reminderPlaceholder": "Enter your reminder name",
+            "cancel": "Cancel",
+            "save": "Save",
+            "note": "*Note: This feature will be saved on your browser, if you change browser or delete cookies it will be lost."
+        },
+        "savedList": {
+            "title": "List of saved code strings",
+            "operation": "Operation",
+            "reminderName": "Reminiscent name",
+            "currentCode": "Current Code",
+            "delete": "Delete",
+            "noData": "No data"
+        }
+    },
+    "faqs": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Find answers to common questions about our platform",
+        "categories": {
+            "buyer": "For Buyers",
+            "seller": "For Sellers",
+            "reseller": "For Resellers"
+        },
+        "buyer": {
+            "howToBuy": {
+                "question": "How to buy products?",
+                "answer": "Add money to your account, then use the balance to pay for your order. Please note that the process of adding money and delivering goods is completely automatic, so you may have to wait a while for the system to process."
+            },
+            "nonDuplicateEmail": {
+                "question": "What is a non-duplicate email?",
+                "answer": "Buying and selling accounts in groups carries many risks, especially when the seller is unreliable, as they might resell the same account to others. Our site has a mechanism to check for duplicate accounts (with a commitment that no duplicates are sold), to prevent such risks and ensure that the account you buy has never been sold to anyone else on the system."
+            },
+            "howToAddMoney": {
+                "question": "How to add money?",
+                "answer": "Select the \"Add fund\" option in the menu, then follow the instructions. If the transaction includes accurate details, the fund will be added automatically to your account. You can send any amount (starting from 1 unit)."
+            },
+            "wrongTransfer": {
+                "question": "What should I do if I transfer money to the wrong account?",
+                "answer": "We often encounter this situation, so please check when adding money. If you transfer the wrong amount, please notify us immediately on Facebook. We will verify and refund the money. Note: The money will only be refunded to the correct sender to avoid ABC scams."
+            },
+            "intermediary": {
+                "question": "Do I need to hire an intermediary?",
+                "answer": "Our policy of holding seller funds for 3 days means that taphoammo is essentially acting as an intermediary for safe transactions. Please note that we only support transactions performed directly through our website to ensure your safety and prevent scams currently spreading on social media. We hope you consider this safer option."
+            }
+        },
+        "seller": {
+            "registerToSell": {
+                "question": "How to register to sell?",
+                "answer": "Please log in first, then select \"Register to sell\" and fill in all necessary information to verify. After being approved, you can start selling on the platform."
+            },
+            "createStore": {
+                "question": "How to create a store?",
+                "answer": "First, register to sell, then go to the \"Store management\" section to create a new store. Ensure you select the correct product category."
+            },
+            "optimizeStore": {
+                "question": "How to optimize my store?",
+                "answer": "Start by investing in store images, search keywords, titles, and clear descriptions. Next, develop a long-term plan to ensure product quality. We will help optimize your store to make it as attractive as possible when advertised on social media. In addition, the store ranking will be updated weekly based on your sales performance."
+            },
+            "topPage": {
+                "question": "How to make my store appear at the top of the page?",
+                "answer": "It all depends on your sales performance and customer reviews. The ranking is updated weekly."
+            },
+            "salesRevenue": {
+                "question": "How is my sales revenue processed?",
+                "answer": "For each successful order, the amount will be in the \"Pending\" state for 3 days. If there is no dispute from the buyer, you can withdraw the amount immediately after this time. Please refer to the withdrawal limit on the platform."
+            },
+            "prohibitedItems": {
+                "question": "What items are prohibited?",
+                "answer": "The list of prohibited items on the platform is continuously updated. Please pay attention to these updates, especially those related to identity theft, such as bank accounts, Facebook accounts, and email accounts hacked through illegal activities and activities related to politics or religion."
+            },
+            "discount": {
+                "question": "How is discount applied to orders?",
+                "answer": "We apply a discount for each successful order, hoping you understand that this is part of a co-development relationship. In addition, the agent program is an option to increase your sales, but remember that you must provide a discount for your agent."
+            },
+            "withdrawMoney": {
+                "question": "How can I withdraw money?",
+                "answer": "For approved balances, you can choose the withdrawal option to transfer to your account."
+            },
+            "buildTrust": {
+                "question": "How can I build trust for my product on your platform?",
+                "answer": "You have another option, which is to create a private server for your product and provide an API for our platform. Our technical team will coordinate to integrate both systems. However, for long-term development, you may consider building trust options."
+            },
+            "productExchange": {
+                "question": "How do I handle product exchanges for customers?",
+                "answer": "If a customer's order has a defective product, go to the sold order section, select the repair option, then select \"Repair action\" -> enter the number of products to be repaired. The system will automatically create a discount code based on the number of products needed and send it to the customer."
+            }
+        },
+        "reseller": {
+            "becomeReseller": {
+                "question": "How do I become a reseller?",
+                "answer": "Members who have successfully registered and updated their personal information (name, social media account, bank account - used for withdrawal, etc.) can become resellers on this platform."
+            },
+            "startSelling": {
+                "question": "How do I start selling?",
+                "answer": "Browse the list of stores. Stores that allow resellers will have a button for resellers. You should proactively negotiate the percentage discount with the store owner and remember to use your referral link."
+            },
+            "withdrawRevenue": {
+                "question": "Can I withdraw my sales revenue?",
+                "answer": "Yes. Similar to sellers, the commission from each order will be held on the platform for 3 days. After this time, you can request a withdrawal if there is no dispute about the order."
+            },
+            "additionalRewards": {
+                "question": "Do I receive any additional rewards?",
+                "answer": "Yes. Monthly, based on your sales revenue, we will reward an additional percentage if your revenue reaches a certain threshold."
+            }
+        }
+    },
+    "contact": {
+        "title": "Contact Support",
+        "faq": "Frequently Asked Questions",
+        "socialLinks": {
+            "facebook": "EbayMMO",
+            "telegram": "Chat with support",
+            "email": "support@ebaymmo.com",
+            "workingHours": "Mon-Sat 08:00am - 10:00pm"
+        },
+        "supportMessage": "Our support staff will try to resolve your complaints and questions as quickly as possible.",
+        "form": {
+            "contactInfo": "Contact Information",
+            "email": {
+                "label": "Email",
+                "placeholder": "Enter your email"
+            },
+            "phone": {
+                "label": "Phone number",
+                "placeholder": "Enter your phone number"
+            },
+            "consultationNeed": {
+                "title": "Consultation Need",
+                "label": "Consultation need",
+                "placeholder": "Please select a consultation need",
+                "options": {
+                    "default": "Please select a consultation need",
+                    "option1": "Select a consultation need 1",
+                    "option2": "Select a consultation need 2",
+                    "option3": "Select a consultation need 3"
+                }
+            },
+            "content": {
+                "label": "Content",
+                "placeholder": "Enter specific consultation needs"
+            },
+            "submit": "Send question",
+            "sending": "Sending..."
+        },
+        "validation": {
+            "email": {
+                "required": "Please enter email",
+                "invalid": "Invalid email"
+            },
+            "phone": {
+                "required": "Please enter phone number",
+                "invalid": "Phone number is invalid",
+                "minLength": "Phone number must be at least 10 digits",
+                "maxLength": "Phone number cannot be longer than 15 digits"
+            },
+            "need": {
+                "required": "Please select a consultation need"
+            },
+            "content": {
+                "required": "Please enter content",
+                "minLength": "Content must be at least 10 characters"
+            }
+        },
+        "messages": {
+            "success": "Contact information sent successfully!",
+            "error": "Contact information sent failure!"
+        }
+    },
+    "categorysection": {
+        "category": "CATEGORY LIST",
+        "store": "STORE LIST",
+        "service": "LIST OF SERVICES",
+        "seemore": "See more"
+    },
+
+    "contactSection": {
+        "title": "CONTACT SUPPORT",
+        "faq": "FREQUENTLY ASKED QUESTIONS",
+        "social": {
+            "facebook": "EbayMMO",
+            "telegram": "Chat with support",
+            "email": "support@ebaymmo.com",
+            "workingHours": "Mon-Sat 08:00am - 10:00pm"
+        },
+        "supportMessage": "Our support team will do their best to handle your complaints and questions as quickly as possible.",
+        "contactInfo": "Contact information",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Enter your email",
+        "phoneLabel": "Phone number",
+        "phonePlaceholder": "Enter your phone number",
+        "consultationNeed": "Consultation need",
+        "selectConsultation": "Please select a consultation need",
+        "option1": "Select a consultation need 1",
+        "option2": "Select a consultation need 2",
+        "option3": "Select a consultation need 3",
+        "contentLabel": "Content",
+        "contentPlaceholder": "Enter specific consultation needs",
+        "sendButton": "Send question",
+        "sendingButton": "Sending..."
+    },
+    "saleRegistration": {
+        "title": "Cooperation Opportunity",
+        "content": "We offer you various opportunities to join us and grow together. Please select the option that best suits your needs and send us your information so we can contact you.",
+        "storeInformation": "Store Information",
+        "phoneNumber": "Phone Number",
+        "enterPhoneNumber": "Enter your phone number",
+        "uploadIdCard": "Upload ID Card Image",
+        "uploadPortraitPhoto": "Upload Portrait Photo",
+        "2faCode": "2FA Code",
+        "enter2faCode": "Enter 2FA code",
+        "register": "Register",
+        "enable2fa": "Enable Two-Factor Authentication",
+        "needEnable2fa": "You need to enable 2FA to register as a seller",
+        "2faProtection": "2FA helps protect your account and transactions",
+        "enableNow": "Enable Now",
+        "validation": {
+            "phoneNumberRequired": "Please enter your phone number",
+            "phoneNumberDigitsOnly": "Phone number must contain only digits",
+            "phoneNumberMinLength": "Phone number must be at least 10 digits",
+            "phoneNumberMaxLength": "Phone number cannot exceed 11 digits"
+        },
+        "features": {
+            "secure": {
+                "title": "Completely Secure",
+                "description": "This information is fully secure and will be used for us to contact you when necessary."
+            },
+            "cooperate": {
+                "title": "Cooperate - Connect",
+                "description": "Let's connect and cooperate to develop the online money-making community."
+            },
+            "support": {
+                "title": "Support Team",
+                "description": "Our support team will contact you to help optimize your sales performance."
+            },
+            "notifications": {
+                "title": "Push Notifications",
+                "description": "Please go to the account information (profile) section, and update the push notification settings to Telegram so you don't miss any customers."
+            },
+            "twoFactor": {
+                "title": "Two-Factor Authentication (2FA)",
+                "description": "This is a mandatory requirement before registering as a seller. Please update it in your profile."
+            }
+        }
+    },
+    "user": {
+        "title": "My Account",
+        "nav": {
+            "title": "User Account",
+            "account-management": "Account Management",
+            "address-balance": "Address Balance",
+            "order-management": "Order Management",
+            "transaction-history": "Transaction History",
+            "deposit-history": "Deposit History",
+            "withdrawal-history": "Withdrawal History",
+            "reseller-history": "Reseller History",
+            "favourite-store": "Your Favourite Store",
+            "content-management": "Content Management",
+            "favourite-post": "Your Favourite Post",
+            "logout": "Logout"
+        },
+        "address-balance": {
+            "title": "Balance Management",
+            "currentBalance": "Current Balance: {balance} USDT",
+            "addWallet": "Add Wallet",
+            "maxWallets": "You can only create up to 3 wallets",
+            "network": "Network",
+            "walletAddress": "Wallet Address",
+            "createdAt": "Created At",
+            "updatedAt": "Updated At",
+            "actions": "Actions",
+            "viewMore": "View More",
+            "collapse": "Collapse",
+            "edit": "Edit",
+            "editWallet": "Edit wallet address",
+            "addNewWallet": "Add new wallet address",
+            "selectNetwork": "Select network",
+            "enterWalletAddress": "Enter wallet address",
+            "enter2FACode": "Enter 2FA code",
+            "saveChanges": "Save changes",
+            "addAddress": "Add address",
+            "errors": {
+                "loginRequired": "Please login again",
+                "fillAllFields": "Please fill in all information",
+                "incorrect2FA": "2FA code is incorrect",
+                "updateFailed": "Failed to update wallet",
+                "addFailed": "Failed to add wallet",
+                "maxWalletsReached": "You can only create up to 3 wallets",
+                "emptyAddress": "Wallet address cannot be empty",
+                "invalidAddressFormat": "Invalid wallet address format. Please enter a valid BSC address",
+                "duplicateAddress": "This wallet address already exists"
+            },
+            "success": {
+                "walletUpdated": "Wallet updated successfully",
+                "walletAdded": "Wallet added successfully"
+            },
+            "2FAWarning": {
+                "title": "Enable Two-Factor Authentication",
+                "description": "You need to enable two-factor authentication to manage your wallets",
+                "enableNow": "Enable Now"
+            }
+        },
+        "account-management": {
+            "title": "Account Management",
+            "api-purchase": {
+                "title": "API Purchase",
+                "enabled": "Enabled",
+                "not-enabled": "Not enabled",
+                "hint": "(Enable API purchase to use this feature)"
+            },
+            "login-history": {
+                "title": "Login History",
+                "ip": "IP",
+                "device": "Device"
+            },
+            "profile": {
+                "title": "Account Information",
+                "avatar": "Avatar",
+                "uploading": "Uploading...",
+                "preview": "Preview",
+                "upload": "Upload",
+                "choose-picture": "Choose Profile Picture",
+                "save": "Save",
+                "points": "points level",
+                "level": "Level {level}",
+                "points-to-next": "{points} Points to level up {nextLevel}",
+                "account": "Account",
+                "kyc-verified": "KYC Verified",
+                "kyc-unverified": "KYC Unverified",
+                "username": "username",
+                "fullName": "Full Name",
+                "fullNamePlaceholder": "Enter your full name",
+                "email": "Email",
+                "password": "Password",
+                "passwordPlaceholder": "Enter new password",
+                "registration-date": "Registration Date",
+                "editableField": {
+                    "oldPassword": "Old Password",
+                    "oldPasswordPlaceholder": "Enter old password",
+                    "newPassword": "New Password",
+                    "newPasswordPlaceholder": "Enter new password",
+                    "confirmPassword": "Confirm Password",
+                    "confirmPasswordPlaceholder": "Re-enter new password",
+                    "passwordMismatch": "Passwords do not match",
+                    "passwordTooShort": "Password must be at least 8 characters long",
+                    "passwordNeedsUppercase": "Password must contain at least one uppercase letter",
+                    "passwordNeedsNumber": "Password must contain at least one number",
+                    "passwordNeedsSpecial": "Password must contain at least one special character",
+                    "cancel": "Cancel",
+                    "confirm": "Confirm",
+                    "noValue": "No {field}"
+                },
+                "fileTypeError": "Only JPEG, PNG, GIF, MP4, MOV, or AVI files are allowed"
+            },
+            "telegram": {
+                "title": "Connect Telegram",
+                "connected": "Connected",
+                "not-connected": "Not connected",
+                "hint": "(Connect with Telegram now)",
+                "success": "Successfully connected to Telegram! {name}",
+                "success-no-name": "Successfully connected to Telegram!"
+            },
+            "2fa": {
+                "title": "Two-Factor Authentication",
+                "hint": "(Protect your account with 2FA authentication)",
+                "qr-code": "QR Code",
+                "scan-instruction": "Use Google Authenticator app on your phone and scan this code",
+                "or": "or",
+                "secret-key": "Use this secret key to configure in the authenticator app",
+                "copy": "Copy",
+                "note": "Note:",
+                "save-code": "Save this code, you won't be able to login if you lose it.",
+                "get-otp": "Get OTP Login",
+                "enter-otp": "Enter 6-digit OTP",
+                "otp-placeholder": "Enter OTP",
+                "verifying": "Verifying...",
+                "confirm": "Confirm",
+                "save-reminder": "Please save this code, you won't be able to login if you lose it.",
+                "enabled": "Enabled",
+                "not-enabled": "Not enabled"
+            },
+            "stats": {
+                "purchased": "Purchased",
+                "number-of-stores": "Number of Stores",
+                "sold": "Sold",
+                "number-of-posts": "Number of Posts",
+                "products": "Products",
+                "stores": "Stores",
+                "posts": "Posts",
+                "orders": "Orders"
+            }
+        }
+    },
+    "order-management": {
+        "title": "Order Management",
+        "header": {
+            "title": "Order Manager",
+            "searchPlaceholder": "What do you want to find",
+            "filter": {
+                "all": "All",
+                "orderCode": "Order Code",
+                "seller": "Seller"
+            }
+        },
+        "table": {
+            "action": "Action",
+            "orderCode": "Order Code",
+            "orderDate": "Order Date",
+            "seller": "Seller",
+            "productName": "Product Name",
+            "quantity": "Quantity",
+            "price": "Price",
+            "reduce": "Reduce",
+            "completedDate": "Completed Date",
+            "status": "Status",
+            "orderType": "Order Type",
+            "totalMoney": "Total Money"
+        },
+        "reviewOrder": "Review Order",
+        "complain": "Complain",
+        "viewComplain": "View Complain",
+        "chat": "Chat",
+        "getProductData": "Get product data",
+        "modal": {
+            "product": "Product",
+            "value": "Value",
+            "postback": "Postback",
+            "noData": "No data for this order",
+            "account": "Account",
+            "password": "Password",
+            "reportError": "Report product error",
+            "warnings": {
+                "deleteAfter30Days": "The order will be deleted after 30 days, please save it to your computer to avoid losing the order",
+                "randomString": "If the product is not an account for login, but a random string, serial number, or any other unrelated string, this means that the store has a system website check. Please complain about the order and notify the platform support to get a refund.",
+                "warranty": "Please request a warranty directly on the platform, using the warranty function to ensure your rights and not receive a product that has been sold to another person."
+            },
+            "buttons": {
+                "downloadOrder": "Download order",
+                "uploadError": "Upload product error"
+            },
+            "errors": {
+                "noDataToDownload": "No data to download"
+            }
+        }
+    },
+    "transaction-history": {
+        "title": "Transaction History",
+        "searchPlaceholder": "What do you want to find?",
+        "columns": {
+            "transactionDate": "Transaction Date",
+            "transactionCode": "Transaction Code",
+            "amount": "Amount",
+            "orderStatus": "Status"
+        },
+        "noTransactions": "No transactions found",
+        "showingEntries": "Showing {from} to {to} of {total} entries"
+    },
+    "deposit-history": {
+        "title": "Deposit History",
+        "errorLoading": "Error loading deposits",
+        "table": {
+            "amount": "Amount",
+            "description": "Description",
+            "depositAt": "Deposit Date",
+            "status": "Status",
+            "actions": "Actions",
+            "viewDetails": "View details"
+        },
+        "modal": {
+            "title": "Deposit Details",
+            "depositLogs": "Deposit Logs",
+            "processedAt": "Processed At",
+            "status": {
+                "completed": "Completed",
+                "pending": "Pending"
+            }
+        },
+        "noData": "No data available"
+    },
+    "reseller-history": {
+        "title": "Reseller History",
+        "storeList": "Store List",
+        "history": "History",
+        "store": "Store",
+        "resellerLink": "Reseller Link",
+        "commission": "Commission",
+        "status": "Status",
+        "orderId": "Order ID",
+        "purchaseDate": "Purchase Date",
+        "quantity": "Quantity",
+        "unitPrice": "Unit Price",
+        "totalAmount": "Total Amount",
+        "commissionAccount": "Commission Account",
+        "seeMore": "See more",
+        "tooltip": {
+            "note": "*Note: ",
+            "content": "Customers only need to visit the site once through your reseller link, we will save cookies and apply commission deductions for all subsequent orders (if your reseller link is still approved by the store owner)"
+        },
+        "statuses": {
+            "active": "Active",
+            "inactive": "Inactive",
+            "pending": "Pending",
+            "approved": "Approved"
+        }
+    },
+    "withdrawal-history": {
+        "title": "Withdrawal History",
+        "requestDate": "Request Date",
+        "transactionAmount": "Transaction Amount",
+        "status": "Status",
+        "description": "Description",
+        "balanceAddress": "Balance Address",
+        "withdrawalRequest": "Withdrawal Request",
+        "statuses": {
+            "pending": "Pending",
+            "completed": "Completed",
+            "failed": "Failed",
+            "processing": "Processing"
+        },
+        "modal": {
+            "title": "Withdrawal Request",
+            "amount": "Amount",
+            "amountPlaceholder": "Enter amount to withdraw",
+            "submit": "Submit",
+            "cancel": "Cancel",
+            "success": "Withdrawal request sent successfully",
+            "error": "Failed to send withdrawal request",
+            "missingFields": "Please fill in all required fields"
+        }
+    },
+    "favourite-post": {
+        "title": "Favorite Posts",
+        "noPosts": "You have no favorite posts yet",
+        "error": "Error loading favorite posts",
+        "donate": "Donate"
+    },
+    "content-management": {
+        "title": "Content Management",
+        "publicPosts": "Public Posts",
+        "post": "Post",
+        "postNotFound": "Posts not found",
+        "search": {
+            "placeholder": "Search posts"
+        }
+    },
+    "checkLiveFB": {
+        "title": "Check UID Facebook - Verify Facebook Accounts",
+        "inputLabels": {
+            "uidList": "Enter UID List (max 1000 per check)",
+            "delimiter": "Delimiter",
+            "column": "Column",
+            "liveUids": "UID Live",
+            "deadUids": "UID Dead"
+        },
+        "stats": {
+            "total": "Total",
+            "success": "Success",
+            "failed": "Failed"
+        },
+        "buttons": {
+            "check": "Check",
+            "checking": "Checking..."
+        },
+        "errors": {
+            "maxUidsExceeded": "UID count exceeds the limit (max 1000)"
+        }
+    },
+    "shares": {
+        "placeholder": "Search blog",
+        "searchBy": "Search by",
+        "post": "Post",
+        "noPost": "No blog available"
+    },
+    "post": {
+        "donate": {
+            "enjoy": "Enjoyed the post?",
+            "title": "Donate",
+            "description": "If so, consider supporting the author by donating if you found the content helpful.",
+            "relatedPost": "Related Post",
+            "errorRelated": "No related posts found"
+        },
+        "comment": {
+            "title": "comment",
+            "placeHolder": "Please comment in this post...",
+            "description": "Your comment will be reviewed before it is posted. ",
+            "submit": "Submit Comment",
+            "loading": "Loading...",
+            "viewReply": "View replies",
+            "hideReply": "Hide replies",
+            "noReply": "There are no reply yet.",
+            "noComment": "There are no commentt yet."
+        }
+    },
+    "order-service": {
+        "service": "Service",
+        "status": {
+            "cancelled": "Reject Order",
+            "pending": "Pending Confirmation",
+            "accepted": "In Progress",
+            "completed": "Completed",
+            "updateSuccess": "Order status updated successfully",
+            "updateFailed": "Failed to update order status",
+            "updateError": "Error updating order status",
+            "noOrderId": "Order ID not found"
+        },
+        "buttons": {
+            "accept": "Accept Order",
+            "reject": "Reject Order",
+            "confirmCompletion": "Confirm Completion",
+            "contactBuyer": "Contact Buyer",
+            "viewReviews": "View Reviews",
+            "processing": "Processing..."
+        },
+        "stages": {
+            "ordered": "Ordered",
+            "completed": "Completed",
+            "success": "Success"
+        },
+        "testMode": {
+            "title": "Test Mode Controls",
+            "currentStatus": "Current Status",
+            "stage": "Stage"
+        },
+        "default": {
+            "service": "Design Service",
+            "category": "Design",
+            "orderCode": "ORDER123"
+        },
+        "progress-bar": {
+            "processing": "Processing",
+            "confirmed": "Confirmed",
+            "completed": "Completed",
+            "cancelled": "Rejected",
+            "stage-completed": "Completed"
+        }
+    },
+    "order-stages": {
+        "cancelled": {
+            "title": "Order Rejected",
+            "description": "This order has been rejected and cannot be processed further.",
+            "actions": {
+                "viewReason": "View rejection reason",
+                "contact": "Contact buyer for clarification",
+                "viewStats": "View order statistics"
+            }
+        },
+        "pending": {
+            "title": "Awaiting Confirmation",
+            "description": "The order is waiting for your confirmation.",
+            "actions": {
+                "check": "Check order details",
+                "confirm": "Confirm availability",
+                "decideAccept": "Decide whether to accept"
+            }
+        },
+        "accepted": {
+            "title": "In Progress",
+            "description": "You are currently executing this service order.",
+            "actions": {
+                "continue": "Continue working on the order",
+                "quality": "Maintain high quality standards",
+                "confirm": "Confirm completion when done"
+            }
+        },
+        "completed": {
+            "title": "Completed",
+            "description": "The order has been completed.",
+            "actions": {
+                "viewReviews": "View customer reviews",
+                "contact": "Contact buyer for feedback",
+                "viewStats": "Check order analytics"
+            }
+        },
+        "unknown": {
+            "title": "Unknown Status",
+            "description": "Please check the order status again."
+        },
+        "fields": {
+            "orderCode": "Order Code",
+            "orderDate": "Order Date",
+            "service": "Service",
+            "price": "Price",
+            "startDate": "Start Date",
+            "description": "Description",
+            "completionDate": "Completion Date",
+            "buyer": "Buyer",
+            "quantity": "Quantity",
+            "orderStatus": "Order Status"
+        }
+    },
+    "order-buyer": {
+        "cancelled": {
+            "title": "Failed",
+            "description": "This order has been rejected"
+        },
+        "pending": {
+            "title": "Processing",
+            "subtitle": "Order is waiting for confirmation",
+            "message": "We are processing your request and will confirm as soon as possible."
+        },
+        "accepted": {
+            "title": "Confirmed",
+            "subtitle": "Your order is being processed",
+            "message": "Our staff is working on your request. You will be notified when it's completed."
+        },
+        "completed": {
+            "title": "Success",
+            "subtitle": "Order completed",
+            "message": "Congratulations! Your order has been successfully completed. Thank you for using our service!"
+        },
+        "buttons": {
+            "cancelOrder": "Cancel Order",
+            "contactSeller": "Contact Seller",
+            "complaint": "Complaint",
+            "review": "Review"
+        },
+        "orderInfo": "Order Information",
+        "requestDetails": "Request Details",
+        "defaultNotes": "Customer requests a minimalist logo design, using green and white as the main colors.",
+        "buyerInfo": "Buyer Information",
+        "fromDate": "*Starting from {date}",
+        "fields": {
+            "quantity": "Quantity",
+            "price": "Price",
+            "orderDate": "Order Date",
+            "totalPayment": "Total Payment",
+            "completionDeadline": "Completion Deadline",
+            "buyer": "Buyer",
+            "orderCode": "Order Code"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+table:
+  name: store_sales_summary
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - products_sold
+        - rating_count
+        - total_orders
+        - unique_customers
+        - seller_name
+        - store_name
+        - average_rating
+        - total_revenue
+        - last_order_date
+        - seller_id
+        - store_id
+      filter:
+        seller_id:
+          _eq: X-Hasura-User-Id
+    comment: ""

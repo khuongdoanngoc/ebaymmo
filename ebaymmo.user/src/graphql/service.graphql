@@ -1,0 +1,28 @@
+query GetServices($limit: Int, $offset: Int) {
+    products(
+        where: { isService: { _eq: true } }
+        limit: $limit
+        offset: $offset
+    ) {
+        productId
+        productName
+        storeId
+        price
+        isService
+        store {
+            storeName
+            description
+            user {
+                username
+                images
+            }
+        }
+        soldCount
+        stockCount
+    }
+    productsAggregate(where: { isService: { _eq: true } }) {
+        aggregate {
+            count
+        }
+    }
+}

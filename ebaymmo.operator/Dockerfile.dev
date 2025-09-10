@@ -1,0 +1,20 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Cài đặt các dependencies
+COPY package.json package-lock.json ./
+# Sử dụng npm install thay vì npm ci để đảm bảo cài đặt các dependencies mới nếu cần
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Kiểm tra và cài thêm các dependencies còn thiếu
+RUN npm install @apollo/client graphql jwt-decode recharts graphql-ws @radix-ui/react-dropdown-menu @radix-ui/react-label @radix-ui/react-collapsible @radix-ui/react-tooltip @radix-ui/react-popover date-fns react-day-picker exceljs jspdf jspdf-autotable file-saver
+
+# Mở port mà Vite sẽ sử dụng
+EXPOSE 5173
+
+# Lệnh chạy development server với host 0.0.0.0 để có thể truy cập từ bên ngoài
+CMD ["npx", "vite", "--host", "0.0.0.0"] 

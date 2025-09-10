@@ -1,0 +1,49 @@
+table:
+  name: reseller_orders
+  schema: public
+object_relationships:
+  - name: order
+    using:
+      foreign_key_constraint_on: order_id
+  - name: reseller
+    using:
+      foreign_key_constraint_on: reseller_id
+insert_permissions:
+  - role: postgres
+    permission:
+      check: {}
+      columns:
+        - status
+        - commission_amount
+        - create_at
+        - update_at
+        - id
+        - order_id
+        - reseller_id
+    comment: ""
+select_permissions:
+  - role: postgres
+    permission:
+      columns:
+        - status
+        - commission_amount
+        - create_at
+        - update_at
+        - id
+        - order_id
+        - reseller_id
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - commission_amount
+        - create_at
+        - update_at
+        - status
+        - id
+        - order_id
+        - reseller_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""

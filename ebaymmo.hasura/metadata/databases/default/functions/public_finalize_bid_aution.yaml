@@ -1,0 +1,5 @@
+function:
+  name: finalize_bid_aution
+  schema: public
+permissions:
+  - role: user

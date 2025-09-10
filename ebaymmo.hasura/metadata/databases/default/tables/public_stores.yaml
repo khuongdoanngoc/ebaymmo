@@ -1,0 +1,399 @@
+table:
+  name: stores
+  schema: public
+object_relationships:
+  - name: category
+    using:
+      foreign_key_constraint_on: category_id
+  - name: user
+    using:
+      foreign_key_constraint_on: seller_id
+array_relationships:
+  - name: bidHistories
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: bids_history
+          schema: public
+  - name: bids
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: bids
+          schema: public
+  - name: coupons
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: coupons
+          schema: public
+  - name: positions
+    using:
+      foreign_key_constraint_on:
+        column: winner_stores
+        table:
+          name: positions
+          schema: public
+  - name: products
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: products
+          schema: public
+  - name: reports
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: reports
+          schema: public
+  - name: resellers
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: resellers
+          schema: public
+  - name: storeAccessLogs
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: store_access_logs
+          schema: public
+  - name: storePoints
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: store_points
+          schema: public
+  - name: storeRatings
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: store_ratings
+          schema: public
+  - name: wishlists
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: wishlist
+          schema: public
+insert_permissions:
+  - role: operator
+    permission:
+      check: {}
+      columns:
+        - allow_pre_order
+        - allow_reseller
+        - duplicate_product
+        - private_warehouse
+        - avatar
+        - short_description
+        - slug
+        - store_name
+        - store_tag
+        - sub_title
+        - average_rating
+        - access_count
+        - favorite_count
+        - five_star
+        - four_star
+        - one_star
+        - rating_total
+        - refund_rating
+        - three_star
+        - total_sold_count
+        - total_stock_count
+        - two_star
+        - max_price
+        - min_price
+        - store_price
+        - description
+        - create_at
+        - update_at
+        - status
+        - category_id
+        - seller_id
+        - store_id
+    comment: ""
+  - role: user
+    permission:
+      check: {}
+      columns:
+        - access_count
+        - allow_pre_order
+        - allow_reseller
+        - avatar
+        - average_rating
+        - category_id
+        - create_at
+        - description
+        - duplicate_product
+        - favorite_count
+        - five_star
+        - four_star
+        - max_price
+        - min_price
+        - one_star
+        - private_warehouse
+        - rating_total
+        - refund_rating
+        - seller_id
+        - short_description
+        - slug
+        - status
+        - store_id
+        - store_name
+        - store_price
+        - store_tag
+        - sub_title
+        - three_star
+        - total_sold_count
+        - total_stock_count
+        - two_star
+        - update_at
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - access_count
+        - allow_pre_order
+        - allow_reseller
+        - avatar
+        - average_rating
+        - category_id
+        - create_at
+        - description
+        - duplicate_product
+        - favorite_count
+        - five_star
+        - four_star
+        - max_price
+        - min_price
+        - one_star
+        - private_warehouse
+        - rating_total
+        - refund_rating
+        - seller_id
+        - short_description
+        - slug
+        - status
+        - store_id
+        - store_name
+        - store_price
+        - store_tag
+        - sub_title
+        - three_star
+        - total_sold_count
+        - total_stock_count
+        - two_star
+        - update_at
+      filter: {}
+      limit: 50
+      allow_aggregations: true
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - access_count
+        - avatar
+        - average_rating
+        - category_id
+        - create_at
+        - description
+        - favorite_count
+        - rating_total
+        - refund_rating
+        - seller_id
+        - short_description
+        - slug
+        - status
+        - store_id
+        - store_name
+        - store_price
+        - store_tag
+        - sub_title
+        - total_sold_count
+        - total_stock_count
+        - update_at
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - access_count
+        - allow_pre_order
+        - allow_reseller
+        - avatar
+        - average_rating
+        - category_id
+        - create_at
+        - description
+        - duplicate_product
+        - favorite_count
+        - five_star
+        - four_star
+        - max_price
+        - min_price
+        - one_star
+        - private_warehouse
+        - rating_total
+        - refund_rating
+        - seller_id
+        - short_description
+        - slug
+        - status
+        - store_id
+        - store_name
+        - store_price
+        - store_tag
+        - sub_title
+        - three_star
+        - total_sold_count
+        - total_stock_count
+        - two_star
+        - update_at
+      filter: {}
+      limit: 50
+      allow_aggregations: true
+    comment: ""
+update_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - access_count
+        - allow_pre_order
+        - allow_reseller
+        - avatar
+        - average_rating
+        - create_at
+        - description
+        - duplicate_product
+        - favorite_count
+        - five_star
+        - four_star
+        - max_price
+        - min_price
+        - one_star
+        - private_warehouse
+        - rating_total
+        - refund_rating
+        - short_description
+        - slug
+        - status
+        - store_name
+        - store_price
+        - store_tag
+        - sub_title
+        - three_star
+        - total_sold_count
+        - total_stock_count
+        - two_star
+        - update_at
+      filter: {}
+      check: null
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - access_count
+        - allow_pre_order
+        - allow_reseller
+        - avatar
+        - average_rating
+        - category_id
+        - create_at
+        - deleted
+        - description
+        - duplicate_product
+        - favorite_count
+        - five_star
+        - four_star
+        - max_price
+        - min_price
+        - one_star
+        - private_warehouse
+        - rating_total
+        - refund_rating
+        - seller_id
+        - short_description
+        - slug
+        - status
+        - store_id
+        - store_name
+        - store_price
+        - store_tag
+        - sub_title
+        - three_star
+        - total_sold_count
+        - total_stock_count
+        - two_star
+        - update_at
+      filter: {}
+      check: null
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - allow_pre_order
+        - allow_reseller
+        - avatar
+        - category_id
+        - description
+        - duplicate_product
+        - max_price
+        - min_price
+        - private_warehouse
+        - rating_total
+        - refund_rating
+        - short_description
+        - status
+        - store_name
+        - store_price
+        - store_tag
+        - sub_title
+        - total_stock_count
+      filter:
+        seller_id:
+          _eq: X-Hasura-User-Id
+      check: null
+    comment: ""
+event_triggers:
+  - name: SyncStoreData
+    definition:
+      delete:
+        columns: '*'
+      enable_manual: true
+      insert:
+        columns: '*'
+      update:
+        columns:
+          - total_stock_count
+          - status
+          - slug
+          - sub_title
+          - total_sold_count
+          - average_rating
+          - rating_total
+          - duplicate_product
+          - store_id
+          - category_id
+          - store_name
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: '{{SEARCH_URL}}/elasticsearch-sync/store'
+    headers:
+      - name: x-hasura-webhook-secret
+        value: '{{HASURA_WEBHOOK_SECRET}}'

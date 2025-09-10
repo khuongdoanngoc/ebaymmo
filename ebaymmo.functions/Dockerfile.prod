@@ -1,0 +1,58 @@
+# Dockerfile Production
+# Stage 1: Build ứng dụng
+FROM node:18-alpine AS build
+
+# Cài đặt dependencies để build
+RUN apk add --no-cache python3 make g++
+
+WORKDIR /app
+
+# Sao chép package.json và package-lock.json
+COPY package*.json ./
+
+# Cài đặt dependencies, vô hiệu hóa husky
+ENV HUSKY=0
+RUN npm ci
+
+# Sao chép source code (bao gồm cả SDK đã được generate trước đó)
+COPY . .
+
+# Build ứng dụng
+RUN npm run build
+
+# Stage 2: Tạo image production nhẹ hơn
+FROM node:18-alpine AS production
+
+# Thiết lập biến môi trường
+ENV NODE_ENV=production
+ENV HUSKY=0
+
+# Tạo user không phải root để nâng cao bảo mật
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
+WORKDIR /app
+
+# Sao chép package.json và package-lock.json
+COPY package*.json ./
+
+# Cài đặt chỉ production dependencies
+RUN npm ci --omit=dev --ignore-scripts
+
+# Sao chép build artifacts từ stage trước
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/src/sdk ./src/sdk
+
+# Sao chép các file configuration cần thiết
+COPY --chown=appuser:appgroup .env* ./
+
+# Chuyển ownership 
+RUN chown -R appuser:appgroup /app
+
+# Chuyển sang user không phải root
+USER appuser
+
+# Mở port
+EXPOSE 3000
+
+# Start ứng dụng
+CMD ["node", "dist/main.js"] 

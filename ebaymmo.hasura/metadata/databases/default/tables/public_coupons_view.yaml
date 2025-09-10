@@ -1,0 +1,27 @@
+table:
+  name: coupons_view
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - deleted
+        - is_active
+        - unlimited_use
+        - coupon_code
+        - discount_type
+        - store_name
+        - discount_rate
+        - maximum_amount
+        - usage_limit
+        - discount_value
+        - description
+        - create_at
+        - update_at
+        - end_date
+        - start_date
+        - coupon_id
+        - seller_id
+        - store_id
+      filter: {}
+    comment: ""

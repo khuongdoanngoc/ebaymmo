@@ -1,0 +1,96 @@
+mutation Login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+        accessToken
+        refreshToken
+    }
+}
+
+mutation GoogleLogin($profile: GoogleProfileInput!, $accessToken: String!) {
+    googleLogin(profile: $profile, accessToken: $accessToken) {
+        accessToken
+        refreshToken
+    }
+}
+
+mutation ResetPassword($newPassword: String!, $token: String!) {
+    resetPassword(newPassword: $newPassword, token: $token) {
+        message
+        success
+        error
+    }
+}
+
+mutation ForgotPassword($email: String!) {
+    forgotPassword(email: $email) {
+        message
+        success
+    }
+}
+
+mutation RefreshToken($refreshToken: String!) {
+    refreshToken(refreshToken: $refreshToken) {
+        accessToken
+        refreshToken
+    }
+}
+
+mutation RegisterUser($email: String!, $password: String!, $username: String!) {
+    registerUser(
+        input: { email: $email, password: $password, username: $username }
+    ) {
+        message
+    }
+}
+
+mutation Enable2FA {
+    enable2FA {
+        qrCodeUrl
+        secret
+    }
+}
+
+mutation verify2FAToken($token: String!) {
+    verify2FAToken(token: $token) {
+        success
+    }
+}
+
+mutation verify2FACode($twoFactorToken: String!) {
+    verify2FACode(twoFactorToken: $twoFactorToken) {
+        status
+    }
+}
+
+mutation CreateTwoFaAuthenticator(
+    $objects: [TwofaAuthenticatorsInsertInput!] = {}
+) {
+    insertTwofaAuthenticators(objects: $objects) {
+        returning {
+            deviceName
+            userId
+            isActive
+            secretKey
+            twoSecretKey
+        }
+    }
+}
+
+subscription GetTwoFaAuthenticator($where1: TwofaAuthenticatorsBoolExp = {}) {
+    twofaAuthenticators(where: $where1) {
+        id
+        userId
+        secretKey
+        isActive
+        createdAt
+        activatedAt
+        lastUsedAt
+        deviceName
+        twoSecretKey
+    }
+}
+
+mutation DeleteTwoFaAuthenticator($_eq: uuid!) {
+    deleteTwofaAuthenticators(where: { id: { _eq: $_eq } }) {
+        affectedRows
+    }
+}

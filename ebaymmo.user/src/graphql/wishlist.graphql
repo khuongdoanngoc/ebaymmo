@@ -1,0 +1,19 @@
+mutation InsertWishlist($storeId: uuid!, $userId: uuid!) {
+    insertWishlistOne(object: { storeId: $storeId, userId: $userId }) {
+        wishlistId
+        storeId
+        userId
+    }
+}
+
+mutation DeleteWishlist($where: WishlistBoolExp = {}) {
+    deleteWishlist(where: $where) {
+        affectedRows
+    }
+}
+
+query GetWishlist($where: WishlistBoolExp = {}) {
+    wishlist(where: $where) {
+        storeId
+    }
+}

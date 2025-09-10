@@ -1,0 +1,66 @@
+# Mutation để thêm ví mới
+mutation AddUserAddress($input: AddressesInsertInput!) {
+    insertAddresses(objects: [$input]) {
+        returning {
+            userId
+            network
+            address
+            createAt
+            updateAt
+            networkName
+        }
+    }
+}
+
+# Query để lấy danh sách và đếm số ví của user
+query GetUserAddresses($userId: uuid!) {
+    addresses(where: { userId: { _eq: $userId } }) {
+        addressId
+        network
+        address
+        createAt
+        updateAt
+        networkName
+    }
+    addressesAggregate(where: { userId: { _eq: $userId } }) {
+        aggregate {
+            count
+        }
+    }
+}
+
+# Mutation xóa address với where condition
+mutation DeleteUserAddress($where: AddressesBoolExp!) {
+    deleteAddresses(where: $where) {
+        returning {
+            addressId
+            network
+            address
+        }
+    }
+}
+
+# Mutation update address
+mutation UpdateUserAddress(
+    $where: AddressesBoolExp!
+    $set: AddressesSetInput!
+) {
+    updateAddresses(where: $where, _set: $set) {
+        returning {
+            addressId
+            network
+            address
+            networkName
+            createAt
+            updateAt
+        }
+    }
+}
+
+# Query to check if wallet address exists
+query CheckWalletAddressExists($address: String!) {
+    addresses(where: { address: { _eq: $address } }) {
+        addressId
+        address
+    }
+}

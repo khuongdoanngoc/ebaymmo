@@ -1,0 +1,81 @@
+table:
+  name: resellers
+  schema: public
+object_relationships:
+  - name: store
+    using:
+      foreign_key_constraint_on: store_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+array_relationships:
+  - name: reseller_orders
+    using:
+      foreign_key_constraint_on:
+        column: reseller_id
+        table:
+          name: reseller_orders
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        user_id:
+          _eq: X-Hasura-User-Id
+      columns:
+        - commission_rate
+        - notes
+        - request_date
+        - status
+        - store_id
+        - user_id
+    comment: ""
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - approval_date
+        - commission_rate
+        - create_at
+        - is_active
+        - notes
+        - request_date
+        - reseller_id
+        - status
+        - store_id
+        - user_id
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - approval_date
+        - commission_rate
+        - create_at
+        - is_active
+        - link
+        - notes
+        - request_date
+        - reseller_id
+        - status
+        - store_id
+        - user_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - approval_date
+        - commission_rate
+        - link
+        - notes
+        - status
+      filter:
+        store:
+          user:
+            user_id:
+              _eq: X-Hasura-User-Id
+      check: null
+    comment: ""

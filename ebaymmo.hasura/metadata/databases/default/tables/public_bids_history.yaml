@@ -1,0 +1,44 @@
+table:
+  name: bids_history
+  schema: public
+object_relationships:
+  - name: bid
+    using:
+      foreign_key_constraint_on: bid_id
+  - name: position
+    using:
+      foreign_key_constraint_on: position_id
+  - name: store
+    using:
+      foreign_key_constraint_on: store_id
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - action
+        - status
+        - bid_amount
+        - bid_date
+        - create_at
+        - update_at
+        - bid_id
+        - history_id
+        - store_id
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - action
+        - status
+        - bid_amount
+        - description
+        - bid_date
+        - create_at
+        - update_at
+        - bid_id
+        - history_id
+        - position_id
+        - store_id
+      filter: {}
+    comment: ""

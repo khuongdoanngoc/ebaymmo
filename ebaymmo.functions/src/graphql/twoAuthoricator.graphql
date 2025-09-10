@@ -1,0 +1,37 @@
+query GetTwoFaAuthenticator($where1: TwofaAuthenticatorsBoolExp = {}) {
+  twofaAuthenticators(where: $where1) {
+    id
+    userId
+    secretKey
+    isActive
+    createdAt
+    activatedAt
+    lastUsedAt
+    deviceName
+    twoSecretKey
+  }
+}
+
+mutation CreateTwoFaAuthenticator($objects: [TwofaAuthenticatorsInsertInput!] = {}) {
+  insertTwofaAuthenticators(objects: $objects) {
+    returning {
+      deviceName
+      userId
+      isActive
+      secretKey
+      twoSecretKey
+    }
+  }
+}
+
+mutation UpdateTwoFaAuthenticators($where: TwofaAuthenticatorsBoolExp = {}, $_set: TwofaAuthenticatorsSetInput = {}) {
+  updateTwofaAuthenticators(where: $where, _set: $_set){
+    returning{
+      userId
+      isActive
+      secretKey
+      twoSecretKey
+      deviceName
+    }
+  }
+}

@@ -1,0 +1,5 @@
+function:
+  name: hold_bid_amount
+  schema: public
+permissions:
+  - role: user

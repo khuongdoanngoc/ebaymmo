@@ -1,0 +1,30 @@
+query GetOrderById(
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [OrdersOrderBy!] = {}
+    $where: OrdersBoolExp = {}
+) {
+    users {
+        userId
+        orders(
+            limit: $limit
+            offset: $offset
+            orderBy: $orderBy
+            where: $where
+        ) {
+            orderId
+            quantity
+            price
+            totalAmount
+            updateAt
+            orderStatus
+            buyerId
+            orderCode
+            orderDate
+            createAt
+            couponId
+            productId
+            orderDate
+        }
+    }
+}

@@ -1,0 +1,12 @@
+mutation DonateToBlog($p_blog_id: String!, $p_comment: String!, $p_donation_amount: numeric!, $p_donor_id: uuid!) {
+  donateToBlog(args: {p_blog_id: $p_blog_id, p_comment: $p_comment, p_donation_amount: $p_donation_amount, p_donor_id: $p_donor_id}) {
+    amount
+    blogId
+    donationId
+    donationDate
+    createAt
+    updateAt
+    userId
+    comment
+  }
+}

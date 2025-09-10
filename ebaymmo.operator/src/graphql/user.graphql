@@ -1,0 +1,97 @@
+mutation UpdateUser($where: UsersBoolExp = {}, $_set: UsersSetInput = {}) {
+    updateUsers(where: $where, _set: $_set) {
+        affectedRows
+        returning {
+            sellerSince
+            status
+        }
+    }
+}
+
+mutation UpdateUserStores($_eq: uuid!, $status: store_status!) {
+    updateStores(
+        where: { sellerId: { _eq: $_eq } }
+        _set: { status: $status }
+    ) {
+        affectedRows
+        returning {
+            storeId
+            storeName
+            sellerId
+            status
+        }
+    }
+}
+
+subscription getUsers(
+    $limit: Int = 50
+    $offset: Int = 0
+    $orderBy: [UsersOrderBy!] = {}
+    $where: UsersBoolExp = {}
+) {
+    users(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        userId
+        createAt
+        fullName
+        images
+        lastLogin
+        role
+        sellerSince
+        email
+        status
+        username
+        ordersAggregate {
+            aggregate {
+                count
+                sum {
+                    totalAmount
+                }
+            }
+        }
+        stores {
+            storeId
+            storeName
+            status
+            category {
+                categoryName
+            }
+        }
+    }
+}
+
+subscription UserInfo($userId: uuid!) {
+    usersByPk(userId: $userId) {
+        balance
+        images
+        email
+        fullName
+        username
+        createAt
+        userId
+        twoFactorEnabled
+    }
+}
+
+query SearchUsers(
+    $where: UsersBoolExp = {}
+    $limit: Int = 10
+    $offset: Int = 0
+) {
+    users(limit: $limit, offset: $offset, where: $where) {
+        fullName
+        images
+        userId
+        username
+    }
+}
+
+subscription stasticUser(
+    $columns: [UsersSelectColumn!] = userId
+    $where: UsersBoolExp = {}
+) {
+    usersAggregate(where: $where) {
+        aggregate {
+            count(columns: $columns)
+        }
+    }
+}

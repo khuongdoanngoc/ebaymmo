@@ -1,0 +1,51 @@
+services:
+  database:
+    build:
+      context: .
+      dockerfile: Dockerfile.pg_cron
+    env_file: ./.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    command:
+      [
+        "postgres",
+        "-c",
+        "log_statement=all",
+        "-c",
+        "log_destination=stderr",
+        "-c",
+        "shared_preload_libraries=pg_cron",
+        "-c",
+        "cron.database_name=${POSTGRES_DB-postgres}",
+        "-c",
+        "max_connections=500",
+      ]
+    networks:
+      my_custom_network:
+        ipv4_address: ${DATABASE_IP}
+
+  hasura:
+    image: hasura/graphql-engine:v2.36.0
+    ports:
+      - "${HASURA_PORT}:8080"
+    restart: always
+    env_file: ./.env
+    depends_on:
+      - database
+    networks:
+      my_custom_network:
+        ipv4_address: ${HASURA_IP}
+
+  redis:
+    image: redis:latest
+    restart: always
+    networks:
+      my_custom_network:
+        ipv4_address: ${REDIS_IP}
+volumes:
+  postgres_data:
+
+networks:
+  my_custom_network:
+    external: true

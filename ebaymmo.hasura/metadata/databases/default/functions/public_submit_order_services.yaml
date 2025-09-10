@@ -1,0 +1,5 @@
+function:
+  name: submit_order_services
+  schema: public
+permissions:
+  - role: user

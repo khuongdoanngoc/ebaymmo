@@ -1,0 +1,25 @@
+mutation InsertTelegramConnection($object: TelegramConnectionsInsertInput!) {
+  insertTelegramConnectionsOne(object: $object) {
+    createdAt
+    id
+    referralCode
+    telegramFirstName
+    telegramId
+    telegramLastName
+    telegramUsername
+  }
+}
+
+query GetTelegramConnectionByTelegramId($telegramId: String!) {
+  telegramConnections(where: {telegramId: {_eq: $telegramId}}) {
+    id
+    telegramId
+  }
+}
+
+query GetTelegramConnectionByReferralCode($referralCode: String!) {
+  telegramConnections(where: {referralCode: {_eq: $referralCode}}) {
+    id
+    referralCode
+  }
+}

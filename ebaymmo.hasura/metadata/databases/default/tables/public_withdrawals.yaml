@@ -1,0 +1,78 @@
+table:
+  name: withdrawals
+  schema: public
+object_relationships:
+  - name: address
+    using:
+      foreign_key_constraint_on: address_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        user_id:
+          _eq: X-Hasura-User-Id
+      columns:
+        - amount
+        - balance_address
+        - description
+        - create_at
+        - update_at
+        - processed_date
+        - request_date
+        - withdrawal_status
+        - address_id
+        - user_id
+        - withdrawal_id
+    comment: ""
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - amount
+        - balance_address
+        - description
+        - create_at
+        - update_at
+        - processed_date
+        - request_date
+        - withdrawal_status
+        - address_id
+        - user_id
+        - withdrawal_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - amount
+        - balance_address
+        - description
+        - create_at
+        - update_at
+        - processed_date
+        - request_date
+        - withdrawal_status
+        - address_id
+        - user_id
+        - withdrawal_id
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+      allow_aggregations: true
+    comment: ""
+update_permissions:
+  - role: operator
+    permission:
+      columns:
+        - description
+        - processed_date
+        - request_date
+        - withdrawal_id
+        - withdrawal_status
+      filter: {}
+      check: {}
+    comment: ""

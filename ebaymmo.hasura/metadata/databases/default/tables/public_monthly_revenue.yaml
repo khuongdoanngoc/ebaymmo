@@ -1,0 +1,11 @@
+table:
+  name: monthly_revenue
+  schema: public
+select_permissions:
+  - role: operator
+    permission:
+      columns:
+        - total_amount
+        - month
+      filter: {}
+    comment: ""

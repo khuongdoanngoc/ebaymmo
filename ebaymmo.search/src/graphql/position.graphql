@@ -1,0 +1,13 @@
+query GetPositions($where: PositionsBoolExp = {}, $offset: Int = 0, $limit: Int = 10) {
+  positions(where: $where, offset: $offset, limit: $limit) {
+    category {
+      slug
+      type
+    }
+    positionId
+    winnerStores
+    positionName
+    status
+    description
+  }
+}

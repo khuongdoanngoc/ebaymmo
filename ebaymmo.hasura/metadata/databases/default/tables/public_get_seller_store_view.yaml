@@ -1,0 +1,61 @@
+table:
+  name: get_seller_store_view
+  schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - total_sold_count
+        - total_stock_count
+        - category_name
+        - category_slug
+        - full_name
+        - images
+        - parent_category_name
+        - parent_category_slug
+        - username
+        - seller_since
+        - last_login
+        - store_id
+        - user_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - total_sold_count
+        - total_stock_count
+        - category_name
+        - category_slug
+        - full_name
+        - images
+        - parent_category_name
+        - parent_category_slug
+        - username
+        - seller_since
+        - last_login
+        - store_id
+        - user_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - total_sold_count
+        - total_stock_count
+        - category_name
+        - category_slug
+        - full_name
+        - images
+        - parent_category_name
+        - parent_category_slug
+        - username
+        - seller_since
+        - last_login
+        - store_id
+        - user_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""

@@ -1,0 +1,82 @@
+query GetUsers(
+  $where: UsersBoolExp = {}
+  $orderBy: [UsersOrderBy!] = {}
+  $offset: Int = 0
+  $limit: Int = 10
+  $distinctOn: [UsersSelectColumn!] = email
+) {
+  users(
+    where: $where
+    orderBy: $orderBy
+    offset: $offset
+    limit: $limit
+    distinctOn: $distinctOn
+  ) {
+    balance
+    createAt
+    email
+    password
+    fullName
+    username
+    googleAccountId
+    images
+    referralCode
+    lastLogin
+    loginFailedCount
+    twoFactorSecret
+    twoFactorEnabled
+  }
+}
+query GetUserInfo($userId: uuid!) {
+  users(where: { userId: { _eq: $userId } }) {
+    email
+    balance
+    email
+    username
+  }
+}
+
+mutation CreateUser($object: UsersInsertInput = {}) {
+  insertUsersOne(object: $object) {
+    fullName
+    balance
+    email
+    googleAccountId
+    images
+    lastLogin
+    loginFailedCount
+    fullName
+    username
+    role
+    updateAt
+    userId
+    email
+    username
+    createAt
+  }
+}
+
+mutation UpdateUser(
+  $pkColumns: UsersPkColumnsInput!
+  $_set: UsersSetInput = {}
+) {
+  updateUsersByPk(pkColumns: $pkColumns, _set: $_set) {
+    balance
+  }
+}
+
+query GetUsersByGoogleId($googleAccountId: String!) {
+  users(where: { googleAccountId: { _eq: $googleAccountId } }) {
+    userId
+    balance
+    createAt
+    email
+    password
+    fullName
+    username
+    googleAccountId
+    images
+    lastLogin
+    loginFailedCount
+  }
+}

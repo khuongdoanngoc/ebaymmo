@@ -1,0 +1,78 @@
+mutation CreateDeposit(
+    $networkCode: String!
+    $amount: Float!
+    $urlCallback: String!
+    $orderId: String!
+    $userId: String!
+) {
+    createDeposit(
+        networkCode: $networkCode
+        amount: $amount
+        urlCallback: $urlCallback
+        orderId: $orderId
+        userId: $userId
+    ) {
+        transactionId
+        walletId
+        merchantId
+        paymentMethodId
+        orderId
+        amount
+        createdAt
+        wallet {
+            walletId
+            address
+        }
+        paymentMethod {
+            paymentMethodId
+            networkCode
+            chainId
+            vmType
+        }
+        qrUrl
+        paymentPageUrl
+    }
+}
+
+mutation InsertDepositeLogs($object: DepositsInsertInput = {}) {
+    insertDepositsOne(object: $object) {
+        amount
+        createAt
+        depositId
+        depositDate
+        depositStatus
+        description
+        transactionId
+        updateAt
+        userId
+    }
+}
+
+query GetDeposits {
+    deposits {
+        depositId
+        userId
+        amount
+        depositStatus
+        depositDate
+        description
+        createAt
+        updateAt
+        transactionId
+        depositLogs {
+            logId
+            depositId
+            amount
+            status
+            transactionId
+            paymentMethod
+            errorMessage
+            processedAt
+            txhash
+            payload
+            orderId
+            createAt
+            updateAt
+        }
+    }
+}

@@ -1,0 +1,37 @@
+table:
+  name: listing_orders
+  schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - is_service
+        - buyer_name
+        - order_code
+        - order_status
+        - order_type
+        - product_name
+        - product_status
+        - referral_code
+        - seller_name
+        - store_name
+        - has_discount
+        - quantity
+        - sold_count
+        - price
+        - product_price
+        - stock_count
+        - total_amount
+        - complete_date_service
+        - create_at
+        - update_at
+        - order_date
+        - buyer_id
+        - coupon_id
+        - order_id
+        - product_id
+        - seller_id
+        - store_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""

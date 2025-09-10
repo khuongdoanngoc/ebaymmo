@@ -1,0 +1,27 @@
+query GetDeposits(
+    $where: DepositsBoolExp = {}
+    $limit: Int
+    $offset: Int
+    $orderBy: [DepositsOrderBy!] = { depositDate: DESC }
+) {
+    deposits(where: $where, orderBy: $orderBy, limit: $limit, offset: $offset) {
+        amount
+        createAt
+        depositId
+        depositStatus
+        description
+        user {
+            fullName
+            email
+        }
+        depositLogs {
+            txhash
+            payload
+        }
+    }
+    depositsAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}

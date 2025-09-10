@@ -1,0 +1,311 @@
+table:
+  name: users
+  schema: public
+object_relationships:
+  - name: twofaAuthenticator
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: twofa_authenticators
+          schema: public
+array_relationships:
+  - name: addresses
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: addresses
+          schema: public
+  - name: blogFavourites
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: blog_favourite
+          schema: public
+  - name: blogs
+    using:
+      foreign_key_constraint_on:
+        column: email
+        table:
+          name: blogs
+          schema: public
+  - name: commentsBlogs
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: blog_comments
+          schema: public
+  - name: deposits
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: deposits
+          schema: public
+  - name: donations
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: donations
+          schema: public
+  - name: notifications
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: notifications
+          schema: public
+  - name: orders
+    using:
+      foreign_key_constraint_on:
+        column: buyer_id
+        table:
+          name: orders
+          schema: public
+  - name: ordersLogs
+    using:
+      foreign_key_constraint_on:
+        column: logs_by
+        table:
+          name: orders_logs
+          schema: public
+  - name: productUploadLogs
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: product_upload_logs
+          schema: public
+  - name: reports
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: reports
+          schema: public
+  - name: resellers
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: resellers
+          schema: public
+  - name: socialMediaLinks
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: social_media_links
+          schema: public
+  - name: storeAccessLogs
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: store_access_logs
+          schema: public
+  - name: storeRatings
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: store_ratings
+          schema: public
+  - name: storeRegistrations
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: store_registrations
+          schema: public
+  - name: stores
+    using:
+      foreign_key_constraint_on:
+        column: seller_id
+        table:
+          name: stores
+          schema: public
+  - name: supportTickets
+    using:
+      foreign_key_constraint_on:
+        column: assigned_to
+        table:
+          name: support_tickets
+          schema: public
+  - name: telegramConnections
+    using:
+      foreign_key_constraint_on:
+        column: referral_code
+        table:
+          name: telegram_connections
+          schema: public
+  - name: twofaAuthenticators
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: twofa_authenticators
+          schema: public
+  - name: wishlists
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: wishlist
+          schema: public
+  - name: withdrawals
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: withdrawals
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - balance
+        - create_at
+        - email
+        - full_name
+        - google_account_id
+        - images
+        - last_login
+        - login_failed_count
+        - password
+        - referral_code
+        - role
+        - seller_since
+        - two_factor_enabled
+        - two_factor_secret
+        - update_at
+        - user_id
+        - username
+      filter: {}
+      limit: 98
+    comment: ""
+  - role: operator
+    permission:
+      columns:
+        - balance
+        - create_at
+        - email
+        - full_name
+        - google_account_id
+        - images
+        - last_login
+        - referral_code
+        - role
+        - seller_since
+        - slug
+        - status
+        - two_factor_enabled
+        - two_factor_secret
+        - update_at
+        - user_id
+        - username
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - balance
+        - create_at
+        - email
+        - full_name
+        - google_account_id
+        - held_balance
+        - images
+        - last_login
+        - login_failed_count
+        - password
+        - referral_code
+        - role
+        - seller_since
+        - status
+        - telegram_connection_status
+        - two_factor_enabled
+        - two_factor_secret
+        - update_at
+        - user_id
+        - username
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+    comment: ""
+update_permissions:
+  - role: operator
+    permission:
+      columns:
+        - email
+        - full_name
+        - images
+        - role
+        - seller_since
+        - status
+        - user_id
+        - username
+      filter: {}
+      check: null
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - full_name
+        - images
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+      check: null
+    comment: ""
+event_triggers:
+  - name: SyncBlogUsers
+    definition:
+      enable_manual: true
+      insert:
+        columns: '*'
+      update:
+        columns:
+          - balance
+          - password
+          - user_id
+          - email
+          - role
+          - full_name
+          - username
+          - google_account_id
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: http://188.166.253.8:4000/api/sync
+    headers:
+      - name: API_KEY
+        value: '{{BLOG_API_SECRET_KEY}}'
+  - name: SyncChatUsers
+    definition:
+      delete:
+        columns: '*'
+      enable_manual: true
+      insert:
+        columns: '*'
+      update:
+        columns:
+          - images
+          - user_id
+          - full_name
+          - email
+          - username
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: '{{CHAT_URL}}/auth/upsert-user'
+    headers:
+      - name: x-api-key
+        value: lmglkyxmxpknkkhagbmbrtsezaiachifxwioldrflnmqpjsknw

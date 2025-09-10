@@ -1,0 +1,204 @@
+query GetPosition(
+    $limit: Int
+    $offset: Int
+    $where: PositionsBoolExp
+    $orderBy: [PositionsOrderBy!]
+) {
+    positions(
+        limit: $limit
+        offset: $offset
+        where: $where
+        orderBy: $orderBy
+    ) {
+        createAt
+        description
+        bidAmount
+        endDate
+        positionId
+        positionName
+        startDate
+        status
+        updateAt
+        store {
+            storeName
+            storeId
+        }
+        winnerStores
+        categoryId
+        category {
+            categoryId
+            categoryName
+            description
+            imagesUrl
+        }
+    }
+    positionsAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+query GetCategories(
+    $offset: Int!
+    $limit: Int!
+    $orderBy: [CategoriesOrderBy!] = {}
+    $where: CategoriesBoolExp = {}
+) {
+    categories(
+        offset: $offset
+        limit: $limit
+        orderBy: $orderBy
+        where: $where
+    ) {
+        categoryId
+        categoryName
+        parentCategoryId
+    }
+}
+
+# Tạo mới position
+mutation CreatePosition($object: PositionsInsertInput!) {
+    insertPositionsOne(object: $object) {
+        positionId
+        positionName
+        status
+        createAt
+    }
+}
+
+# Cập nhật position
+mutation UpdatePosition($positionId: uuid!, $updates: PositionsSetInput!) {
+    updatePositionsByPk(
+        pkColumns: { positionId: $positionId }
+        _set: $updates
+    ) {
+        positionId
+        positionName
+        status
+        updateAt
+    }
+}
+
+# Xóa position
+mutation DeletePosition($positionId: uuid!) {
+    deletePositionsByPk(positionId: $positionId) {
+        positionId
+        positionName
+    }
+}
+
+# Cập nhật chỉ thời gian
+mutation UpdatePositionTime(
+    $positionId: uuid!
+    $startDate: timestamptz!
+    $endDate: timestamptz!
+) {
+    updatePositionsByPk(
+        pkColumns: { positionId: $positionId }
+        _set: { startDate: $startDate, endDate: $endDate }
+    ) {
+        positionId
+        startDate
+        endDate
+        updateAt
+    }
+}
+
+# Thêm query để lấy danh sách bids
+query GetBids(
+    $limit: Int
+    $offset: Int
+    $where: BidsBoolExp
+    $orderBy: [BidsOrderBy!]
+) {
+    bids(limit: $limit, offset: $offset, where: $where, orderBy: $orderBy) {
+        bidId
+        positionId
+        storeId
+        bidAmount
+        bidDate
+        createAt
+        bidStatus
+        position {
+            positionName
+            bidAmount
+            description
+        }
+        store {
+            storeName
+        }
+    }
+    bidsAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+# Query lấy danh sách stores
+query GetStores(
+    $limit: Int
+    $offset: Int
+    $where: StoresBoolExp
+    $orderBy: [StoresOrderBy!]
+) {
+    stores(limit: $limit, offset: $offset, where: $where, orderBy: $orderBy) {
+        storeId
+        storeName
+    }
+    storesAggregate(where: $where) {
+        aggregate {
+            count
+        }
+    }
+}
+
+# Tạo bid mới
+mutation CreateBid($object: BidsInsertInput!) {
+    insertBidsOne(object: $object) {
+        bidId
+        positionId
+        storeId
+        bidAmount
+        createAt
+        bidStatus
+    }
+}
+
+# Cập nhật bid
+mutation UpdateBid($bidId: uuid!, $updates: BidsSetInput!) {
+    updateBidsByPk(pkColumns: { bidId: $bidId }, _set: $updates) {
+        bidId
+        bidAmount
+        bidStatus
+        updateAt
+    }
+}
+
+# Xóa bid
+mutation DeleteBid($bidId: uuid!) {
+    deleteBidsByPk(bidId: $bidId) {
+        bidId
+    }
+}
+
+subscription GetBidByPositionId(
+    $limit: Int = 10
+    $offset: Int = 10
+    $orderBy: [BidsOrderBy!] = {}
+    $where: BidsBoolExp = {}
+) {
+    bids(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        bidAmount
+        bidDate
+        bidId
+        bidStatus
+        createAt
+        updateAt
+        position {
+            positionName
+            description
+        }
+    }
+}

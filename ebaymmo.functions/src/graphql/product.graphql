@@ -1,0 +1,35 @@
+mutation createProductItem($object: ProductItemsInsertInput!) {
+  insertProductItemsOne(object: $object) {
+    productItemId
+    dataText
+    content
+    createAt
+    updateAt
+  }
+}
+
+query GetProductItems($where: ProductItemsBoolExp) {
+  productItems(where: $where) {
+    productItemId
+    dataText
+    content
+    createAt
+    updateAt
+  }
+}
+
+query GetProductStock($where: ProductsBoolExp = {}) {
+  products(where: $where) {
+    stockCount
+    productId
+  }
+}
+
+mutation UpdateProductStock($where: ProductsBoolExp = {}, $_set: ProductsSetInput = {}) {
+  updateProducts(where: $where, _set: $_set) {
+    returning {
+      productId
+      stockCount
+    }
+  }
+}

@@ -1,0 +1,16 @@
+query getProducts(
+    $limit: Int = 10
+    $offset: Int = 0
+    $orderBy: [ProductsOrderBy!] = {}
+    $where: ProductsBoolExp = {}
+) {
+    products(limit: $limit, offset: $offset, orderBy: $orderBy, where: $where) {
+        price
+        productId
+        productName
+        soldCount
+        stockCount
+        status
+        createAt
+    }
+}

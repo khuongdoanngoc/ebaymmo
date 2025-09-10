@@ -1,0 +1,266 @@
+query GetUpcomingBids($currentTime: timestamptz!, $twoDaysLater: timestamptz!) {
+    positions(
+        where: {
+            endDate: { _gt: $currentTime }
+            _and: { endDate: { _lte: $twoDaysLater } }
+        }
+        orderBy: { endDate: ASC }
+    ) {
+        positionId
+        positionName
+        status
+        startDate
+        endDate
+    }
+}
+
+subscription getBidsForUsers {
+    bids(orderBy: { bidDate: ASC }, where: { bidStatus: { _eq: "active" } }) {
+        bidId
+        bidDate
+        bidAmount
+        bidStatus
+        createAt
+        updateAt
+        storeId
+        position {
+            endDate
+            startDate
+        }
+        bidHistories {
+            bidId
+            bidDate
+        }
+    }
+}
+
+subscription GetHighestBid($bidId: uuid!) {
+    listingBidHistories(
+        where: { bidId: { _eq: $bidId }, action: { _eq: "hold_bid" } }
+        orderBy: { createAt: ASC }
+    ) {
+        action
+        bidAmount
+        bidDate
+        bidId
+        historyId
+        createAt
+        positionId
+        status
+        storeId
+        updateAt
+        images
+        fullName
+        username
+        userId
+        balance
+    }
+}
+
+subscription GetHighestBidder($bidId: uuid!) {
+    bidsHistory(
+        where: {
+            bidId: { _eq: $bidId }
+            action: { _eq: "hold_bid" }
+            status: { _eq: "hold" }
+        }
+        orderBy: { bidAmount: DESC }
+        limit: 1
+    ) {
+        bidAmount
+        createAt
+        store {
+            storeId
+            storeName
+            avatar
+            user {
+                fullName
+                images
+            }
+        }
+    }
+}
+
+subscription getBidsById($bidId: uuid!) {
+    bids(where: { bidId: { _eq: $bidId } }) {
+        bidDate
+        bidAmount
+        position {
+            positionId
+            positionName
+            description
+            endDate
+            category {
+                categoryId
+                categoryName
+                imagesUrl
+            }
+        }
+    }
+}
+
+mutation HoldBidAmount($input: HoldBidAmountInput!) {
+    holdBidAmountAction(input: $input) {
+        action
+        bidAmount
+        bidDate
+        bidId
+        historyId
+        createAt
+        positionId
+        status
+        storeId
+        updateAt
+        description
+    }
+}
+
+mutation FinalizeBidAuction($input: FinalizeBidInput!) {
+    finalizeBidAuctionAction(input: $input) {
+        action
+        bidAmount
+        bidDate
+        bidId
+        historyId
+        createAt
+        positionId
+        status
+        storeId
+        updateAt
+        description
+    }
+}
+
+query GetUserStores($userId: uuid!, $categoryId: uuid!) {
+    stores(
+        where: {
+            sellerId: { _eq: $userId }
+            status: { _eq: "active" }
+            categoryId: { _eq: $categoryId }
+        }
+    ) {
+        storeId
+        storeName
+        avatar
+        description
+        shortDescription
+    }
+}
+
+subscription GetBid($bidId: uuid!) {
+    bidsByPk(bidId: $bidId) {
+        bidDate
+        bidStatus
+    }
+}
+
+subscription GetBidConfig {
+    configs(where: { name: { _eq: "BID_DURATION" } }) {
+        value
+    }
+}
+
+subscription GetWinnerStores {
+    winnerStores(
+        where: {
+            winnerStores: { _isNull: false }
+            _and: { categoryId: { _isNull: true } }
+        }
+    ) {
+        positionId
+        categoryId
+        positionName
+        winnerStores
+        storeId
+        storeName
+        avatar
+        slug
+        lowestPrice
+        averageRating
+        ratingTotal
+        totalSoldCount
+        totalStockCount
+        sellerId
+        sellerName
+        sellerAvatar
+    }
+}
+
+subscription OnBidFinalized($bidId: uuid!) {
+    bidsByPk(bidId: $bidId) {
+        bidStatus
+        bidAmount
+        position {
+            positionName
+            winnerStores
+            store {
+                storeId
+                storeName
+                avatar
+                user {
+                    fullName
+                    images
+                    username
+                }
+            }
+        }
+    }
+}
+
+subscription GetPositionByBidId($limit: Int = 10, $offset: Int = 0) {
+    positions(
+        limit: $limit
+        offset: $offset
+        orderBy: { endDate: ASC }
+        where: { endDate: { _gte: NOW } }
+    ) {
+        createAt
+        description
+        endDate
+        positionId
+        positionName
+        startDate
+        status
+        winnerStores
+        updateAt
+    }
+}
+
+query GetPositions(
+    $where: PositionsBoolExp = {}
+    $offset: Int = 0
+    $limit: Int = 10
+    $orderBy: [PositionsOrderBy!] = {}
+) {
+    positions(
+        where: $where
+        offset: $offset
+        limit: $limit
+        orderBy: $orderBy
+    ) {
+        category {
+            slug
+            type
+        }
+        positionId
+        winnerStores
+        positionName
+        status
+        description
+    }
+}
+
+query GetAllUserStores($userId: uuid!) {
+    stores(
+        where: {
+            sellerId: { _eq: $userId }
+            status: { _eq: "active" }
+        }
+    ) {
+        storeId
+        storeName
+        avatar
+        description
+        shortDescription
+    }
+}
